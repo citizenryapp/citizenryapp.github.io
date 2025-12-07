@@ -411,3 +411,41 @@
         padding: 32px 24px;
     }
 }
+
+/* Legal Pages (Privacy Policy, Terms of Service) */
+.legal-page .post-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.legal-page .post-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0;
+}
+
+.legal-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.legal-content h3 {
+    margin-top: 32px;
+    margin-bottom: 16px;
+    font-size: 1.3rem;
+    color: var(--text-primary);
+}
+
+.legal-content ol {
+    margin: 20px 0;
+    padding-left: 24px;
+}
+
+.legal-content ol li {
+    margin-bottom: 8px;
+    color: var(--text-secondary);
+}
+
+.legal-content p {
+    margin-bottom: 16px;
+    line-height: 1.7;
+}
