@@ -1,0 +1,15 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "9NQ9XUQP33.com.everyday.Citizenry",
+        "paths": [
+          "/events/*",
+          "/in-app-events/*",
+          "/app/*"
+        ]
+      }
+    ]
+  }
+}
