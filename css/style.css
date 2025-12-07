@@ -269,7 +269,7 @@ h1, h2, h3, h4, h5, h6 {
 .mobile-nav-links {
     list-style: none;
     padding: 24px;
-    flex: 1;
+    padding-bottom: 0;
 }
 
 .mobile-nav-links li {
@@ -293,8 +293,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .mobile-download-btn {
     display: block;
-    padding: 24px;
-    margin-top: auto;
+    padding: 0 24px 24px 24px;
+    margin-top: 16px;
 }
 
 .mobile-download-btn img {
