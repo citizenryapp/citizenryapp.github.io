@@ -10,6 +10,14 @@
       "excerpt_es": "¡Prepárate para el examen de ciudadanía 2025! Revisa las 128 preguntas y respuestas cívicas, conoce las últimas actualizaciones y practica con las entrevistas simuladas de Citizenry."
     },
     {
+      "id": "check-n400-case-status",
+      "file": "blog/check-n400-case-status.html",
+      "title_en": "How to Check Your N-400 Case Status",
+      "title_es": "Cómo Verificar el Estado de Tu Caso N-400",
+      "excerpt_en": "Learn what each status update means and how to track your N-400 application step by step using the USCIS online portal.",
+      "excerpt_es": "Aprende qué significa cada actualización de estado y cómo rastrear tu solicitud N-400."
+    },
+    {
       "id": "citizenship-through-military-service",
       "file": "blog/citizenship-through-military-service.html",
       "title_en": "Citizenship Through Military Service",
@@ -128,14 +136,6 @@
       "title_es": "Requisitos de Naturalización: ¿Es Elegible?",
       "excerpt_en": "Check if you meet the eligibility requirements for US citizenship. Learn about residence, physical presence, age, and other naturalization requirements.",
       "excerpt_es": "Verifica si cumples con los requisitos de elegibilidad para la ciudadanía."
-    },
-    {
-      "id": "check-n400-case-status",
-      "file": "blog/check-n400-case-status.html",
-      "title_en": "How to Check Your N-400 Case Status",
-      "title_es": "Cómo Verificar el Estado de Tu Caso N-400",
-      "excerpt_en": "Learn what each status update means and how to track your N-400 application step by step using the USCIS online portal.",
-      "excerpt_es": "Aprende qué significa cada actualización de estado y cómo rastrear tu solicitud N-400."
     }
   ]
 }
