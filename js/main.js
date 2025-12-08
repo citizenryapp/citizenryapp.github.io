@@ -36,7 +36,8 @@
                     el.src = '';
                     el.src = text;
                 } else {
-                    el.textContent = text;
+                    // Use innerHTML to support HTML tags like <strong> in translations
+                    el.innerHTML = text;
                 }
             }
         });
