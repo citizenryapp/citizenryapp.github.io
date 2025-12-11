@@ -10,6 +10,14 @@
       "excerpt_es": "¡Prepárate para el examen de ciudadanía 2025! Revisa las 128 preguntas y respuestas cívicas, conoce las últimas actualizaciones y practica con las entrevistas simuladas de Citizenry."
     },
     {
+      "id": "oath-ceremony-what-to-expect",
+      "file": "blog/oath-ceremony-what-to-expect.html",
+      "title_en": "What to Expect at Your Oath Ceremony",
+      "title_es": "Qué Esperar en Tu Ceremonia de Juramento",
+      "excerpt_en": "Everything you need to know about the naturalization oath ceremony. Learn what happens, what to bring, and what to do after you become a US citizen.",
+      "excerpt_es": "Todo lo que necesitas saber sobre la ceremonia de juramento de naturalización."
+    },
+    {
       "id": "naturalization-eligibility-requirements",
       "file": "blog/naturalization-eligibility-requirements.html",
       "title_en": "Naturalization Requirements: Are You Eligible?",
@@ -128,14 +136,6 @@
       "title_es": "Consejos para el Examen de Lectura y Escritura en Inglés",
       "excerpt_en": "Master the English portion of your citizenship test. Learn the vocabulary words, practice sentences, and tips for the reading and writing components.",
       "excerpt_es": "Domina la parte de inglés de tu examen de ciudadanía. Aprende el vocabulario y consejos para lectura y escritura."
-    },
-    {
-      "id": "oath-ceremony-what-to-expect",
-      "file": "blog/oath-ceremony-what-to-expect.html",
-      "title_en": "What to Expect at Your Oath Ceremony",
-      "title_es": "Qué Esperar en Tu Ceremonia de Juramento",
-      "excerpt_en": "Everything you need to know about the naturalization oath ceremony. Learn what happens, what to bring, and what to do after you become a US citizen.",
-      "excerpt_es": "Todo lo que necesitas saber sobre la ceremonia de juramento de naturalización."
     }
   ]
 }
