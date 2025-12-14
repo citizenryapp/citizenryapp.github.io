@@ -341,7 +341,7 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 800;
     margin-bottom: 20px;
     line-height: 1.1;
-    color: var(--text-primary);
+    color: #113263;
 }
 
 .hero-subtitle {
@@ -1117,10 +1117,6 @@ h1, h2, h3, h4, h5, h6 {
     
     .cta-badge {
         height: 56px;
-    }
-    
-    .hero-image {
-        order: -1;
     }
     
     .hero-image img {
