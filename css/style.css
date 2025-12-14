@@ -425,7 +425,7 @@ h1, h2, h3, h4, h5, h6 {
    Social Proof Banner
    ============================================ */
 .social-proof {
-    background: var(--text-primary);
+    background: #113263;
     color: white;
     padding: 20px 0;
     text-align: center;
