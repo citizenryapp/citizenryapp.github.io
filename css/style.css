@@ -331,8 +331,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .hero-grid {
     display: grid;
-    grid-template-columns: 1fr 400px;
-    gap: 80px;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 60px;
     align-items: center;
 }
 
@@ -415,9 +415,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero-image img {
-    max-width: 100%;
+    width: 100%;
     height: auto;
-    max-height: 600px;
     border-radius: 24px;
     box-shadow: var(--shadow-lg);
 }
@@ -1040,8 +1039,8 @@ h1, h2, h3, h4, h5, h6 {
    ============================================ */
 @media (max-width: 1024px) {
     .hero-grid {
-        grid-template-columns: 1fr 360px;
-        gap: 50px;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
     }
     
     .hero-content h1 {
@@ -1120,7 +1119,7 @@ h1, h2, h3, h4, h5, h6 {
     }
     
     .hero-image img {
-        max-height: 400px;
+        max-width: 300px;
     }
     
     .section-header h2 {
