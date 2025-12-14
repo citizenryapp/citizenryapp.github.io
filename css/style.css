@@ -336,6 +336,20 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
 }
 
+.hero-top-download {
+    display: none;
+}
+
+.hero-top-download-link {
+    display: inline-block;
+}
+
+.hero-top-download-badge {
+    height: 52px;
+    width: auto;
+    display: block;
+}
+
 .hero-content h1 {
     font-size: 3.2rem;
     font-weight: 800;
@@ -1087,8 +1101,19 @@ h1, h2, h3, h4, h5, h6 {
         display: flex;
     }
     
+    .hero-top-download {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 16px;
+    }
+
+    /* Avoid showing two App Store badges on mobile */
+    .hero-cta .download-btn {
+        display: none;
+    }
+
     .hero {
-        padding: 60px 0;
+        padding: 32px 0 60px;
     }
     
     .hero-grid {
