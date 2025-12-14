@@ -188,7 +188,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .header-badge {
-    height: 44px;
+    height: 50px;
     width: auto;
     display: block;
     transition: transform 0.2s ease;
@@ -295,12 +295,13 @@ h1, h2, h3, h4, h5, h6 {
     display: block;
     padding: 0 24px 24px 24px;
     margin-top: 16px;
+    text-align: center;
 }
 
 .mobile-download-btn img {
-    width: 100%;
-    max-width: 200px;
-    height: auto;
+    height: 56px;
+    width: auto;
+    display: inline-block;
 }
 
 .mobile-menu-overlay {
@@ -345,7 +346,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero-top-download-badge {
+<<<<<<< HEAD
     height: 52px;
+=======
+    height: 64px;
+>>>>>>> 6db1d86 (Download badge)
     width: auto;
     display: block;
 }
@@ -1140,6 +1145,10 @@ h1, h2, h3, h4, h5, h6 {
     }
     
     .cta-badge {
+        height: 56px;
+    }
+
+    .hero-top-download-badge {
         height: 56px;
     }
     
