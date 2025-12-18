@@ -10,6 +10,14 @@
       "excerpt_es": "¡Prepárate para el examen de ciudadanía 2025! Revisa las 128 preguntas y respuestas cívicas, conoce las últimas actualizaciones y practica con las entrevistas simuladas de Citizenry."
     },
     {
+      "id": "common-reasons-citizenship-denied",
+      "file": "blog/common-reasons-citizenship-denied.html",
+      "title_en": "Common Reasons Citizenship Applications Get Denied",
+      "title_es": "Razones Comunes por las que se Niegan Solicitudes de Ciudadanía",
+      "excerpt_en": "Learn the most common reasons N-400 citizenship applications are denied and how to avoid them. Understand eligibility issues and test failures.",
+      "excerpt_es": "Aprende las razones más comunes por las que se niegan solicitudes N-400 y cómo evitarlas."
+    },
+    {
       "id": "english-reading-writing-test-tips",
       "file": "blog/english-reading-writing-test-tips.html",
       "title_en": "English Reading and Writing Test Tips",
@@ -128,14 +136,6 @@
       "title_es": "Qué Llevar a Tu Entrevista de Ciudadanía",
       "excerpt_en": "A complete checklist of documents and items you need to bring to your USCIS citizenship interview. Be prepared and avoid delays.",
       "excerpt_es": "Una lista completa de documentos y artículos que necesitas llevar a tu entrevista de ciudadanía."
-    },
-    {
-      "id": "common-reasons-citizenship-denied",
-      "file": "blog/common-reasons-citizenship-denied.html",
-      "title_en": "Common Reasons Citizenship Applications Get Denied",
-      "title_es": "Razones Comunes por las que se Niegan Solicitudes de Ciudadanía",
-      "excerpt_en": "Learn the most common reasons N-400 citizenship applications are denied and how to avoid them. Understand eligibility issues and test failures.",
-      "excerpt_es": "Aprende las razones más comunes por las que se niegan solicitudes N-400 y cómo evitarlas."
     }
   ]
 }
