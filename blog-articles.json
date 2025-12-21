@@ -10,6 +10,14 @@
       "excerpt_es": "¡Prepárate para el examen de ciudadanía 2025! Revisa las 128 preguntas y respuestas cívicas, conoce las últimas actualizaciones y practica con las entrevistas simuladas de Citizenry."
     },
     {
+      "id": "selective-service-registration",
+      "file": "blog/selective-service-registration.html",
+      "title_en": "Selective Service Registration: What Male Applicants Need to Know",
+      "title_es": "Registro del Servicio Selectivo: Lo que los Solicitantes Masculinos Deben Saber",
+      "excerpt_en": "Learn about Selective Service registration requirements for male citizenship applicants. Understand what happens if you didn't register and how it affects naturalization.",
+      "excerpt_es": "Aprende sobre los requisitos de registro del Servicio Selectivo para solicitantes masculinos de ciudadanía."
+    },
+    {
       "id": "spouses-of-us-citizens-3-year-rule",
       "file": "blog/spouses-of-us-citizens-3-year-rule.html",
       "title_en": "Naturalization for Spouses of US Citizens: The 3-Year Rule Explained",
@@ -208,14 +216,6 @@
       "title_es": "Residencia Continua vs Presencia Física: ¿Cuál es la Diferencia?",
       "excerpt_en": "Understand the difference between continuous residence and physical presence requirements for US citizenship. Learn how travel affects your naturalization eligibility.",
       "excerpt_es": "Entiende la diferencia entre los requisitos de residencia continua y presencia física para la ciudadanía."
-    },
-    {
-      "id": "selective-service-registration",
-      "file": "blog/selective-service-registration.html",
-      "title_en": "Selective Service Registration: What Male Applicants Need to Know",
-      "title_es": "Registro del Servicio Selectivo: Lo que los Solicitantes Masculinos Deben Saber",
-      "excerpt_en": "Learn about Selective Service registration requirements for male citizenship applicants. Understand what happens if you didn't register and how it affects naturalization.",
-      "excerpt_es": "Aprende sobre los requisitos de registro del Servicio Selectivo para solicitantes masculinos de ciudadanía."
     }
   ]
 }
