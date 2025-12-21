@@ -174,7 +174,7 @@ function generateBlogPage1(articles, dates) {
         "publisher": {
             "@type": "Organization",
             "name": "Citizenry",
-            "logo": "https://citizenryapp.com/assets/images/citizenry-logo.png"
+            "logo": "https://citizenryapp.com/assets/images/citizenry-logotype.png"
         }
     }
     </script>
@@ -189,7 +189,7 @@ function generateBlogPage1(articles, dates) {
             <div class="container">
                 <div class="nav-wrapper">
                     <a href="index.html" class="logo">
-                        <img src="assets/images/citizenry-logo.png" alt="Citizenry" height="40">
+                        <img src="assets/images/citizenry-logotype.png" alt="Citizenry" height="40">
                     </a>
                     
                     <div class="nav-center">
@@ -226,7 +226,7 @@ function generateBlogPage1(articles, dates) {
         <!-- Mobile Slide Menu -->
         <div class="mobile-menu" id="mobileMenu">
             <div class="mobile-menu-header">
-                <img src="assets/images/citizenry-logo.png" alt="Citizenry" height="32">
+                <img src="assets/images/citizenry-logotype.png" alt="Citizenry" height="32">
                 <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">&times;</button>
             </div>
             <ul class="mobile-nav-links">
@@ -304,7 +304,7 @@ ${pagination}
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <img src="assets/images/citizenry-logo.png" alt="Citizenry" height="32">
+                    <img src="assets/images/citizenry-logotype.png" alt="Citizenry" height="32">
                 </div>
                 <div class="footer-links">
                     <a href="privacy-policy.html" data-en="Privacy Policy" data-es="Política de Privacidad">Privacy Policy</a>
@@ -358,7 +358,7 @@ function generateBlogPageN(pageNum, articles, dates, totalPages) {
         <nav class="navbar">
             <div class="container">
                 <div class="nav-wrapper">
-                    <a href="index.html" class="logo"><img src="assets/images/citizenry-logo.png" alt="Citizenry" height="40"></a>
+                    <a href="index.html" class="logo"><img src="assets/images/citizenry-logotype.png" alt="Citizenry" height="40"></a>
                     <div class="nav-center">
                         <ul class="nav-menu">
                             <li><a href="index.html" data-en="Home" data-es="Inicio">Home</a></li>
@@ -376,7 +376,7 @@ function generateBlogPageN(pageNum, articles, dates, totalPages) {
             </div>
         </nav>
         <div class="mobile-menu" id="mobileMenu">
-            <div class="mobile-menu-header"><img src="assets/images/citizenry-logo.png" alt="Citizenry" height="32"><button class="mobile-menu-close" id="mobileMenuClose">&times;</button></div>
+            <div class="mobile-menu-header"><img src="assets/images/citizenry-logotype.png" alt="Citizenry" height="32"><button class="mobile-menu-close" id="mobileMenuClose">&times;</button></div>
             <ul class="mobile-nav-links">
                 <li><a href="index.html" data-en="Home" data-es="Inicio">Home</a></li>
                 <li><a href="index.html#features" data-en="Features" data-es="Características">Features</a></li>
@@ -420,7 +420,7 @@ ${pagination}
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-brand"><img src="assets/images/citizenry-logo.png" alt="Citizenry" height="32"></div>
+                <div class="footer-brand"><img src="assets/images/citizenry-logotype.png" alt="Citizenry" height="32"></div>
                 <div class="footer-links">
                     <a href="privacy-policy.html" data-en="Privacy Policy" data-es="Política de Privacidad">Privacy Policy</a>
                     <a href="terms-of-service.html" data-en="Terms of Service" data-es="Términos de Servicio">Terms of Service</a>
