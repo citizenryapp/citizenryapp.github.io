@@ -214,6 +214,13 @@
     border: 1px solid var(--text-primary);
 }
 
+.pagination-ellipsis {
+    padding: 10px 8px;
+    color: var(--text-muted);
+    font-weight: 500;
+    cursor: default;
+}
+
 .pagination-next,
 .pagination-prev {
     color: var(--accent-color);

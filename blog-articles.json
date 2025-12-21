@@ -136,6 +136,86 @@
       "title_es": "Qué Llevar a Tu Entrevista de Ciudadanía",
       "excerpt_en": "A complete checklist of documents and items you need to bring to your USCIS citizenship interview. Be prepared and avoid delays.",
       "excerpt_es": "Una lista completa de documentos y artículos que necesitas llevar a tu entrevista de ciudadanía."
+    },
+    {
+      "id": "common-reasons-citizenship-denied",
+      "file": "blog/common-reasons-citizenship-denied.html",
+      "title_en": "Common Reasons Citizenship Applications Get Denied",
+      "title_es": "Razones Comunes por las que se Niegan Solicitudes de Ciudadanía",
+      "excerpt_en": "Learn the most common reasons N-400 citizenship applications are denied and how to avoid them. Understand eligibility issues and test failures.",
+      "excerpt_es": "Aprende las razones más comunes por las que se niegan solicitudes N-400 y cómo evitarlas."
+    },
+    {
+      "id": "english-reading-writing-test-tips",
+      "file": "blog/english-reading-writing-test-tips.html",
+      "title_en": "English Reading and Writing Test Tips",
+      "title_es": "Consejos para el Examen de Lectura y Escritura en Inglés",
+      "excerpt_en": "Master the English portion of your citizenship test. Learn the vocabulary words, practice sentences, and tips for the reading and writing components.",
+      "excerpt_es": "Domina la parte de inglés de tu examen de ciudadanía. Aprende el vocabulario y consejos para lectura y escritura."
+    },
+    {
+      "id": "do-i-need-a-lawyer-for-citizenship",
+      "file": "blog/do-i-need-a-lawyer-for-citizenship.html",
+      "title_en": "Do I Need a Lawyer to Apply for US Citizenship?",
+      "title_es": "¿Necesito un Abogado para Solicitar la Ciudadanía de EE.UU.?",
+      "excerpt_en": "Learn whether you need a lawyer for your N-400 citizenship application. Understand when legal help is beneficial and how to find authorized representatives.",
+      "excerpt_es": "Aprende si necesitas un abogado para tu solicitud de ciudadanía N-400. Entiende cuándo la ayuda legal es beneficiosa."
+    },
+    {
+      "id": "changing-name-during-naturalization",
+      "file": "blog/changing-name-during-naturalization.html",
+      "title_en": "Can I Change My Name During Naturalization?",
+      "title_es": "¿Puedo Cambiar Mi Nombre Durante la Naturalización?",
+      "excerpt_en": "Learn how to legally change your name during the naturalization process. Understand the difference between judicial and administrative oath ceremonies.",
+      "excerpt_es": "Aprende cómo cambiar legalmente tu nombre durante el proceso de naturalización."
+    },
+    {
+      "id": "green-card-expiring-while-n400-pending",
+      "file": "blog/green-card-expiring-while-n400-pending.html",
+      "title_en": "What If My Green Card Expires While N-400 is Pending?",
+      "title_es": "¿Qué Pasa Si Mi Green Card Expira Mientras Mi N-400 Está Pendiente?",
+      "excerpt_en": "Learn what to do if your Green Card expires while your citizenship application is pending. Understand the automatic 24-month extension and Form I-90.",
+      "excerpt_es": "Aprende qué hacer si tu Green Card expira mientras tu solicitud de ciudadanía está pendiente."
+    },
+    {
+      "id": "what-if-i-fail-citizenship-test",
+      "file": "blog/what-if-i-fail-citizenship-test.html",
+      "title_en": "What Happens If I Fail the Citizenship Test?",
+      "title_es": "¿Qué Pasa Si No Apruebo el Examen de Ciudadanía?",
+      "excerpt_en": "Learn what happens if you fail the US citizenship test. Understand the retesting process, timeline, and how to prepare for your second attempt.",
+      "excerpt_es": "Aprende qué pasa si no apruebas el examen de ciudadanía. Entiende el proceso de reexamen y cómo prepararte."
+    },
+    {
+      "id": "continuous-residence-vs-physical-presence",
+      "file": "blog/continuous-residence-vs-physical-presence.html",
+      "title_en": "Continuous Residence vs Physical Presence: What's the Difference?",
+      "title_es": "Residencia Continua vs Presencia Física: ¿Cuál es la Diferencia?",
+      "excerpt_en": "Understand the difference between continuous residence and physical presence requirements for US citizenship. Learn how travel affects your naturalization eligibility.",
+      "excerpt_es": "Entiende la diferencia entre los requisitos de residencia continua y presencia física para la ciudadanía."
+    },
+    {
+      "id": "selective-service-registration",
+      "file": "blog/selective-service-registration.html",
+      "title_en": "Selective Service Registration: What Male Applicants Need to Know",
+      "title_es": "Registro del Servicio Selectivo: Lo que los Solicitantes Masculinos Deben Saber",
+      "excerpt_en": "Learn about Selective Service registration requirements for male citizenship applicants. Understand what happens if you didn't register and how it affects naturalization.",
+      "excerpt_es": "Aprende sobre los requisitos de registro del Servicio Selectivo para solicitantes masculinos de ciudadanía."
+    },
+    {
+      "id": "spouses-of-us-citizens-3-year-rule",
+      "file": "blog/spouses-of-us-citizens-3-year-rule.html",
+      "title_en": "Naturalization for Spouses of US Citizens: The 3-Year Rule Explained",
+      "title_es": "Naturalización para Cónyuges de Ciudadanos de EE.UU.: La Regla de 3 Años Explicada",
+      "excerpt_en": "Learn about the 3-year naturalization rule for spouses of US citizens. Understand eligibility requirements, marital union, and how to apply for citizenship sooner.",
+      "excerpt_es": "Aprende sobre la regla de naturalización de 3 años para cónyuges de ciudadanos de EE.UU."
+    },
+    {
+      "id": "conditional-green-card-citizenship",
+      "file": "blog/conditional-green-card-citizenship.html",
+      "title_en": "Conditional Green Card Holders: Applying for Citizenship",
+      "title_es": "Titulares de Green Card Condicional: Solicitando la Ciudadanía",
+      "excerpt_en": "Learn how conditional green card holders can apply for US citizenship. Understand the I-751 process, timing for N-400, and what to do if conditions aren't removed yet.",
+      "excerpt_es": "Aprende cómo los titulares de green card condicional pueden solicitar la ciudadanía de EE.UU."
     }
   ]
 }
