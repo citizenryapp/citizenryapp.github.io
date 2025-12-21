@@ -82,7 +82,7 @@ function generateArticleCard(article, date) {
                         </article>`;
 }
 
-// Generate pagination HTML
+// Generate pagination HTML with truncated ellipsis (max 4 page numbers)
 function generatePagination(currentPage, totalPages) {
     let html = '                    <nav class="pagination" aria-label="Blog pagination">\n';
     
@@ -92,14 +92,67 @@ function generatePagination(currentPage, totalPages) {
         html += `                        <a href="${prevPage}" class="pagination-prev" data-en="← Previous" data-es="← Anterior">← Previous</a>\n`;
     }
     
-    // Page numbers
-    for (let i = 1; i <= totalPages; i++) {
-        const pageFile = i === 1 ? 'blog.html' : `blog-page-${i}.html`;
-        if (i === currentPage) {
-            html += `                        <span class="pagination-current">${i}</span>\n`;
+    // Truncated pagination logic: max 4 page numbers
+    // Pattern: Always show 1, always show last, show current + 1 neighbor
+    const pagesToShow = new Set();
+    
+    // Always show page 1
+    pagesToShow.add(1);
+    
+    // Always show last page (if more than 1 page)
+    if (totalPages > 1) {
+        pagesToShow.add(totalPages);
+    }
+    
+    // Show current page
+    pagesToShow.add(currentPage);
+    
+    // Show 1 neighbor to reach max 4 numbers
+    if (currentPage === 1) {
+        // Page 1: show next (2)
+        if (totalPages > 1) pagesToShow.add(2);
+    } else if (currentPage === totalPages) {
+        // Last page: show prev
+        pagesToShow.add(totalPages - 1);
+    } else if (currentPage === 2) {
+        // Page 2: show next (3) → 1, 2, 3, last
+        pagesToShow.add(3);
+    } else if (currentPage === 3) {
+        // Page 3: show prev (2) → 1, 2, 3, last
+        pagesToShow.add(2);
+    } else {
+        // Pages 4+: show next if it's not the last page, otherwise show prev
+        if (currentPage + 1 < totalPages) {
+            // Show next (1, current, next, last)
+            pagesToShow.add(currentPage + 1);
         } else {
-            html += `                        <a href="${pageFile}" class="pagination-link">${i}</a>\n`;
+            // Next would be last page (already shown), so show prev (1, prev, current, last)
+            pagesToShow.add(currentPage - 1);
         }
+    }
+    
+    // Convert to sorted array
+    const sortedPages = Array.from(pagesToShow).sort((a, b) => a - b);
+    
+    // Build pagination HTML
+    let lastPage = 0;
+    for (let i = 0; i < sortedPages.length; i++) {
+        const page = sortedPages[i];
+        
+        // Add ellipsis if there's a gap
+        if (page - lastPage > 1 && lastPage > 0) {
+            html += `                        <span class="pagination-ellipsis">...</span>\n`;
+        }
+        
+        // Add page number
+        const pageFile = page === 1 ? 'blog.html' : `blog-page-${page}.html`;
+        if (page === currentPage) {
+            html += `                        <span class="pagination-current">${page}</span>\n`;
+        } else {
+            html += `                        <a href="${pageFile}" class="pagination-link">${page}</a>\n`;
+        }
+        
+        lastPage = page;
     }
     
     // Next link
@@ -197,6 +250,7 @@ function generateBlogPage1(articles, dates) {
                             <li><a href="index.html" data-en="Home" data-es="Inicio">Home</a></li>
                             <li><a href="index.html#features" data-en="Features" data-es="Características">Features</a></li>
                             <li><a href="index.html#testimonials" data-en="Testimonials" data-es="Testimonios">Testimonials</a></li>
+                            <li><a href="index.html#faq" data-en="FAQ" data-es="Preguntas">FAQ</a></li>
                             <li><a href="blog.html" class="active" data-en="Blog" data-es="Blog">Blog</a></li>
                         </ul>
                     </div>
@@ -233,6 +287,7 @@ function generateBlogPage1(articles, dates) {
                 <li><a href="index.html" data-en="Home" data-es="Inicio">Home</a></li>
                 <li><a href="index.html#features" data-en="Features" data-es="Características">Features</a></li>
                 <li><a href="index.html#testimonials" data-en="Testimonials" data-es="Testimonios">Testimonials</a></li>
+                <li><a href="index.html#faq" data-en="FAQ" data-es="Preguntas">FAQ</a></li>
                 <li><a href="blog.html" data-en="Blog" data-es="Blog">Blog</a></li>
             </ul>
             <a href="https://apps.apple.com/us/app/us-citizenship-test-2026-uscis/id6451455299" class="mobile-download-btn" target="_blank" rel="noopener">
@@ -364,6 +419,7 @@ function generateBlogPageN(pageNum, articles, dates, totalPages) {
                             <li><a href="index.html" data-en="Home" data-es="Inicio">Home</a></li>
                             <li><a href="index.html#features" data-en="Features" data-es="Características">Features</a></li>
                             <li><a href="index.html#testimonials" data-en="Testimonials" data-es="Testimonios">Testimonials</a></li>
+                            <li><a href="index.html#faq" data-en="FAQ" data-es="Preguntas">FAQ</a></li>
                             <li><a href="blog.html" class="active" data-en="Blog" data-es="Blog">Blog</a></li>
                         </ul>
                     </div>
@@ -381,6 +437,7 @@ function generateBlogPageN(pageNum, articles, dates, totalPages) {
                 <li><a href="index.html" data-en="Home" data-es="Inicio">Home</a></li>
                 <li><a href="index.html#features" data-en="Features" data-es="Características">Features</a></li>
                 <li><a href="index.html#testimonials" data-en="Testimonials" data-es="Testimonios">Testimonials</a></li>
+                <li><a href="index.html#faq" data-en="FAQ" data-es="Preguntas">FAQ</a></li>
                 <li><a href="blog.html" data-en="Blog" data-es="Blog">Blog</a></li>
             </ul>
             <a href="https://apps.apple.com/us/app/us-citizenship-test-2026-uscis/id6451455299" class="mobile-download-btn" target="_blank"><img src="assets/images/app-store-badge-en.svg" alt="Download on the App Store" data-en="assets/images/app-store-badge-en.svg" data-es="assets/images/app-store-badge-es.svg"></a>
