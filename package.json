@@ -1,24 +1,12 @@
 {
   "name": "citizenry-website",
   "version": "1.0.0",
-  "description": "Citizenry official website",
-  "main": "src/index.html",
   "scripts": {
     "start": "python3 -m http.server 8000",
     "start:python2": "python -m SimpleHTTPServer 8000",
     "start:php": "php -S localhost:8000",
     "dev": "python3 -m http.server 8000"
   },
-  "keywords": [
-    "citizenship",
-    "naturalization",
-    "civics"
-  ],
-  "author": "",
-  "license": "MIT",
   "dependencies": {},
   "devDependencies": {}
 }
-
-
-
