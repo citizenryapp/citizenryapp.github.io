@@ -10,6 +10,14 @@
       "excerpt_es": "¡Prepárate para el examen de ciudadanía 2025! Revisa las 128 preguntas y respuestas cívicas, conoce las últimas actualizaciones y practica con las entrevistas simuladas de Citizenry."
     },
     {
+      "id": "spouses-of-us-citizens-3-year-rule",
+      "file": "blog/spouses-of-us-citizens-3-year-rule.html",
+      "title_en": "Naturalization for Spouses of US Citizens: The 3-Year Rule Explained",
+      "title_es": "Naturalización para Cónyuges de Ciudadanos de EE.UU.: La Regla de 3 Años Explicada",
+      "excerpt_en": "Learn about the 3-year naturalization rule for spouses of US citizens. Understand eligibility requirements, marital union, and how to apply for citizenship sooner.",
+      "excerpt_es": "Aprende sobre la regla de naturalización de 3 años para cónyuges de ciudadanos de EE.UU."
+    },
+    {
       "id": "conditional-green-card-citizenship",
       "file": "blog/conditional-green-card-citizenship.html",
       "title_en": "Conditional Green Card Holders: Applying for Citizenship",
@@ -208,14 +216,6 @@
       "title_es": "Registro del Servicio Selectivo: Lo que los Solicitantes Masculinos Deben Saber",
       "excerpt_en": "Learn about Selective Service registration requirements for male citizenship applicants. Understand what happens if you didn't register and how it affects naturalization.",
       "excerpt_es": "Aprende sobre los requisitos de registro del Servicio Selectivo para solicitantes masculinos de ciudadanía."
-    },
-    {
-      "id": "spouses-of-us-citizens-3-year-rule",
-      "file": "blog/spouses-of-us-citizens-3-year-rule.html",
-      "title_en": "Naturalization for Spouses of US Citizens: The 3-Year Rule Explained",
-      "title_es": "Naturalización para Cónyuges de Ciudadanos de EE.UU.: La Regla de 3 Años Explicada",
-      "excerpt_en": "Learn about the 3-year naturalization rule for spouses of US citizens. Understand eligibility requirements, marital union, and how to apply for citizenship sooner.",
-      "excerpt_es": "Aprende sobre la regla de naturalización de 3 años para cónyuges de ciudadanos de EE.UU."
     }
   ]
 }
