@@ -10,6 +10,14 @@
       "excerpt_es": "¡Prepárate para el examen de ciudadanía 2025! Revisa las 128 preguntas y respuestas cívicas, conoce las últimas actualizaciones y practica con las entrevistas simuladas de Citizenry."
     },
     {
+      "id": "continuous-residence-vs-physical-presence",
+      "file": "blog/continuous-residence-vs-physical-presence.html",
+      "title_en": "Continuous Residence vs Physical Presence: What's the Difference?",
+      "title_es": "Residencia Continua vs Presencia Física: ¿Cuál es la Diferencia?",
+      "excerpt_en": "Understand the difference between continuous residence and physical presence requirements for US citizenship. Learn how travel affects your naturalization eligibility.",
+      "excerpt_es": "Entiende la diferencia entre los requisitos de residencia continua y presencia física para la ciudadanía."
+    },
+    {
       "id": "selective-service-registration",
       "file": "blog/selective-service-registration.html",
       "title_en": "Selective Service Registration: What Male Applicants Need to Know",
@@ -208,14 +216,6 @@
       "title_es": "¿Qué Pasa Si No Apruebo el Examen de Ciudadanía?",
       "excerpt_en": "Learn what happens if you fail the US citizenship test. Understand the retesting process, timeline, and how to prepare for your second attempt.",
       "excerpt_es": "Aprende qué pasa si no apruebas el examen de ciudadanía. Entiende el proceso de reexamen y cómo prepararte."
-    },
-    {
-      "id": "continuous-residence-vs-physical-presence",
-      "file": "blog/continuous-residence-vs-physical-presence.html",
-      "title_en": "Continuous Residence vs Physical Presence: What's the Difference?",
-      "title_es": "Residencia Continua vs Presencia Física: ¿Cuál es la Diferencia?",
-      "excerpt_en": "Understand the difference between continuous residence and physical presence requirements for US citizenship. Learn how travel affects your naturalization eligibility.",
-      "excerpt_es": "Entiende la diferencia entre los requisitos de residencia continua y presencia física para la ciudadanía."
     }
   ]
 }
