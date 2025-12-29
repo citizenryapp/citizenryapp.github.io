@@ -10,6 +10,14 @@
       "excerpt_es": "¡Prepárate para el examen de ciudadanía 2025! Revisa las 128 preguntas y respuestas cívicas, conoce las últimas actualizaciones y practica con las entrevistas simuladas de Citizenry."
     },
     {
+      "id": "green-card-expiring-while-n400-pending",
+      "file": "blog/green-card-expiring-while-n400-pending.html",
+      "title_en": "What If My Green Card Expires While N-400 is Pending?",
+      "title_es": "¿Qué Pasa Si Mi Green Card Expira Mientras Mi N-400 Está Pendiente?",
+      "excerpt_en": "Learn what to do if your Green Card expires while your citizenship application is pending. Understand the automatic 24-month extension and Form I-90.",
+      "excerpt_es": "Aprende qué hacer si tu Green Card expira mientras tu solicitud de ciudadanía está pendiente."
+    },
+    {
       "id": "what-if-i-fail-citizenship-test",
       "file": "blog/what-if-i-fail-citizenship-test.html",
       "title_en": "What Happens If I Fail the Citizenship Test?",
@@ -208,14 +216,6 @@
       "title_es": "¿Puedo Cambiar Mi Nombre Durante la Naturalización?",
       "excerpt_en": "Learn how to legally change your name during the naturalization process. Understand the difference between judicial and administrative oath ceremonies.",
       "excerpt_es": "Aprende cómo cambiar legalmente tu nombre durante el proceso de naturalización."
-    },
-    {
-      "id": "green-card-expiring-while-n400-pending",
-      "file": "blog/green-card-expiring-while-n400-pending.html",
-      "title_en": "What If My Green Card Expires While N-400 is Pending?",
-      "title_es": "¿Qué Pasa Si Mi Green Card Expira Mientras Mi N-400 Está Pendiente?",
-      "excerpt_en": "Learn what to do if your Green Card expires while your citizenship application is pending. Understand the automatic 24-month extension and Form I-90.",
-      "excerpt_es": "Aprende qué hacer si tu Green Card expira mientras tu solicitud de ciudadanía está pendiente."
     }
   ]
 }
