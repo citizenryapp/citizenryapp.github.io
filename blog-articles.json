@@ -10,6 +10,14 @@
       "excerpt_es": "¡Prepárate para el examen de ciudadanía 2025! Revisa las 128 preguntas y respuestas cívicas, conoce las últimas actualizaciones y practica con las entrevistas simuladas de Citizenry."
     },
     {
+      "id": "changing-name-during-naturalization",
+      "file": "blog/changing-name-during-naturalization.html",
+      "title_en": "Can I Change My Name During Naturalization?",
+      "title_es": "¿Puedo Cambiar Mi Nombre Durante la Naturalización?",
+      "excerpt_en": "Learn how to legally change your name during the naturalization process. Understand the difference between judicial and administrative oath ceremonies.",
+      "excerpt_es": "Aprende cómo cambiar legalmente tu nombre durante el proceso de naturalización."
+    },
+    {
       "id": "green-card-expiring-while-n400-pending",
       "file": "blog/green-card-expiring-while-n400-pending.html",
       "title_en": "What If My Green Card Expires While N-400 is Pending?",
@@ -208,14 +216,6 @@
       "title_es": "¿Necesito un Abogado para Solicitar la Ciudadanía de EE.UU.?",
       "excerpt_en": "Learn whether you need a lawyer for your N-400 citizenship application. Understand when legal help is beneficial and how to find authorized representatives.",
       "excerpt_es": "Aprende si necesitas un abogado para tu solicitud de ciudadanía N-400. Entiende cuándo la ayuda legal es beneficiosa."
-    },
-    {
-      "id": "changing-name-during-naturalization",
-      "file": "blog/changing-name-during-naturalization.html",
-      "title_en": "Can I Change My Name During Naturalization?",
-      "title_es": "¿Puedo Cambiar Mi Nombre Durante la Naturalización?",
-      "excerpt_en": "Learn how to legally change your name during the naturalization process. Understand the difference between judicial and administrative oath ceremonies.",
-      "excerpt_es": "Aprende cómo cambiar legalmente tu nombre durante el proceso de naturalización."
     }
   ]
 }
