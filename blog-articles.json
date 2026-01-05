@@ -10,6 +10,14 @@
       "excerpt_es": "¡Prepárate para el examen de ciudadanía 2025! Revisa las 128 preguntas y respuestas cívicas, conoce las últimas actualizaciones y practica con las entrevistas simuladas de Citizenry."
     },
     {
+      "id": "do-i-need-a-lawyer-for-citizenship",
+      "file": "blog/do-i-need-a-lawyer-for-citizenship.html",
+      "title_en": "Do I Need a Lawyer to Apply for US Citizenship?",
+      "title_es": "¿Necesito un Abogado para Solicitar la Ciudadanía de EE.UU.?",
+      "excerpt_en": "Learn whether you need a lawyer for your N-400 citizenship application. Understand when legal help is beneficial and how to find authorized representatives.",
+      "excerpt_es": "Aprende si necesitas un abogado para tu solicitud de ciudadanía N-400. Entiende cuándo la ayuda legal es beneficiosa."
+    },
+    {
       "id": "changing-name-during-naturalization",
       "file": "blog/changing-name-during-naturalization.html",
       "title_en": "Can I Change My Name During Naturalization?",
@@ -208,14 +216,6 @@
       "title_es": "Consejos para el Examen de Lectura y Escritura en Inglés",
       "excerpt_en": "Master the English portion of your citizenship test. Learn the vocabulary words, practice sentences, and tips for the reading and writing components.",
       "excerpt_es": "Domina la parte de inglés de tu examen de ciudadanía. Aprende el vocabulario y consejos para lectura y escritura."
-    },
-    {
-      "id": "do-i-need-a-lawyer-for-citizenship",
-      "file": "blog/do-i-need-a-lawyer-for-citizenship.html",
-      "title_en": "Do I Need a Lawyer to Apply for US Citizenship?",
-      "title_es": "¿Necesito un Abogado para Solicitar la Ciudadanía de EE.UU.?",
-      "excerpt_en": "Learn whether you need a lawyer for your N-400 citizenship application. Understand when legal help is beneficial and how to find authorized representatives.",
-      "excerpt_es": "Aprende si necesitas un abogado para tu solicitud de ciudadanía N-400. Entiende cuándo la ayuda legal es beneficiosa."
     }
   ]
 }
