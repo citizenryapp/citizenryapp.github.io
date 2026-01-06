@@ -1,0 +1,9 @@
+# Citizenry Website Robots.txt
+# https://citizenryapp.com
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://citizenryapp.com/sitemap.xml
+

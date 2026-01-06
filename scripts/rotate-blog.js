@@ -197,17 +197,17 @@ function generateBlogPage1(articles, dates) {
     <meta name="robots" content="index, follow">
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://citizenryapp.com/blog">
+    <link rel="canonical" href="https://citizenryapp.com/blog.html">
     
     <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://citizenryapp.com/blog">
+    <meta property="og:url" content="https://citizenryapp.com/blog.html">
     <meta property="og:title" content="US Citizenship Test Guide & Tips - Citizenry Blog">
     <meta property="og:description" content="Expert tips and guides for passing your US citizenship test.">
     
     <!-- Alternate Language -->
-    <link rel="alternate" hreflang="en" href="https://citizenryapp.com/blog">
-    <link rel="alternate" hreflang="es" href="https://citizenryapp.com/blog?lang=es">
+    <link rel="alternate" hreflang="en" href="https://citizenryapp.com/blog.html">
+    <link rel="alternate" hreflang="es" href="https://citizenryapp.com/blog.html?lang=es">
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
@@ -223,7 +223,7 @@ function generateBlogPage1(articles, dates) {
         "@type": "Blog",
         "name": "Citizenry Blog",
         "description": "Expert tips and guides for passing your US citizenship test",
-        "url": "https://citizenryapp.com/blog",
+        "url": "https://citizenryapp.com/blog.html",
         "publisher": {
             "@type": "Organization",
             "name": "Citizenry",
@@ -401,7 +401,7 @@ function generateBlogPageN(pageNum, articles, dates, totalPages) {
     <title>US Citizenship Test Guide & Tips - Page ${pageNum} - Citizenry Blog</title>
     <meta name="description" content="Expert tips and guides for passing your US citizenship test. Page ${pageNum} of our citizenship test preparation articles.">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://citizenryapp.com/blog-page-${pageNum}">
+    <link rel="canonical" href="https://citizenryapp.com/blog-page-${pageNum}.html">
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/blog.css">
