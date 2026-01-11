@@ -205,10 +205,6 @@ function generateBlogPage1(articles, dates) {
     <meta property="og:title" content="US Citizenship Test Guide & Tips - Citizenry Blog">
     <meta property="og:description" content="Expert tips and guides for passing your US citizenship test.">
     
-    <!-- Alternate Language -->
-    <link rel="alternate" hreflang="en" href="https://citizenryapp.com/blog.html">
-    <link rel="alternate" hreflang="es" href="https://citizenryapp.com/blog.html?lang=es">
-    
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
     <link rel="apple-touch-icon" href="assets/images/favicon.png">
