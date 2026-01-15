@@ -10,6 +10,14 @@
       "excerpt_es": "¡Prepárate para el examen de ciudadanía 2025! Revisa las 128 preguntas y respuestas cívicas, conoce las últimas actualizaciones y practica con las entrevistas simuladas de Citizenry."
     },
     {
+      "id": "what-to-bring-citizenship-interview",
+      "file": "blog/what-to-bring-citizenship-interview.html",
+      "title_en": "What to Bring to Your Citizenship Interview",
+      "title_es": "Qué Llevar a Tu Entrevista de Ciudadanía",
+      "excerpt_en": "A complete checklist of documents and items you need to bring to your USCIS citizenship interview. Be prepared and avoid delays.",
+      "excerpt_es": "Una lista completa de documentos y artículos que necesitas llevar a tu entrevista de ciudadanía."
+    },
+    {
       "id": "common-reasons-citizenship-denied",
       "file": "blog/common-reasons-citizenship-denied.html",
       "title_en": "Common Reasons Citizenship Applications Get Denied",
@@ -208,14 +216,6 @@
       "title_es": "¿Puedo Viajar Mientras Mi N-400 Está Pendiente?",
       "excerpt_en": "Learn about traveling outside the US while your citizenship application is pending. Understand the risks, requirements, and what to bring when you return.",
       "excerpt_es": "Aprende sobre viajar fuera de EE.UU. mientras tu solicitud de ciudadanía está pendiente."
-    },
-    {
-      "id": "what-to-bring-citizenship-interview",
-      "file": "blog/what-to-bring-citizenship-interview.html",
-      "title_en": "What to Bring to Your Citizenship Interview",
-      "title_es": "Qué Llevar a Tu Entrevista de Ciudadanía",
-      "excerpt_en": "A complete checklist of documents and items you need to bring to your USCIS citizenship interview. Be prepared and avoid delays.",
-      "excerpt_es": "Una lista completa de documentos y artículos que necesitas llevar a tu entrevista de ciudadanía."
     }
   ]
 }
