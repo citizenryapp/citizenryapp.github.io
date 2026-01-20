@@ -164,6 +164,10 @@
     margin-bottom: 32px;
 }
 
+.blog-cta-section .store-badges {
+    justify-content: center;
+}
+
 .blog-cta-section .download-btn-large img {
     height: 64px;
     width: auto;
@@ -358,6 +362,10 @@
     margin-bottom: 24px;
 }
 
+.post-cta .store-badges {
+    justify-content: center;
+}
+
 .post-cta .download-btn-large img {
     height: 56px;
     width: auto;
@@ -415,7 +423,15 @@
     }
     
     .post-cta {
-        padding: 32px 24px;
+        padding: 32px 16px;
+    }
+    
+    .post-cta .store-badges {
+        gap: 8px;
+    }
+    
+    .post-cta .download-btn-large img {
+        height: 40px;
     }
 }
 

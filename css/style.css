@@ -182,13 +182,19 @@ h1, h2, h3, h4, h5, h6 {
     transition: var(--transition);
 }
 
-/* Header Download Button - Larger */
+/* Header Download Badges */
+.header-badges {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
 .header-download {
     display: block;
 }
 
 .header-badge {
-    height: 50px;
+    height: 40px;
     width: auto;
     display: block;
     transition: transform 0.2s ease;
@@ -339,6 +345,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .hero-top-download {
     display: none;
+    gap: 12px;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
 }
 
 .hero-top-download-link {
@@ -346,11 +356,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero-top-download-badge {
-<<<<<<< HEAD
-    height: 52px;
-=======
-    height: 64px;
->>>>>>> 6db1d86 (Download badge)
+    height: 44px;
     width: auto;
     display: block;
 }
@@ -424,6 +430,37 @@ h1, h2, h3, h4, h5, h6 {
 .hero-cta-note {
     font-size: 0.9rem;
     color: var(--text-muted);
+}
+
+/* Store Badges Container - Side by Side */
+.store-badges {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 12px;
+    align-items: center;
+}
+
+.store-badges .download-btn,
+.store-badges .download-btn-large {
+    display: inline-block;
+}
+
+/* Mobile Store Badges in Menu */
+.mobile-store-badges {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 12px;
+    padding: 0 24px 24px 24px;
+    justify-content: center;
+}
+
+.mobile-store-badges .mobile-download-btn img {
+    height: 44px;
+}
+
+.mobile-store-badges .mobile-download-btn {
+    padding: 0;
 }
 
 /* Hero Image - Simple, no device frame */
@@ -998,6 +1035,10 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 36px;
 }
 
+.final-cta .store-badges {
+    justify-content: center;
+}
+
 .download-btn-large {
     display: inline-block;
 }
@@ -1098,6 +1139,10 @@ h1, h2, h3, h4, h5, h6 {
         display: none;
     }
     
+    .header-badges {
+        display: none;
+    }
+    
     .header-download {
         display: none;
     }
@@ -1149,7 +1194,7 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .hero-top-download-badge {
-        height: 56px;
+        height: 44px;
     }
     
     .hero-image img {
@@ -1189,7 +1234,11 @@ h1, h2, h3, h4, h5, h6 {
     }
     
     .download-btn-large img {
-        height: 60px;
+        height: 50px;
+    }
+    
+    .final-cta .store-badges {
+        flex-wrap: nowrap;
     }
     
     .footer-links {
