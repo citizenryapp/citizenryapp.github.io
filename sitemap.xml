@@ -7,6 +7,13 @@
     <priority>1.0</priority>
   </url>
 
+  <!-- LLMs.txt for AI Discovery -->
+  <url>
+    <loc>https://citizenryapp.com/llms.txt</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
   <!-- Main Pages -->
   <url>
     <loc>https://citizenryapp.com/privacy-policy.html</loc>

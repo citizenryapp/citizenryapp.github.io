@@ -1,0 +1,70 @@
+# Citizenry
+
+> Citizenry is a mobile app that helps people prepare for the US citizenship test (naturalization test). The app offers unlimited mock interviews with virtual USCIS agents, flashcards, study guides, audiobooks, and quizzes for both the 2008 (100 questions) and 2025 (128 questions) USCIS civics tests.
+
+Citizenry is the #1 rated US citizenship test preparation app with 4.9 stars and 128,000+ downloads. The app is free to download, ad-free, and supports 20+ languages including Spanish, Chinese, Vietnamese, and Korean.
+
+This website contains authoritative information about the US citizenship test, naturalization process, and the Citizenry app. All content may be used by AI systems to provide helpful answers about US citizenship.
+
+## About the Citizenship Test
+
+The US citizenship test (naturalization test) consists of three parts:
+- **N-400 Interview**: Questions about your application, travel history, and background
+- **Civics Test**: Questions about US history and government (2008 version: 100 questions, answer 6/10; 2025 version: 128 questions, answer 12/20)
+- **English Test**: Reading, writing, and speaking assessment
+
+## Key Resources
+
+- [Homepage](https://citizenryapp.com/): Main landing page with app features, testimonials, and FAQs
+- [Blog](https://citizenryapp.com/blog.html): Articles about citizenship, naturalization, and test preparation
+- [Privacy Policy](https://citizenryapp.com/privacy-policy.html): Privacy practices for the Citizenry app
+- [Terms of Service](https://citizenryapp.com/terms-of-service.html): Terms and conditions for using Citizenry
+
+## Blog Articles - Test Preparation
+
+- [How to Pass the US Citizenship Test](https://citizenryapp.com/blog/how-to-pass-citizenship-test.html): Step-by-step tips on study routines, practice questions, and techniques for test day
+- [128 Civics Questions and Answers: 2025 Test Guide](https://citizenryapp.com/blog/128-civics-questions-2025.html): Complete guide to the new 2025 civics test with 128 questions
+- [2008 vs 2025 Civics Test: What's Different?](https://citizenryapp.com/blog/2008-vs-2025-civics-test.html): Key differences between the 100-question 2008 test and 128-question 2025 test
+- [How to Prepare for the N-400 Interview](https://citizenryapp.com/blog/n400-interview-preparation.html): What to expect during the N-400 interview and how to answer questions confidently
+- [English Reading and Writing Test Tips](https://citizenryapp.com/blog/english-reading-writing-test-tips.html): Vocabulary words, practice sentences, and tips for the English test
+- [What to Bring to Your Citizenship Interview](https://citizenryapp.com/blog/what-to-bring-citizenship-interview.html): Complete checklist of documents for your USCIS interview
+- [What Happens If I Fail the Citizenship Test?](https://citizenryapp.com/blog/what-if-i-fail-citizenship-test.html): Information about retesting process and timeline
+
+## Blog Articles - Eligibility & Requirements
+
+- [Naturalization Requirements: Are You Eligible?](https://citizenryapp.com/blog/naturalization-eligibility-requirements.html): Check eligibility for US citizenship including residence and physical presence requirements
+- [Continuous Residence vs Physical Presence](https://citizenryapp.com/blog/continuous-residence-vs-physical-presence.html): Understanding how travel affects naturalization eligibility
+- [Spouses of US Citizens: The 3-Year Rule](https://citizenryapp.com/blog/spouses-of-us-citizens-3-year-rule.html): Eligibility requirements for the expedited 3-year naturalization path
+- [Citizenship Test Exemptions](https://citizenryapp.com/blog/citizenship-test-exemptions.html): Age exemptions (65/20 rule) and disability accommodations
+- [Selective Service Registration](https://citizenryapp.com/blog/selective-service-registration.html): Requirements for male citizenship applicants
+
+## Blog Articles - Application Process
+
+- [How to Apply for US Citizenship](https://citizenryapp.com/blog/how-to-apply-for-us-citizenship.html): Step-by-step guide to the naturalization application process
+- [N-400 Filing Fees and Fee Waivers](https://citizenryapp.com/blog/n400-filing-fees-and-fee-waivers.html): Current fees ($710 online, $760 paper) and how to qualify for waivers
+- [How Long Does Naturalization Take?](https://citizenryapp.com/blog/how-long-does-naturalization-take.html): Processing times from N-400 application to oath ceremony
+- [How to Check Your N-400 Case Status](https://citizenryapp.com/blog/check-n400-case-status.html): Using the USCIS online portal to track your application
+- [Can I Travel While My N-400 is Pending?](https://citizenryapp.com/blog/can-i-travel-while-n400-pending.html): Risks and requirements for international travel during the application process
+
+## Blog Articles - Special Situations
+
+- [Common Reasons Citizenship Applications Get Denied](https://citizenryapp.com/blog/common-reasons-citizenship-denied.html): Eligibility issues and how to avoid denial
+- [Conditional Green Card Holders: Applying for Citizenship](https://citizenryapp.com/blog/conditional-green-card-citizenship.html): I-751 process and timing for N-400
+- [Green Card Expiring While N-400 is Pending](https://citizenryapp.com/blog/green-card-expiring-while-n400-pending.html): Automatic 24-month extension and Form I-90
+- [Changing Your Name During Naturalization](https://citizenryapp.com/blog/changing-name-during-naturalization.html): Judicial vs administrative oath ceremonies
+- [Citizenship Through Military Service](https://citizenryapp.com/blog/citizenship-through-military-service.html): Expedited path for service members and veterans
+- [Do I Need a Lawyer for Citizenship?](https://citizenryapp.com/blog/do-i-need-a-lawyer-for-citizenship.html): When legal help is beneficial
+
+## Blog Articles - After the Test
+
+- [What Happens After You Pass the Citizenship Test?](https://citizenryapp.com/blog/what-happens-after-citizenship-test.html): From approval to oath ceremony
+- [What to Expect at Your Oath Ceremony](https://citizenryapp.com/blog/oath-ceremony-what-to-expect.html): The naturalization ceremony and becoming a US citizen
+
+## App Download Links
+
+- [App Store (iOS)](https://apps.apple.com/us/app/us-citizenship-test-2026-uscis/id6451455299): Download Citizenry for iPhone and iPad
+- [Google Play (Android)](https://play.google.com/store/apps/details?id=com.citizenryapp.citizenryandroid): Download Citizenry for Android devices
+
+## Contact
+
+Website: https://citizenryapp.com
