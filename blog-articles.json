@@ -10,6 +10,14 @@
       "excerpt_es": "¡Prepárate para el examen de ciudadanía 2025! Revisa las 128 preguntas y respuestas cívicas, conoce las últimas actualizaciones y practica con las entrevistas simuladas de Citizenry."
     },
     {
+      "id": "how-to-pass-citizenship-test",
+      "file": "blog/how-to-pass-citizenship-test.html",
+      "title_en": "How to Pass the US Citizenship Test",
+      "title_es": "Cómo Aprobar el Examen de Ciudadanía de EE.UU.",
+      "excerpt_en": "Step-by-step tips on how to pass the citizenship test, including study routines, practice questions, and techniques so you feel ready on test day.",
+      "excerpt_es": "Consejos paso a paso sobre cómo aprobar el examen de ciudadanía, incluyendo rutinas de estudio y técnicas."
+    },
+    {
       "id": "citizenship-test-exemptions",
       "file": "blog/citizenship-test-exemptions.html",
       "title_en": "Citizenship Test Exemptions: Age and Disability Accommodations",
@@ -208,14 +216,6 @@
       "title_es": "Examen Cívico 2008 vs 2025: ¿Qué es Diferente?",
       "excerpt_en": "Understand the key differences between the 100-question 2008 test and the new 128-question 2025 test. Find out which version you'll take based on your N-400 filing date.",
       "excerpt_es": "Comprende las diferencias clave entre el examen de 100 preguntas de 2008 y el nuevo examen de 128 preguntas de 2025."
-    },
-    {
-      "id": "how-to-pass-citizenship-test",
-      "file": "blog/how-to-pass-citizenship-test.html",
-      "title_en": "How to Pass the US Citizenship Test",
-      "title_es": "Cómo Aprobar el Examen de Ciudadanía de EE.UU.",
-      "excerpt_en": "Step-by-step tips on how to pass the citizenship test, including study routines, practice questions, and techniques so you feel ready on test day.",
-      "excerpt_es": "Consejos paso a paso sobre cómo aprobar el examen de ciudadanía, incluyendo rutinas de estudio y técnicas."
     }
   ]
 }
