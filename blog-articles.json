@@ -10,6 +10,14 @@
       "excerpt_es": "¡Prepárate para el examen de ciudadanía 2025! Revisa las 128 preguntas y respuestas cívicas, conoce las últimas actualizaciones y practica con las entrevistas simuladas de Citizenry."
     },
     {
+      "id": "2008-vs-2025-civics-test",
+      "file": "blog/2008-vs-2025-civics-test.html",
+      "title_en": "2008 vs 2025 Civics Test: What's Different?",
+      "title_es": "Examen Cívico 2008 vs 2025: ¿Qué es Diferente?",
+      "excerpt_en": "Understand the key differences between the 100-question 2008 test and the new 128-question 2025 test. Find out which version you'll take based on your N-400 filing date.",
+      "excerpt_es": "Comprende las diferencias clave entre el examen de 100 preguntas de 2008 y el nuevo examen de 128 preguntas de 2025."
+    },
+    {
       "id": "how-to-pass-citizenship-test",
       "file": "blog/how-to-pass-citizenship-test.html",
       "title_en": "How to Pass the US Citizenship Test",
@@ -208,14 +216,6 @@
       "title_es": "¿Qué Sucede Después de Aprobar el Examen de Ciudadanía?",
       "excerpt_en": "Learn what to expect after passing your US citizenship test. From approval to oath ceremony, understand the final steps to becoming an American citizen.",
       "excerpt_es": "Aprende qué esperar después de aprobar tu examen de ciudadanía. Desde la aprobación hasta la ceremonia de juramento."
-    },
-    {
-      "id": "2008-vs-2025-civics-test",
-      "file": "blog/2008-vs-2025-civics-test.html",
-      "title_en": "2008 vs 2025 Civics Test: What's Different?",
-      "title_es": "Examen Cívico 2008 vs 2025: ¿Qué es Diferente?",
-      "excerpt_en": "Understand the key differences between the 100-question 2008 test and the new 128-question 2025 test. Find out which version you'll take based on your N-400 filing date.",
-      "excerpt_es": "Comprende las diferencias clave entre el examen de 100 preguntas de 2008 y el nuevo examen de 128 preguntas de 2025."
     }
   ]
 }
