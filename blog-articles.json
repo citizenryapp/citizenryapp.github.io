@@ -10,6 +10,14 @@
       "excerpt_es": "¡Prepárate para el examen de ciudadanía 2025! Revisa las 128 preguntas y respuestas cívicas, conoce las últimas actualizaciones y practica con las entrevistas simuladas de Citizenry."
     },
     {
+      "id": "what-happens-after-citizenship-test",
+      "file": "blog/what-happens-after-citizenship-test.html",
+      "title_en": "What Happens After You Pass the Citizenship Test?",
+      "title_es": "¿Qué Sucede Después de Aprobar el Examen de Ciudadanía?",
+      "excerpt_en": "Learn what to expect after passing your US citizenship test. From approval to oath ceremony, understand the final steps to becoming an American citizen.",
+      "excerpt_es": "Aprende qué esperar después de aprobar tu examen de ciudadanía. Desde la aprobación hasta la ceremonia de juramento."
+    },
+    {
       "id": "2008-vs-2025-civics-test",
       "file": "blog/2008-vs-2025-civics-test.html",
       "title_en": "2008 vs 2025 Civics Test: What's Different?",
@@ -208,14 +216,6 @@
       "title_es": "Cómo Prepararse para la Entrevista N-400",
       "excerpt_en": "Learn what to expect during your N-400 interview and how to answer questions confidently. Practice with mock interviews to build your confidence.",
       "excerpt_es": "Aprende qué esperar durante tu entrevista N-400 y cómo responder preguntas con confianza."
-    },
-    {
-      "id": "what-happens-after-citizenship-test",
-      "file": "blog/what-happens-after-citizenship-test.html",
-      "title_en": "What Happens After You Pass the Citizenship Test?",
-      "title_es": "¿Qué Sucede Después de Aprobar el Examen de Ciudadanía?",
-      "excerpt_en": "Learn what to expect after passing your US citizenship test. From approval to oath ceremony, understand the final steps to becoming an American citizen.",
-      "excerpt_es": "Aprende qué esperar después de aprobar tu examen de ciudadanía. Desde la aprobación hasta la ceremonia de juramento."
     }
   ]
 }

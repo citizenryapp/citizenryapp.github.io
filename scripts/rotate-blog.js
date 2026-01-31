@@ -1,9 +1,11 @@
 /**
- * Blog Rotation Script
+ * Blog Rotation Script (Jekyll-Compatible)
  * 
  * This script rotates blog articles to make the blog appear fresh.
  * It moves articles in a rotation pattern and updates dates to maintain
  * the appearance of twice-weekly publishing.
+ * 
+ * Updated for Jekyll: Generates files with front matter that use layouts.
  * 
  * Run manually: node scripts/rotate-blog.js
  * Or automatically via GitHub Actions every 3-4 days
@@ -72,321 +74,164 @@ function formatDateISO(date) {
 
 // Generate article card HTML
 function generateArticleCard(article, date) {
-    return `                        <article class="blog-post-card">
-                            <div class="post-content">
-                                <h3 data-en="${article.title_en}" data-es="${article.title_es}">${article.title_en}</h3>
-                                <div class="post-meta"><time datetime="${formatDateISO(date)}">${formatDateDisplay(date)}</time></div>
-                                <p class="excerpt" data-en="${article.excerpt_en}" data-es="${article.excerpt_es}">${article.excerpt_en}</p>
-                                <a href="${article.file}" class="read-more-link" data-en="Read More →" data-es="Leer Más →">Read More →</a>
-                            </div>
-                        </article>`;
+    return `                <article class="blog-post-card">
+                    <div class="post-content">
+                        <h3 data-en="${article.title_en}" data-es="${article.title_es}">${article.title_en}</h3>
+                        <div class="post-meta"><time datetime="${formatDateISO(date)}">${formatDateDisplay(date)}</time></div>
+                        <p class="excerpt" data-en="${article.excerpt_en}" data-es="${article.excerpt_es}">${article.excerpt_en}</p>
+                        <a href="/blog/${path.basename(article.file)}" class="read-more-link" data-en="Read More →" data-es="Leer Más →">Read More →</a>
+                    </div>
+                </article>`;
 }
 
 // Generate pagination HTML with truncated ellipsis (max 4 page numbers)
 function generatePagination(currentPage, totalPages) {
-    let html = '                    <nav class="pagination" aria-label="Blog pagination">\n';
+    let html = '            <nav class="pagination" aria-label="Blog pagination">\n';
     
     // Previous link
     if (currentPage > 1) {
-        const prevPage = currentPage === 2 ? 'blog.html' : `blog-page-${currentPage - 1}.html`;
-        html += `                        <a href="${prevPage}" class="pagination-prev" data-en="← Previous" data-es="← Anterior">← Previous</a>\n`;
+        const prevPage = currentPage === 2 ? '/blog.html' : `/blog-page-${currentPage - 1}.html`;
+        html += `                <a href="${prevPage}" class="pagination-prev" data-en="← Previous" data-es="← Anterior">← Previous</a>\n`;
     }
     
     // Truncated pagination logic: max 4 page numbers
-    // Pattern: Always show 1, always show last, show current + 1 neighbor
     const pagesToShow = new Set();
-    
-    // Always show page 1
     pagesToShow.add(1);
-    
-    // Always show last page (if more than 1 page)
-    if (totalPages > 1) {
-        pagesToShow.add(totalPages);
-    }
-    
-    // Show current page
+    if (totalPages > 1) pagesToShow.add(totalPages);
     pagesToShow.add(currentPage);
     
-    // Show 1 neighbor to reach max 4 numbers
     if (currentPage === 1) {
-        // Page 1: show next (2)
         if (totalPages > 1) pagesToShow.add(2);
     } else if (currentPage === totalPages) {
-        // Last page: show prev
         pagesToShow.add(totalPages - 1);
     } else if (currentPage === 2) {
-        // Page 2: show next (3) → 1, 2, 3, last
         pagesToShow.add(3);
     } else if (currentPage === 3) {
-        // Page 3: show prev (2) → 1, 2, 3, last
         pagesToShow.add(2);
     } else {
-        // Pages 4+: show next if it's not the last page, otherwise show prev
         if (currentPage + 1 < totalPages) {
-            // Show next (1, current, next, last)
             pagesToShow.add(currentPage + 1);
         } else {
-            // Next would be last page (already shown), so show prev (1, prev, current, last)
             pagesToShow.add(currentPage - 1);
         }
     }
     
-    // Convert to sorted array
     const sortedPages = Array.from(pagesToShow).sort((a, b) => a - b);
     
-    // Build pagination HTML
     let lastPage = 0;
     for (let i = 0; i < sortedPages.length; i++) {
         const page = sortedPages[i];
         
-        // Add ellipsis if there's a gap
         if (page - lastPage > 1 && lastPage > 0) {
-            html += `                        <span class="pagination-ellipsis">...</span>\n`;
+            html += `                <span class="pagination-ellipsis">...</span>\n`;
         }
         
-        // Add page number
-        const pageFile = page === 1 ? 'blog.html' : `blog-page-${page}.html`;
+        const pageFile = page === 1 ? '/blog.html' : `/blog-page-${page}.html`;
         if (page === currentPage) {
-            html += `                        <span class="pagination-current">${page}</span>\n`;
+            html += `                <span class="pagination-current">${page}</span>\n`;
         } else {
-            html += `                        <a href="${pageFile}" class="pagination-link">${page}</a>\n`;
+            html += `                <a href="${pageFile}" class="pagination-link">${page}</a>\n`;
         }
         
         lastPage = page;
     }
     
-    // Next link
     if (currentPage < totalPages) {
-        html += `                        <a href="blog-page-${currentPage + 1}.html" class="pagination-next" data-en="Next →" data-es="Siguiente →">Next →</a>\n`;
+        html += `                <a href="/blog-page-${currentPage + 1}.html" class="pagination-next" data-en="Next →" data-es="Siguiente →">Next →</a>\n`;
     }
     
-    html += '                    </nav>';
+    html += '            </nav>';
     return html;
 }
 
-// Generate the main blog.html (page 1 with featured article)
+// Generate the main blog.html (page 1 with featured article) - Jekyll format
 function generateBlogPage1(articles, dates) {
     const featured = articles[0];
     const featuredDate = dates[0];
     const regularArticles = articles.slice(1, 1 + ARTICLES_PER_PAGE);
     const regularDates = dates.slice(1, 1 + ARTICLES_PER_PAGE);
-    const totalPages = Math.ceil((articles.length - 1) / ARTICLES_PER_PAGE) + (articles[0].featured ? 0 : 0);
-    const actualTotalPages = Math.ceil((articles.length) / (ARTICLES_PER_PAGE + 1));
     
-    // Calculate total pages properly
     const nonFeaturedCount = articles.length - 1;
-    const pages = Math.ceil(nonFeaturedCount / ARTICLES_PER_PAGE);
+    const totalPages = Math.ceil(nonFeaturedCount / ARTICLES_PER_PAGE);
     
     const articleCards = regularArticles.map((article, i) => 
         generateArticleCard(article, regularDates[i])
     ).join('\n\n');
     
-    const pagination = generatePagination(1, pages);
+    const pagination = generatePagination(1, totalPages);
 
-    return `<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Primary Meta Tags -->
-    <title>US Citizenship Test Guide & Tips - Citizenry Blog</title>
-    <meta name="title" content="US Citizenship Test Guide & Tips - Citizenry Blog">
-    <meta name="description" content="Expert tips and guides for passing your US citizenship test. Learn about the 2025 civics test, N-400 interview preparation, and naturalization requirements.">
-    <meta name="keywords" content="US citizenship test tips, civics test guide, N-400 interview, naturalization test, citizenship blog">
-    <meta name="robots" content="index, follow">
-    
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://citizenryapp.com/blog.html">
-    
-    <!-- Open Graph -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://citizenryapp.com/blog.html">
-    <meta property="og:title" content="US Citizenship Test Guide & Tips - Citizenry Blog">
-    <meta property="og:description" content="Expert tips and guides for passing your US citizenship test.">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="assets/images/favicon.png">
-    <link rel="apple-touch-icon" href="assets/images/favicon.png">
-    
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/blog.css">
-    
-    <!-- Blog Schema -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Blog",
-        "name": "Citizenry Blog",
-        "description": "Expert tips and guides for passing your US citizenship test",
-        "url": "https://citizenryapp.com/blog.html",
-        "publisher": {
-            "@type": "Organization",
-            "name": "Citizenry",
-            "logo": "https://citizenryapp.com/assets/images/citizenry-logotype.png"
-        }
-    }
-    </script>
-</head>
-<body>
-    <!-- Skip to content -->
-    <a href="#main-content" class="skip-link" data-en="Skip to content" data-es="Saltar al contenido">Skip to content</a>
+    // Jekyll front matter + content only (no header/footer - handled by layout)
+    return `---
+layout: blog-list
+title: US Citizenship Test Guide & Tips - Citizenry Blog
+meta_title: US Citizenship Test Guide & Tips - Citizenry Blog
+description: Expert tips and guides for passing your US citizenship test. Learn about the 2025 civics test, N-400 interview preparation, and naturalization requirements.
+keywords: US citizenship test tips, civics test guide, N-400 interview, naturalization test, citizenship blog
+---
 
-    <!-- Header/Navigation -->
-    <header class="header">
-        <nav class="navbar">
-            <div class="container">
-                <div class="nav-wrapper">
-                    <a href="index.html" class="logo">
-                        <img src="assets/images/citizenry-logotype.png" alt="Citizenry" height="40">
-                    </a>
-                    
-                    <div class="nav-center">
-                        <ul class="nav-menu" id="navMenu">
-                            <li><a href="index.html" data-en="Home" data-es="Inicio">Home</a></li>
-                            <li><a href="index.html#features" data-en="Features" data-es="Características">Features</a></li>
-                            <li><a href="index.html#testimonials" data-en="Testimonials" data-es="Testimonios">Testimonials</a></li>
-                            <li><a href="index.html#faq" data-en="FAQ" data-es="Preguntas">FAQ</a></li>
-                            <li><a href="blog.html" class="active" data-en="Blog" data-es="Blog">Blog</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="nav-right">
-                        <!-- Language Toggle -->
-                        <button type="button" class="lang-toggle" aria-label="Switch language">
-                            <span class="lang-text" data-en="Español" data-es="English">Español</span>
-                        </button>
-                        
-                        <!-- Header Store Badges -->
-                        <div class="header-badges">
-                            <a href="https://apps.apple.com/us/app/us-citizenship-test-2026-uscis/id6451455299" class="header-download" target="_blank" rel="noopener">
-                                <img src="assets/images/app-store-badge-en.svg" alt="Download on the App Store" class="header-badge" id="headerBadge" data-en="assets/images/app-store-badge-en.svg" data-es="assets/images/app-store-badge-es.svg">
-                            </a>
-                            <a href="https://play.google.com/store/apps/details?id=com.citizenryapp.citizenryandroid" class="header-download" target="_blank" rel="noopener">
-                                <img src="assets/images/google_play_badge_en.svg" alt="Get it on Google Play" class="header-badge" id="headerPlayBadge" data-en="assets/images/google_play_badge_en.svg" data-es="assets/images/google_play_badge_es.svg">
-                            </a>
-                        </div>
-                        
-                        <!-- Mobile Menu Toggle -->
-                        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </button>
-                    </div>
+<!-- Blog Header -->
+<section class="blog-header">
+    <div class="container">
+        <h1 data-en="US Citizenship Test Guide & Tips" data-es="Guía y Consejos para el Examen de Ciudadanía">US Citizenship Test Guide & Tips</h1>
+        <p data-en="Everything you need to know to pass your citizenship test" data-es="Todo lo que necesitas saber para aprobar tu examen de ciudadanía">Everything you need to know to pass your citizenship test</p>
+    </div>
+</section>
+
+<!-- Featured Article Section -->
+<section class="featured-article">
+    <div class="container">
+        <div class="featured-content">
+            <div class="featured-image">
+                <img src="/assets/images/hero-screenshot-en.png" alt="${featured.title_en}" id="featuredImage" data-en="/assets/images/hero-screenshot-en.png" data-es="/assets/images/hero-screenshot-es.png">
+            </div>
+            <div class="featured-text">
+                <div class="featured-badge-large" data-en="Featured Article" data-es="Artículo Destacado">Featured Article</div>
+                <h2 data-en="${featured.title_en}" data-es="${featured.title_es}">${featured.title_en}</h2>
+                <div class="post-meta">
+                    <time datetime="${formatDateISO(featuredDate)}">${formatDateDisplay(featuredDate)}</time>
                 </div>
+                <p class="featured-excerpt" data-en="${featured.excerpt_en}" data-es="${featured.excerpt_es}">${featured.excerpt_en}</p>
+                <a href="/blog/${path.basename(featured.file)}" class="read-more-link large" data-en="Read More →" data-es="Leer Más →">Read More →</a>
             </div>
-        </nav>
-        
-        <!-- Mobile Slide Menu -->
-        <div class="mobile-menu" id="mobileMenu">
-            <div class="mobile-menu-header">
-                <img src="assets/images/citizenry-logotype.png" alt="Citizenry" height="32">
-                <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">&times;</button>
+        </div>
+    </div>
+</section>
+
+<!-- Blog Posts Grid -->
+<section class="blog-content">
+    <div class="container">
+        <div class="blog-layout">
+            <!-- Main Blog Posts -->
+            <div class="blog-posts-grid">
+${articleCards}
             </div>
-            <ul class="mobile-nav-links">
-                <li><a href="index.html" data-en="Home" data-es="Inicio">Home</a></li>
-                <li><a href="index.html#features" data-en="Features" data-es="Características">Features</a></li>
-                <li><a href="index.html#testimonials" data-en="Testimonials" data-es="Testimonios">Testimonials</a></li>
-                <li><a href="index.html#faq" data-en="FAQ" data-es="Preguntas">FAQ</a></li>
-                <li><a href="blog.html" data-en="Blog" data-es="Blog">Blog</a></li>
-            </ul>
-            <a href="https://apps.apple.com/us/app/us-citizenship-test-2026-uscis/id6451455299" class="mobile-download-btn" target="_blank" rel="noopener">
-                <img src="assets/images/app-store-badge-en.svg" alt="Download on the App Store" id="mobileBadge" data-en="assets/images/app-store-badge-en.svg" data-es="assets/images/app-store-badge-es.svg">
+            
+            <!-- Pagination -->
+${pagination}
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="blog-cta-section">
+    <div class="container">
+        <h2 data-en="Ready to Start Practicing?" data-es="¿Listo para Empezar a Practicar?">Ready to Start Practicing?</h2>
+        <p data-en="Download Citizenry and practice with AI-powered mock interviews" data-es="Descarga Citizenry y practica con entrevistas simuladas con IA">Download Citizenry and practice with AI-powered mock interviews</p>
+        <div class="store-badges">
+            <a href="{{ site.app_store_url }}" class="download-btn-large" target="_blank" rel="noopener">
+                <img src="/assets/images/app-store-badge-en.svg" alt="Download on the App Store" id="blogCtaBadge" data-en="/assets/images/app-store-badge-en.svg" data-es="/assets/images/app-store-badge-es.svg">
+            </a>
+            <a href="{{ site.play_store_url }}" class="download-btn-large" target="_blank" rel="noopener">
+                <img src="/assets/images/google_play_badge_en.svg" alt="Get it on Google Play" id="blogCtaPlayBadge" data-en="/assets/images/google_play_badge_en.svg" data-es="/assets/images/google_play_badge_es.svg">
             </a>
         </div>
-        <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
-    </header>
-
-    <!-- Main Content -->
-    <main id="main-content">
-        <!-- Blog Header -->
-        <section class="blog-header">
-            <div class="container">
-                <h1 data-en="US Citizenship Test Guide & Tips" data-es="Guía y Consejos para el Examen de Ciudadanía">US Citizenship Test Guide & Tips</h1>
-                <p data-en="Everything you need to know to pass your citizenship test" data-es="Todo lo que necesitas saber para aprobar tu examen de ciudadanía">Everything you need to know to pass your citizenship test</p>
-            </div>
-        </section>
-
-        <!-- Featured Article Section -->
-        <section class="featured-article">
-            <div class="container">
-                <div class="featured-content">
-                    <div class="featured-image">
-                        <img src="assets/images/hero-screenshot-en.png" alt="${featured.title_en}" id="featuredImage" data-en="assets/images/hero-screenshot-en.png" data-es="assets/images/hero-screenshot-es.png">
-                    </div>
-                    <div class="featured-text">
-                        <div class="featured-badge-large" data-en="Featured Article" data-es="Artículo Destacado">Featured Article</div>
-                        <h2 data-en="${featured.title_en}" data-es="${featured.title_es}">${featured.title_en}</h2>
-                        <div class="post-meta">
-                            <time datetime="${formatDateISO(featuredDate)}">${formatDateDisplay(featuredDate)}</time>
-                        </div>
-                        <p class="featured-excerpt" data-en="${featured.excerpt_en}" data-es="${featured.excerpt_es}">${featured.excerpt_en}</p>
-                        <a href="${featured.file}" class="read-more-link large" data-en="Read More →" data-es="Leer Más →">Read More →</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Blog Posts Grid -->
-        <section class="blog-content">
-            <div class="container">
-                <div class="blog-layout">
-                    <!-- Main Blog Posts -->
-                    <div class="blog-posts-grid">
-${articleCards}
-                    </div>
-                    
-                    <!-- Pagination -->
-${pagination}
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA Section -->
-        <section class="blog-cta-section">
-            <div class="container">
-                <h2 data-en="Ready to Start Practicing?" data-es="¿Listo para Empezar a Practicar?">Ready to Start Practicing?</h2>
-                <p data-en="Download Citizenry and practice with AI-powered mock interviews" data-es="Descarga Citizenry y practica con entrevistas simuladas con IA">Download Citizenry and practice with AI-powered mock interviews</p>
-                <div class="store-badges">
-                    <a href="https://apps.apple.com/us/app/us-citizenship-test-2026-uscis/id6451455299" class="download-btn-large" target="_blank" rel="noopener">
-                        <img src="assets/images/app-store-badge-en.svg" alt="Download on the App Store" id="blogCtaBadge" data-en="assets/images/app-store-badge-en.svg" data-es="assets/images/app-store-badge-es.svg">
-                    </a>
-                    <a href="https://play.google.com/store/apps/details?id=com.citizenryapp.citizenryandroid" class="download-btn-large" target="_blank" rel="noopener">
-                        <img src="assets/images/google_play_badge_en.svg" alt="Get it on Google Play" id="blogCtaPlayBadge" data-en="assets/images/google_play_badge_en.svg" data-es="assets/images/google_play_badge_es.svg">
-                    </a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <img src="assets/images/citizenry-logotype.png" alt="Citizenry" height="32">
-                </div>
-                <div class="footer-links">
-                    <a href="privacy-policy.html" data-en="Privacy Policy" data-es="Política de Privacidad">Privacy Policy</a>
-                    <a href="terms-of-service.html" data-en="Terms of Service" data-es="Términos de Servicio">Terms of Service</a>
-                </div>
-                <p class="footer-copyright">&copy; 2025 Citizenry. <span data-en="All rights reserved." data-es="Todos los derechos reservados.">All rights reserved.</span></p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="js/main.js"></script>
-</body>
-</html>`;
+    </div>
+</section>
+`;
 }
 
-// Generate subsequent blog pages (page 2, 3, 4, etc.)
+// Generate subsequent blog pages (page 2, 3, 4, etc.) - Jekyll format
 function generateBlogPageN(pageNum, articles, dates, totalPages) {
-    // Calculate which articles to show on this page
-    // Page 1 has featured + 4 articles (indices 0-4)
-    // Page 2 starts at index 5, shows 4 articles (indices 5-8)
-    // Page 3 starts at index 9, shows 4 articles (indices 9-12)
     const startIndex = 1 + (pageNum - 1) * ARTICLES_PER_PAGE;
     const endIndex = Math.min(startIndex + ARTICLES_PER_PAGE, articles.length);
     
@@ -399,108 +244,50 @@ function generateBlogPageN(pageNum, articles, dates, totalPages) {
     
     const pagination = generatePagination(pageNum, totalPages);
 
-    return `<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>US Citizenship Test Guide & Tips - Page ${pageNum} - Citizenry Blog</title>
-    <meta name="description" content="Expert tips and guides for passing your US citizenship test. Page ${pageNum} of our citizenship test preparation articles.">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://citizenryapp.com/blog-page-${pageNum}.html">
-    <link rel="icon" type="image/png" href="assets/images/favicon.png">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/blog.css">
-</head>
-<body>
-    <a href="#main-content" class="skip-link" data-en="Skip to content" data-es="Saltar al contenido">Skip to content</a>
+    // Jekyll front matter + content only (no header/footer - handled by layout)
+    return `---
+layout: blog-list
+title: US Citizenship Test Guide & Tips - Page ${pageNum} - Citizenry Blog
+description: Expert tips and guides for passing your US citizenship test. Page ${pageNum} of our citizenship test preparation articles.
+---
 
-    <header class="header">
-        <nav class="navbar">
-            <div class="container">
-                <div class="nav-wrapper">
-                    <a href="index.html" class="logo"><img src="assets/images/citizenry-logotype.png" alt="Citizenry" height="40"></a>
-                    <div class="nav-center">
-                        <ul class="nav-menu">
-                            <li><a href="index.html" data-en="Home" data-es="Inicio">Home</a></li>
-                            <li><a href="index.html#features" data-en="Features" data-es="Características">Features</a></li>
-                            <li><a href="index.html#testimonials" data-en="Testimonials" data-es="Testimonios">Testimonials</a></li>
-                            <li><a href="index.html#faq" data-en="FAQ" data-es="Preguntas">FAQ</a></li>
-                            <li><a href="blog.html" class="active" data-en="Blog" data-es="Blog">Blog</a></li>
-                        </ul>
-                    </div>
-                    <div class="nav-right">
-                        <button type="button" class="lang-toggle" aria-label="Switch language"><span class="lang-text" data-en="Español" data-es="English">Español</span></button>
-                        <div class="header-badges"><a href="https://apps.apple.com/us/app/us-citizenship-test-2026-uscis/id6451455299" class="header-download" target="_blank" rel="noopener"><img src="assets/images/app-store-badge-en.svg" alt="Download on the App Store" class="header-badge" data-en="assets/images/app-store-badge-en.svg" data-es="assets/images/app-store-badge-es.svg"></a><a href="https://play.google.com/store/apps/details?id=com.citizenryapp.citizenryandroid" class="header-download" target="_blank" rel="noopener"><img src="assets/images/google_play_badge_en.svg" alt="Get it on Google Play" class="header-badge" data-en="assets/images/google_play_badge_en.svg" data-es="assets/images/google_play_badge_es.svg"></a></div>
-                        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
-                    </div>
-                </div>
-            </div>
-        </nav>
-        <div class="mobile-menu" id="mobileMenu">
-            <div class="mobile-menu-header"><img src="assets/images/citizenry-logotype.png" alt="Citizenry" height="32"><button class="mobile-menu-close" id="mobileMenuClose">&times;</button></div>
-            <ul class="mobile-nav-links">
-                <li><a href="index.html" data-en="Home" data-es="Inicio">Home</a></li>
-                <li><a href="index.html#features" data-en="Features" data-es="Características">Features</a></li>
-                <li><a href="index.html#testimonials" data-en="Testimonials" data-es="Testimonios">Testimonials</a></li>
-                <li><a href="index.html#faq" data-en="FAQ" data-es="Preguntas">FAQ</a></li>
-                <li><a href="blog.html" data-en="Blog" data-es="Blog">Blog</a></li>
-            </ul>
-            <a href="https://apps.apple.com/us/app/us-citizenship-test-2026-uscis/id6451455299" class="mobile-download-btn" target="_blank"><img src="assets/images/app-store-badge-en.svg" alt="Download on the App Store" data-en="assets/images/app-store-badge-en.svg" data-es="assets/images/app-store-badge-es.svg"></a>
-        </div>
-        <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
-    </header>
+<section class="blog-header">
+    <div class="container">
+        <h1 data-en="US Citizenship Test Guide & Tips" data-es="Guía y Consejos para el Examen de Ciudadanía">US Citizenship Test Guide & Tips</h1>
+        <p data-en="Everything you need to know to pass your citizenship test" data-es="Todo lo que necesitas saber para aprobar tu examen de ciudadanía">Everything you need to know to pass your citizenship test</p>
+    </div>
+</section>
 
-    <main id="main-content">
-        <section class="blog-header">
-            <div class="container">
-                <h1 data-en="US Citizenship Test Guide & Tips" data-es="Guía y Consejos para el Examen de Ciudadanía">US Citizenship Test Guide & Tips</h1>
-                <p data-en="Everything you need to know to pass your citizenship test" data-es="Todo lo que necesitas saber para aprobar tu examen de ciudadanía">Everything you need to know to pass your citizenship test</p>
-            </div>
-        </section>
-
-        <section class="blog-content">
-            <div class="container">
-                <div class="blog-layout">
-                    <div class="blog-posts-grid">
+<section class="blog-content">
+    <div class="container">
+        <div class="blog-layout">
+            <div class="blog-posts-grid">
 ${articleCards}
-                    </div>
-                    
+            </div>
+            
 ${pagination}
-                </div>
-            </div>
-        </section>
-
-        <section class="blog-cta-section">
-            <div class="container">
-                <h2 data-en="Ready to Start Practicing?" data-es="¿Listo para Empezar a Practicar?">Ready to Start Practicing?</h2>
-                <p data-en="Download Citizenry and practice with AI-powered mock interviews" data-es="Descarga Citizenry y practica con entrevistas simuladas con IA">Download Citizenry and practice with AI-powered mock interviews</p>
-                <div class="store-badges">
-                    <a href="https://apps.apple.com/us/app/us-citizenship-test-2026-uscis/id6451455299" class="download-btn-large" target="_blank" rel="noopener"><img src="assets/images/app-store-badge-en.svg" alt="Download on the App Store" data-en="assets/images/app-store-badge-en.svg" data-es="assets/images/app-store-badge-es.svg"></a>
-                    <a href="https://play.google.com/store/apps/details?id=com.citizenryapp.citizenryandroid" class="download-btn-large" target="_blank" rel="noopener"><img src="assets/images/google_play_badge_en.svg" alt="Get it on Google Play" data-en="assets/images/google_play_badge_en.svg" data-es="assets/images/google_play_badge_es.svg"></a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand"><img src="assets/images/citizenry-logotype.png" alt="Citizenry" height="32"></div>
-                <div class="footer-links">
-                    <a href="privacy-policy.html" data-en="Privacy Policy" data-es="Política de Privacidad">Privacy Policy</a>
-                    <a href="terms-of-service.html" data-en="Terms of Service" data-es="Términos de Servicio">Terms of Service</a>
-                </div>
-                <p class="footer-copyright">&copy; 2025 Citizenry. <span data-en="All rights reserved." data-es="Todos los derechos reservados.">All rights reserved.</span></p>
-            </div>
         </div>
-    </footer>
-    <script src="js/main.js"></script>
-</body>
-</html>`;
+    </div>
+</section>
+
+<section class="blog-cta-section">
+    <div class="container">
+        <h2 data-en="Ready to Start Practicing?" data-es="¿Listo para Empezar a Practicar?">Ready to Start Practicing?</h2>
+        <p data-en="Download Citizenry and practice with AI-powered mock interviews" data-es="Descarga Citizenry y practica con entrevistas simuladas con IA">Download Citizenry and practice with AI-powered mock interviews</p>
+        <div class="store-badges">
+            <a href="{{ site.app_store_url }}" class="download-btn-large" target="_blank" rel="noopener">
+                <img src="/assets/images/app-store-badge-en.svg" alt="Download on the App Store" data-en="/assets/images/app-store-badge-en.svg" data-es="/assets/images/app-store-badge-es.svg">
+            </a>
+            <a href="{{ site.play_store_url }}" class="download-btn-large" target="_blank" rel="noopener">
+                <img src="/assets/images/google_play_badge_en.svg" alt="Get it on Google Play" data-en="/assets/images/google_play_badge_en.svg" data-es="/assets/images/google_play_badge_es.svg">
+            </a>
+        </div>
+    </div>
+</section>
+`;
 }
 
-// Update individual article file with new date
+// Update individual article file with new date (Jekyll front matter format)
 function updateArticleDate(filePath, date) {
     const fullPath = path.join(__dirname, '..', filePath);
     
@@ -511,22 +298,25 @@ function updateArticleDate(filePath, date) {
     
     let content = fs.readFileSync(fullPath, 'utf8');
     
-    // Update datetime attribute in time tag
+    // Check if file has Jekyll front matter
+    if (content.startsWith('---')) {
+        // Update date in front matter
+        content = content.replace(
+            /^(---[\s\S]*?date:\s*)\d{4}-\d{2}-\d{2}/m,
+            `$1${formatDateISO(date)}`
+        );
+    }
+    
+    // Update datetime attribute in time tag (for any remaining inline dates)
     content = content.replace(
         /<time datetime="[^"]*">[^<]*<\/time>/g,
         `<time datetime="${formatDateISO(date)}">${formatDateDisplay(date)}</time>`
     );
     
-    // Update datePublished in JSON-LD
+    // Update datePublished in JSON-LD (if present)
     content = content.replace(
         /"datePublished":\s*"[^"]*"/g,
         `"datePublished": "${formatDateISO(date)}"`
-    );
-    
-    // Update dateModified in JSON-LD
-    content = content.replace(
-        /"dateModified":\s*"[^"]*"/g,
-        `"dateModified": "${formatDateISO(date)}"`
     );
     
     fs.writeFileSync(fullPath, content);
@@ -535,8 +325,8 @@ function updateArticleDate(filePath, date) {
 
 // Main execution
 function main() {
-    console.log('🔄 Blog Rotation Script');
-    console.log('=======================\n');
+    console.log('🔄 Blog Rotation Script (Jekyll-Compatible)');
+    console.log('==========================================\n');
     
     // Step 1: Rotate articles
     console.log('Step 1: Rotating articles...');
@@ -557,8 +347,8 @@ function main() {
     console.log(`  Total articles: ${rotatedArticles.length}`);
     console.log(`  Total pages: ${totalPages}`);
     
-    // Step 5: Generate blog pages
-    console.log('\nStep 4: Generating blog pages...');
+    // Step 5: Generate blog pages (Jekyll format with front matter)
+    console.log('\nStep 4: Generating Jekyll blog pages...');
     
     // Generate page 1 (with featured article)
     const page1 = generateBlogPage1(rotatedArticles, dates);
@@ -581,10 +371,7 @@ function main() {
     console.log('\n✅ Blog rotation complete!');
     console.log(`   Featured article: ${rotatedArticles[0].title_en}`);
     console.log(`   Most recent date: ${formatDateDisplay(dates[0])}`);
+    console.log('\n   Note: Files use Jekyll layouts - header/footer from _includes/');
 }
 
 main();
-
-
-
-
