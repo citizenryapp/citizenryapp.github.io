@@ -1,0 +1,73 @@
+<!-- Skip to content -->
+<a href="#main-content" class="skip-link" data-en="Skip to content" data-es="Saltar al contenido">Skip to content</a>
+
+<!-- Header/Navigation -->
+<header class="header">
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="/" class="logo">
+                    <img src="/assets/images/citizenry-logotype.png" alt="Citizenry" height="40">
+                </a>
+                
+                <div class="nav-center">
+                    <ul class="nav-menu" id="navMenu">
+                        <li><a href="/#home" data-en="Home" data-es="Inicio">Home</a></li>
+                        <li><a href="/#features" data-en="Features" data-es="Características">Features</a></li>
+                        <li><a href="/#testimonials" data-en="Testimonials" data-es="Testimonios">Testimonials</a></li>
+                        <li><a href="/#faq" data-en="FAQ" data-es="Preguntas">FAQ</a></li>
+                        <li><a href="/blog.html" {% if page.url contains 'blog' %}class="active"{% endif %} data-en="Blog" data-es="Blog">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="nav-right">
+                    <!-- Language Toggle -->
+                    <button type="button" class="lang-toggle" aria-label="Switch language">
+                        <span class="lang-text" data-en="Español" data-es="English">Español</span>
+                    </button>
+                    
+                    <!-- Header Store Badges -->
+                    <div class="header-badges">
+                        <a href="{{ site.app_store_url }}" class="header-download" target="_blank" rel="noopener">
+                            <img src="/assets/images/app-store-badge-en.svg" alt="Download on the App Store" class="header-badge" id="headerBadge" data-en="/assets/images/app-store-badge-en.svg" data-es="/assets/images/app-store-badge-es.svg">
+                        </a>
+                        <a href="{{ site.play_store_url }}" class="header-download" target="_blank" rel="noopener">
+                            <img src="/assets/images/google_play_badge_en.svg" alt="Get it on Google Play" class="header-badge" id="headerPlayBadge" data-en="/assets/images/google_play_badge_en.svg" data-es="/assets/images/google_play_badge_es.svg">
+                        </a>
+                    </div>
+                    
+                    <!-- Mobile Menu Toggle -->
+                    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Mobile Slide Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <img src="/assets/images/citizenry-logotype.png" alt="Citizenry" height="32">
+            <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">&times;</button>
+        </div>
+        <ul class="mobile-nav-links">
+            <li><a href="/#home" data-en="Home" data-es="Inicio">Home</a></li>
+            <li><a href="/#features" data-en="Features" data-es="Características">Features</a></li>
+            <li><a href="/#testimonials" data-en="Testimonials" data-es="Testimonios">Testimonials</a></li>
+            <li><a href="/#faq" data-en="FAQ" data-es="Preguntas">FAQ</a></li>
+            <li><a href="/blog.html" data-en="Blog" data-es="Blog">Blog</a></li>
+        </ul>
+        <div class="mobile-store-badges">
+            <a href="{{ site.app_store_url }}" class="mobile-download-btn" target="_blank" rel="noopener">
+                <img src="/assets/images/app-store-badge-en.svg" alt="Download on the App Store" id="mobileBadge" data-en="/assets/images/app-store-badge-en.svg" data-es="/assets/images/app-store-badge-es.svg">
+            </a>
+            <a href="{{ site.play_store_url }}" class="mobile-download-btn" target="_blank" rel="noopener">
+                <img src="/assets/images/google_play_badge_en.svg" alt="Get it on Google Play" id="mobilePlayBadge" data-en="/assets/images/google_play_badge_en.svg" data-es="/assets/images/google_play_badge_es.svg">
+            </a>
+        </div>
+    </div>
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+</header>

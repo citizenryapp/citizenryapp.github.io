@@ -1,0 +1,43 @@
+# Site settings
+title: Citizenry - US Citizenship Test App
+description: Prepare for your US citizenship test with Citizenry's unlimited mock interviews. Practice with virtual USCIS agents, study guides, audiobooks, and quizzes.
+url: "https://citizenryapp.com"
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+permalink: /:path:output_ext
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - package.json
+  - package-lock.json
+  - scripts
+  - README.md
+  - .gitignore
+
+# Keep these files (don't process as Jekyll)
+include:
+  - .nojekyll
+  - apple-app-site-association
+  - CNAME
+
+# Default front matter
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+  - scope:
+      path: "blog"
+      type: "pages"
+    values:
+      layout: "blog-post"
+
+# App store links (reusable)
+app_store_url: "https://apps.apple.com/us/app/us-citizenship-test-2026-uscis/id6451455299"
+play_store_url: "https://play.google.com/store/apps/details?id=com.citizenryapp.citizenryandroid"

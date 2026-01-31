@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include head.html %}
+    <link rel="stylesheet" href="/css/blog.css">
+    
+    <!-- Article Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "{{ page.title }}",
+        "description": "{{ page.description }}",
+        "datePublished": "{{ page.date | date: '%Y-%m-%d' }}",
+        "author": {
+            "@type": "Organization",
+            "name": "Citizenry"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Citizenry",
+            "logo": "https://citizenryapp.com/assets/images/citizenry-logotype.png"
+        }
+    }
+    </script>
+</head>
+<body>
+    {% include header.html %}
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <article class="blog-post">
+            <div class="container">
+                <div class="post-header">
+                    <a href="/blog.html" class="back-link" data-en="← Back to Blog" data-es="← Volver al Blog">← Back to Blog</a>
+                    <h1 data-en="{{ page.title }}" data-es="{{ page.title_es | default: page.title }}">{{ page.title }}</h1>
+                    <div class="post-meta">
+                        <time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: '%B %d, %Y' }}</time>
+                    </div>
+                </div>
+                
+                <div class="post-content">
+                    {{ content }}
+                    
+                    <div class="post-cta">
+                        <h3 data-en="Ready to Start Practicing?" data-es="¿Listo para Empezar a Practicar?">Ready to Start Practicing?</h3>
+                        <p data-en="Download Citizenry and start your path to citizenship today." data-es="Descarga Citizenry y comienza tu camino hacia la ciudadanía hoy.">Download Citizenry and start your path to citizenship today.</p>
+                        <div class="store-badges">
+                            <a href="{{ site.app_store_url }}" class="download-btn-large" target="_blank" rel="noopener">
+                                <img src="/assets/images/app-store-badge-en.svg" alt="Download on the App Store" data-en="/assets/images/app-store-badge-en.svg" data-es="/assets/images/app-store-badge-es.svg">
+                            </a>
+                            <a href="{{ site.play_store_url }}" class="download-btn-large" target="_blank" rel="noopener">
+                                <img src="/assets/images/google_play_badge_en.svg" alt="Get it on Google Play" data-en="/assets/images/google_play_badge_en.svg" data-es="/assets/images/google_play_badge_es.svg">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    {% include footer.html %}
+
+    <script src="/js/main.js"></script>
+</body>
+</html>

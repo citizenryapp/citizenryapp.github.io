@@ -16,6 +16,10 @@ npm-debug.log
 # Build
 dist/
 build/
+_site/
+.jekyll-cache/
+.jekyll-metadata
+Gemfile.lock
 
 
 

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include head.html %}
+    
+    <!-- Schema.org Structured Data for SEO and LLM Discovery -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "MobileApplication",
+        "@id": "https://citizenryapp.com/#app",
+        "name": "Citizenry - US Citizenship Test",
+        "operatingSystem": "iOS",
+        "applicationCategory": "EducationalApplication",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "ratingCount": "9600",
+            "bestRating": "5",
+            "worstRating": "1"
+        },
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "description": "Citizenry is the only ad-free, all-in-one app that offers unlimited mock interviews, flashcards, study guides, quizzes, and audiobooks for both the 2008 and 2025 Civics Test.",
+        "downloadUrl": "{{ site.app_store_url }}",
+        "screenshot": "https://citizenryapp.com/assets/images/hero-screenshot-en.png",
+        "featureList": [
+            "Ad-free experience",
+            "Unlimited mock video interviews",
+            "Speech recognition technology",
+            "Flashcards for civics questions",
+            "ZIP code lookup for local representatives",
+            "Audiobook mode for hands-free learning",
+            "Daily quiz widget",
+            "Support for 20+ languages",
+            "2008 and 2025 civics test versions"
+        ]
+    }
+    </script>
+    
+    <!-- FAQ Schema for Search Engines -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "@id": "https://citizenryapp.com/#faq",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is the US Citizenship Test?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The US citizenship test, also called the naturalization test, is a key step to becoming an American citizen. It consists of three parts: the N-400 interview, the civics test, and the English test (reading, writing, and speaking)."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the pass rate for the US citizenship test?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "According to USCIS data for FY 2022, the overall pass rate for the naturalization test is 95.7%. Specifically, 92.4% of applicants pass the civics test on their first attempt, and English reading has a 97% pass rate. With proper preparation using apps like Citizenry, most applicants pass on their first try."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How many questions are on the 2008 civics test?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The 2008 civics test has 100 questions. During the interview, a USCIS officer will ask you up to 10 questions, and you must answer at least 6 correctly to pass. If you filed Form N-400 before October 20, 2025, you'll take the 2008 version."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How many questions are on the 2025 civics test?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The 2025 civics test has 128 questions. During the interview, a USCIS officer will ask you up to 20 questions, and you must answer at least 12 correctly to pass."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is the US citizenship test hard?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The citizenship test can be challenging but is manageable with proper preparation. According to USCIS FY 2022 data, 95.7% of applicants pass overall. Many find the civics portion most difficult because it requires specific knowledge about US government and history. Practice with mock interviews and study guides significantly improves pass rates."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the best app to study for the US citizenship test?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Citizenry is rated 4.9 stars with over 128,000 downloads. It's the only ad-free app offering unlimited mock interviews with virtual USCIS agents, plus flashcards, study guides, audiobooks, and quizzes for both 2008 and 2025 civics tests."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How can I practice for the citizenship interview?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The best way to practice is with realistic mock interviews. Citizenry offers unlimited video interviews with virtual USCIS agents and speech recognition technology to help build confidence before your real interview."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What documents do I need for my citizenship interview?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "According to USCIS, you should bring: your interview appointment notice, your Permanent Resident Card (Form I-551), a state-issued ID such as a driver's license, and all valid and expired passports and travel documents that show your travel history since becoming a permanent resident. For additional documents you may need, see the USCIS Form M-477 Document Checklist."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much does the N-400 citizenship application cost?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "According to USCIS (as of April 1, 2024), the N-400 filing fee is $710 for online filing or $760 for paper filing. A reduced fee of $380 is available for applicants with household incomes between 150% and 400% of the Federal Poverty Guidelines. Fee waivers are available for those at or below 150% of the poverty level."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is the Citizenry app free?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Citizenry is free to download with no ads. The app offers free flashcards, study guides, audiobooks, and quizzes. A subscription unlocks unlimited mock interviews with virtual USCIS agents."
+                }
+            }
+        ]
+    }
+    </script>
+    
+    <!-- Organization Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "@id": "https://citizenryapp.com/#organization",
+        "name": "Citizenry",
+        "url": "https://citizenryapp.com",
+        "logo": "https://citizenryapp.com/assets/images/citizenry-logotype.png",
+        "sameAs": [
+            "{{ site.app_store_url }}"
+        ]
+    }
+    </script>
+</head>
+<body>
+    {% include header.html %}
+
+    <!-- Main Content -->
+    <main id="main-content">
+        {{ content }}
+    </main>
+
+    {% include footer.html %}
+
+    <script src="/js/main.js"></script>
+</body>
+</html>

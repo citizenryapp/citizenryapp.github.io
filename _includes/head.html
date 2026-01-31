@@ -1,0 +1,51 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Primary Meta Tags -->
+<title>{{ page.title | default: site.title }}</title>
+<meta name="title" content="{{ page.meta_title | default: page.title | default: site.title }}">
+<meta name="description" content="{{ page.description | default: site.description }}">
+{% if page.keywords %}<meta name="keywords" content="{{ page.keywords }}">{% endif %}
+<meta name="author" content="Citizenry">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="{{ page.url | absolute_url }}">
+
+<!-- LLMs.txt for AI Discovery -->
+<link rel="alternate" type="text/plain" href="{{ site.url }}/llms.txt" title="LLMs.txt">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="{{ page.og_type | default: 'website' }}">
+<meta property="og:url" content="{{ page.url | absolute_url }}">
+<meta property="og:title" content="{{ page.og_title | default: page.title | default: site.title }}">
+<meta property="og:description" content="{{ page.og_description | default: page.description | default: site.description }}">
+{% if page.og_image %}<meta property="og:image" content="{{ page.og_image }}">{% endif %}
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="{{ page.url | absolute_url }}">
+<meta property="twitter:title" content="{{ page.title | default: site.title }}">
+<meta property="twitter:description" content="{{ page.description | default: site.description }}">
+
+<!-- Sitemap -->
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" sizes="96x96" href="/assets/images/favicon-96.png">
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/images/favicon-48.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16.png">
+<link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+
+<!-- Stylesheets -->
+<link rel="stylesheet" href="/css/style.css">
+{% if page.extra_css %}
+{% for css in page.extra_css %}
+<link rel="stylesheet" href="{{ css }}">
+{% endfor %}
+{% endif %}
+
+{% if page.schema %}
+{{ page.schema }}
+{% endif %}
