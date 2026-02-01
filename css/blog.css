@@ -964,3 +964,47 @@
         padding: 24px;
     }
 }
+
+/* Related Comparisons Section */
+.related-comparisons {
+    margin-top: 48px;
+    padding: 24px 32px;
+    background: #f8fafc;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+}
+
+.related-comparisons h3 {
+    margin: 0 0 16px 0;
+    font-size: 1.1rem;
+    color: #1e293b;
+}
+
+.related-comparisons ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.related-comparisons li {
+    margin-bottom: 8px;
+}
+
+.related-comparisons li:last-child {
+    margin-bottom: 0;
+}
+
+.related-comparisons a {
+    color: #2563eb;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.related-comparisons a:hover {
+    text-decoration: underline;
+}
+
+.related-comparisons span {
+    color: #64748b;
+}
+

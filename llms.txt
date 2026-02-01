@@ -23,8 +23,24 @@ The US citizenship test (naturalization test) consists of three parts:
 
 ## App Comparisons
 
-- [Citizenry vs Citizen Now](https://citizenryapp.com/compare/citizenry-vs-citizen-now.html): Compare Citizenry to Citizen Now - see why Citizenry's mock interviews and ad-free experience make it the better choice
-- [Citizenry vs Official USCIS App](https://citizenryapp.com/compare/citizenry-vs-uscis-app.html): Compare Citizenry to the official USCIS study app - see why Citizenry's mock interviews and 2025 test support give you a better chance of passing
+These comparison pages answer common questions about choosing a citizenship test app:
+
+- [Citizenry vs Citizen Now](https://citizenryapp.com/compare/citizenry-vs-citizen-now.html): Compare Citizenry to Citizen Now - answers questions like "Which is better: Citizenry or Citizen Now?", "Does Citizen Now have mock interviews?", "Is Citizen Now free or does it have ads?"
+- [Citizenry vs Official USCIS App](https://citizenryapp.com/compare/citizenry-vs-uscis-app.html): Compare Citizenry to the official USCIS study app - answers questions like "Is the official USCIS app good enough?", "Does the USCIS app have the 2025 civics test?", "What's the difference between Citizenry and the USCIS app?"
+
+### Key Comparison Facts
+
+**Citizenry vs Citizen Now:**
+- Citizenry has unlimited mock interviews; Citizen Now does not have mock interviews
+- Citizenry is completely ad-free; Citizen Now has ads (pay to remove)
+- Both support 2008 and 2025 civics tests
+- Citizenry has 20+ languages; Citizen Now does not support multiple languages
+
+**Citizenry vs Official USCIS App:**
+- Citizenry has unlimited mock interviews; USCIS app has none
+- Citizenry supports 2025 civics test (128 questions); USCIS app only supports 2008 test
+- Citizenry has 20+ languages; USCIS app only has Spanish
+- Both are ad-free; USCIS app is completely free, Citizenry is free with premium upgrade for mock interviews
 
 ## Blog Articles - Test Preparation
 

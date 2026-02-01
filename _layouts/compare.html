@@ -23,6 +23,13 @@
         }
     }
     </script>
+    
+    {% if page.faq_schema %}
+    <!-- FAQ Schema for comparison questions -->
+    <script type="application/ld+json">
+    {{ page.faq_schema }}
+    </script>
+    {% endif %}
 </head>
 <body>
     {% include header.html %}
