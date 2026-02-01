@@ -537,7 +537,7 @@
 
 /* Compare Intro Section */
 .compare-intro {
-    padding: 60px 0;
+    padding: 0px 0 60px;
     background: var(--bg-white);
 }
 
@@ -605,11 +605,13 @@
     font-size: 1.75rem;
     margin-bottom: 32px;
     color: var(--text-primary);
+    text-align: center;
 }
 
 .compare-cards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 24px;
 }
 
@@ -619,6 +621,8 @@
     padding: 32px;
     border: 1px solid var(--border-color);
     transition: var(--transition);
+    flex: 0 1 400px;
+    max-width: 450px;
 }
 
 .compare-card:hover {
@@ -743,98 +747,128 @@
     margin: 0;
 }
 
-/* Comparison Table */
-.comparison-table-wrapper {
-    overflow-x: auto;
+/* Comparison Grid */
+.comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     margin: 24px 0 40px;
     border-radius: 16px;
     border: 1px solid var(--border-color);
+    overflow: hidden;
+    background: var(--bg-white);
 }
 
-.comparison-table {
-    width: 100%;
-    border-collapse: collapse;
-    min-width: 600px;
-}
-
-.comparison-table th,
-.comparison-table td {
+.comparison-grid .grid-header {
     padding: 16px 20px;
-    text-align: left;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.comparison-table th {
-    background: var(--bg-section);
     font-weight: 600;
-    color: var(--text-primary);
     font-size: 0.95rem;
+    color: var(--text-primary);
+    background: var(--bg-section);
+    border-bottom: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
 }
 
-.comparison-table th.app-column {
-    text-align: center;
-    min-width: 180px;
+.comparison-grid .grid-header:last-child {
+    border-right: none;
 }
 
-.comparison-table th.citizenry-column {
+.comparison-grid .grid-header.citizenry {
     background: #f0fdf4;
     color: #15803d;
-}
-
-.comparison-table td {
-    color: var(--text-secondary);
-    font-size: 0.95rem;
-}
-
-.comparison-table td.app-column {
     text-align: center;
 }
 
-.comparison-table tr:last-child td {
+.comparison-grid .grid-header.competitor {
+    text-align: center;
+}
+
+.comparison-grid .grid-cell {
+    padding: 16px 20px;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+}
+
+.comparison-grid .grid-cell:nth-child(3n) {
+    border-right: none;
+}
+
+/* Last row - no bottom border */
+.comparison-grid .grid-cell.last-row {
     border-bottom: none;
 }
 
-.comparison-table tr.highlight-row {
-    background: #fefce8;
-}
-
-.comparison-table tr.highlight-row td:first-child {
-    font-weight: 600;
+.comparison-grid .grid-cell.feature-name {
+    font-weight: 500;
     color: var(--text-primary);
 }
 
-.comparison-table .feature-yes {
+.comparison-grid .grid-cell.citizenry-cell {
+    text-align: center;
+    justify-content: center;
+}
+
+.comparison-grid .grid-cell.competitor-cell {
+    text-align: center;
+    justify-content: center;
+}
+
+.comparison-grid .grid-cell.highlight {
+    background: #fefce8;
+}
+
+.comparison-grid .grid-cell.yes {
     color: #15803d;
 }
 
-.comparison-table .feature-no {
+.comparison-grid .grid-cell.no {
     color: #dc2626;
 }
 
-.comparison-table .feature-unknown {
-    color: var(--text-muted);
+.comparison-grid .grid-cell.partial {
+    color: var(--text-secondary);
 }
 
-.comparison-table .check {
+.comparison-grid .check {
     color: #22c55e;
     font-weight: 700;
     font-size: 1.1rem;
+    margin-right: 6px;
 }
 
-.comparison-table .cross {
+.comparison-grid .cross {
     color: #ef4444;
     font-weight: 700;
     font-size: 1.1rem;
+    margin-right: 6px;
 }
 
-.comparison-table .unknown {
-    color: var(--text-muted);
-    font-weight: 500;
-}
-
-.comparison-table .rating {
-    color: #f59e0b;
-    font-weight: 600;
+/* Responsive */
+@media (max-width: 768px) {
+    .comparison-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+        font-size: 0.85rem;
+    }
+    
+    .comparison-grid .grid-header,
+    .comparison-grid .grid-cell {
+        padding: 12px 10px;
+        font-size: 0.85rem;
+    }
+    
+    .comparison-grid .grid-cell {
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+    }
+    
+    .comparison-grid .grid-cell.feature-name {
+        text-align: left;
+        align-items: flex-start;
+    }
 }
 
 /* Recommendation Boxes */

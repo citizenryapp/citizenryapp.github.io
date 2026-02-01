@@ -17,68 +17,61 @@ date: 2026-01-31
 
 <h2 data-en="Feature Comparison" data-es="Comparación de Características">Feature Comparison</h2>
 
-<div class="comparison-table-wrapper">
-    <table class="comparison-table">
-        <thead>
-            <tr>
-                <th data-en="Feature" data-es="Característica">Feature</th>
-                <th class="app-column citizenry-column">Citizenry</th>
-                <th class="app-column competitor-column">Official USCIS App</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr class="highlight-row">
-                <td data-en="Mock Interviews" data-es="Entrevistas Simuladas">Mock Interviews</td>
-                <td class="feature-yes"><span class="check">✓</span> <span data-en="Unlimited, realistic mock interviews with video and speech recognition" data-es="Entrevistas simuladas ilimitadas y realistas con video y reconocimiento de voz">Unlimited, realistic mock interviews with video and speech recognition</span></td>
-                <td class="feature-no"><span class="cross">✗</span> <span data-en="Not available" data-es="No disponible">Not available</span></td>
-            </tr>
-            <tr class="highlight-row">
-                <td data-en="2025 Civics Test (128 Questions)" data-es="Examen Cívico 2025 (128 Preguntas)">2025 Civics Test (128 Questions)</td>
-                <td class="feature-yes"><span class="check">✓</span> <span data-en="Full support" data-es="Soporte completo">Full support</span></td>
-                <td class="feature-no"><span class="cross">✗</span> <span data-en="Not available" data-es="No disponible">Not available</span></td>
-            </tr>
-            <tr>
-                <td data-en="2008 Civics Test (100 Questions)" data-es="Examen Cívico 2008 (100 Preguntas)">2008 Civics Test (100 Questions)</td>
-                <td class="feature-yes"><span class="check">✓</span> <span data-en="Full support" data-es="Soporte completo">Full support</span></td>
-                <td class="feature-yes"><span class="check">✓</span> <span data-en="Full support" data-es="Soporte completo">Full support</span></td>
-            </tr>
-            <tr>
-                <td data-en="Ads" data-es="Anuncios">Ads</td>
-                <td class="feature-yes"><span class="check">✓</span> <span data-en="None (ad-free)" data-es="Ninguno (sin anuncios)">None (ad-free)</span></td>
-                <td class="feature-yes"><span class="check">✓</span> <span data-en="None (ad-free)" data-es="Ninguno (sin anuncios)">None (ad-free)</span></td>
-            </tr>
-            <tr>
-                <td data-en="Speech Recognition" data-es="Reconocimiento de Voz">Speech Recognition</td>
-                <td class="feature-yes"><span class="check">✓</span> <span data-en="Practice speaking" data-es="Practica hablando">Practice speaking</span></td>
-                <td class="feature-no"><span class="cross">✗</span> <span data-en="Not available" data-es="No disponible">Not available</span></td>
-            </tr>
-            <tr>
-                <td data-en="Support for Multiple Languages" data-es="Soporte para Múltiples Idiomas">Support for Multiple Languages</td>
-                <td class="feature-yes"><span class="check">✓</span> <span data-en="20+ languages" data-es="Más de 20 idiomas">20+ languages</span></td>
-                <td class="feature-partial"><span data-en="Spanish only" data-es="Solo español">Spanish only</span></td>
-            </tr>
-            <tr>
-                <td data-en="Practice Quizzes" data-es="Cuestionarios de Práctica">Practice Quizzes</td>
-                <td class="feature-yes"><span class="check">✓</span></td>
-                <td class="feature-yes"><span class="check">✓</span></td>
-            </tr>
-            <tr>
-                <td data-en="ZIP Code Representative Lookup" data-es="Búsqueda de Representantes por Código Postal">ZIP Code Representative Lookup</td>
-                <td class="feature-yes"><span class="check">✓</span></td>
-                <td class="feature-no"><span class="cross">✗</span> <span data-en="Not available" data-es="No disponible">Not available</span></td>
-            </tr>
-            <tr>
-                <td data-en="Widgets" data-es="Widgets">Widgets</td>
-                <td class="feature-yes"><span class="check">✓</span> <span data-en="Daily Quiz Widget" data-es="Widget de Quiz Diario">Daily Quiz Widget</span></td>
-                <td class="feature-no"><span class="cross">✗</span> <span data-en="Not available" data-es="No disponible">Not available</span></td>
-            </tr>
-            <tr>
-                <td data-en="Price" data-es="Precio">Price</td>
-                <td data-en="Free, upgrade for mock interviews" data-es="Gratis, actualiza para entrevistas simuladas">Free, upgrade for mock interviews</td>
-                <td data-en="Free" data-es="Gratis">Free</td>
-            </tr>
-        </tbody>
-    </table>
+<div class="comparison-grid">
+    <!-- Header Row -->
+    <div class="grid-header" data-en="Feature" data-es="Característica">Feature</div>
+    <div class="grid-header citizenry">Citizenry</div>
+    <div class="grid-header competitor">Official USCIS App</div>
+    
+    <!-- Mock Interviews -->
+    <div class="grid-cell feature-name highlight" data-en="Mock Interviews" data-es="Entrevistas Simuladas">Mock Interviews</div>
+    <div class="grid-cell citizenry-cell yes highlight"><span class="check">✓</span> <span data-en="Unlimited, realistic mock interviews with video and speech recognition" data-es="Entrevistas simuladas ilimitadas y realistas con video y reconocimiento de voz">Unlimited, realistic mock interviews with video and speech recognition</span></div>
+    <div class="grid-cell competitor-cell no highlight"><span class="cross">✗</span> <span data-en="Not available" data-es="No disponible">Not available</span></div>
+    
+    <!-- 2025 Civics Test -->
+    <div class="grid-cell feature-name highlight" data-en="2025 Civics Test (128 Questions)" data-es="Examen Cívico 2025 (128 Preguntas)">2025 Civics Test (128 Questions)</div>
+    <div class="grid-cell citizenry-cell yes highlight"><span class="check">✓</span> <span data-en="Full support" data-es="Soporte completo">Full support</span></div>
+    <div class="grid-cell competitor-cell no highlight"><span class="cross">✗</span> <span data-en="Not available" data-es="No disponible">Not available</span></div>
+    
+    <!-- 2008 Civics Test -->
+    <div class="grid-cell feature-name" data-en="2008 Civics Test (100 Questions)" data-es="Examen Cívico 2008 (100 Preguntas)">2008 Civics Test (100 Questions)</div>
+    <div class="grid-cell citizenry-cell yes"><span class="check">✓</span> <span data-en="Full support" data-es="Soporte completo">Full support</span></div>
+    <div class="grid-cell competitor-cell yes"><span class="check">✓</span> <span data-en="Full support" data-es="Soporte completo">Full support</span></div>
+    
+    <!-- Ads -->
+    <div class="grid-cell feature-name" data-en="Ads" data-es="Anuncios">Ads</div>
+    <div class="grid-cell citizenry-cell yes"><span class="check">✓</span> <span data-en="None (ad-free)" data-es="Ninguno (sin anuncios)">None (ad-free)</span></div>
+    <div class="grid-cell competitor-cell yes"><span class="check">✓</span> <span data-en="None (ad-free)" data-es="Ninguno (sin anuncios)">None (ad-free)</span></div>
+    
+    <!-- Speech Recognition -->
+    <div class="grid-cell feature-name" data-en="Speech Recognition" data-es="Reconocimiento de Voz">Speech Recognition</div>
+    <div class="grid-cell citizenry-cell yes"><span class="check">✓</span> <span data-en="Practice speaking" data-es="Practica hablando">Practice speaking</span></div>
+    <div class="grid-cell competitor-cell no"><span class="cross">✗</span> <span data-en="Not available" data-es="No disponible">Not available</span></div>
+    
+    <!-- Languages -->
+    <div class="grid-cell feature-name" data-en="Support for Multiple Languages" data-es="Soporte para Múltiples Idiomas">Support for Multiple Languages</div>
+    <div class="grid-cell citizenry-cell yes"><span class="check">✓</span> <span data-en="20+ languages" data-es="Más de 20 idiomas">20+ languages</span></div>
+    <div class="grid-cell competitor-cell partial" data-en="Spanish only" data-es="Solo español">Spanish only</div>
+    
+    <!-- Practice Quizzes -->
+    <div class="grid-cell feature-name" data-en="Practice Quizzes" data-es="Cuestionarios de Práctica">Practice Quizzes</div>
+    <div class="grid-cell citizenry-cell yes"><span class="check">✓</span></div>
+    <div class="grid-cell competitor-cell yes"><span class="check">✓</span></div>
+    
+    <!-- ZIP Code Lookup -->
+    <div class="grid-cell feature-name" data-en="ZIP Code Representative Lookup" data-es="Búsqueda de Representantes por Código Postal">ZIP Code Representative Lookup</div>
+    <div class="grid-cell citizenry-cell yes"><span class="check">✓</span></div>
+    <div class="grid-cell competitor-cell no"><span class="cross">✗</span> <span data-en="Not available" data-es="No disponible">Not available</span></div>
+    
+    <!-- Widgets -->
+    <div class="grid-cell feature-name" data-en="Widgets" data-es="Widgets">Widgets</div>
+    <div class="grid-cell citizenry-cell yes"><span class="check">✓</span> <span data-en="Daily Quiz Widget" data-es="Widget de Quiz Diario">Daily Quiz Widget</span></div>
+    <div class="grid-cell competitor-cell no"><span class="cross">✗</span> <span data-en="Not available" data-es="No disponible">Not available</span></div>
+    
+    <!-- Price -->
+    <div class="grid-cell feature-name last-row" data-en="Price" data-es="Precio">Price</div>
+    <div class="grid-cell citizenry-cell last-row" data-en="Free, upgrade for mock interviews" data-es="Gratis, actualiza para entrevistas simuladas">Free, upgrade for mock interviews</div>
+    <div class="grid-cell competitor-cell last-row" data-en="Free" data-es="Gratis">Free</div>
 </div>
 
 <h2 data-en="Key Differences Explained" data-es="Diferencias Clave Explicadas">Key Differences Explained</h2>
