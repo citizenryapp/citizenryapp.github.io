@@ -31,6 +31,18 @@
     <priority>0.5</priority>
   </url>
 
+  <!-- Compare Section -->
+  <url>
+    <loc>https://citizenryapp.com/compare/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://citizenryapp.com/compare/citizenry-vs-citizen-now.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Blog Index Pages -->
   <url>
     <loc>https://citizenryapp.com/blog.html</loc>

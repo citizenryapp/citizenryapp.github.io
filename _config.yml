@@ -37,6 +37,11 @@ defaults:
       type: "pages"
     values:
       layout: "blog-post"
+  - scope:
+      path: "compare"
+      type: "pages"
+    values:
+      layout: "compare"
 
 # App store links (reusable)
 app_store_url: "https://apps.apple.com/us/app/us-citizenship-test-2026-uscis/id6451455299"

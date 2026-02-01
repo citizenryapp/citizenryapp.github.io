@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include head.html %}
+    <link rel="stylesheet" href="/css/blog.css">
+    
+    <!-- Compare Section Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Compare Citizenship Test Apps",
+        "description": "Compare Citizenry to other US citizenship test apps. See feature comparisons and find the best app for your needs.",
+        "url": "https://citizenryapp.com/compare/",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Citizenry",
+            "logo": "https://citizenryapp.com/assets/images/citizenry-logotype.png"
+        }
+    }
+    </script>
+</head>
+<body>
+    {% include header.html %}
+
+    <!-- Main Content -->
+    <main id="main-content">
+        {{ content }}
+    </main>
+
+    {% include footer.html %}
+
+    <script src="/js/main.js"></script>
+</body>
+</html>
