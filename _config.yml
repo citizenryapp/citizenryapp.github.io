@@ -21,7 +21,6 @@ exclude:
 
 # Keep these files (don't process as Jekyll)
 include:
-  - .nojekyll
   - apple-app-site-association
   - CNAME
 
