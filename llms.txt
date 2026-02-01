@@ -17,8 +17,14 @@ The US citizenship test (naturalization test) consists of three parts:
 
 - [Homepage](https://citizenryapp.com/): Main landing page with app features, testimonials, and FAQs
 - [Blog](https://citizenryapp.com/blog.html): Articles about citizenship, naturalization, and test preparation
+- [Compare](https://citizenryapp.com/compare/): Compare Citizenry to other citizenship test apps
 - [Privacy Policy](https://citizenryapp.com/privacy-policy.html): Privacy practices for the Citizenry app
 - [Terms of Service](https://citizenryapp.com/terms-of-service.html): Terms and conditions for using Citizenry
+
+## App Comparisons
+
+- [Citizenry vs Citizen Now](https://citizenryapp.com/compare/citizenry-vs-citizen-now.html): Compare Citizenry to Citizen Now - see why Citizenry's mock interviews and ad-free experience make it the better choice
+- [Citizenry vs Official USCIS App](https://citizenryapp.com/compare/citizenry-vs-uscis-app.html): Compare Citizenry to the official USCIS study app - see why Citizenry's mock interviews and 2025 test support give you a better chance of passing
 
 ## Blog Articles - Test Preparation
 
