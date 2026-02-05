@@ -10,6 +10,14 @@
       "excerpt_es": "¡Prepárate para el examen de ciudadanía 2025! Revisa las 128 preguntas y respuestas cívicas, conoce las últimas actualizaciones y practica con las entrevistas simuladas de Citizenry."
     },
     {
+      "id": "how-long-does-naturalization-take",
+      "file": "blog/how-long-does-naturalization-take.html",
+      "title_en": "How Long Does the Naturalization Process Take?",
+      "title_es": "¿Cuánto Tiempo Toma el Proceso de Naturalización?",
+      "excerpt_en": "Learn how long the US citizenship process takes from N-400 application to oath ceremony. Understand processing times, timelines, and what affects wait times.",
+      "excerpt_es": "Aprende cuánto tiempo toma el proceso de ciudadanía desde la solicitud N-400 hasta la ceremonia de juramento."
+    },
+    {
       "id": "n400-interview-preparation",
       "file": "blog/n400-interview-preparation.html",
       "title_en": "How to Prepare for the N-400 Interview",
@@ -208,14 +216,6 @@
       "title_es": "Tarifas del N-400 y Exenciones de Tarifas Explicadas",
       "excerpt_en": "Learn about N-400 citizenship application fees, fee waivers, and reduced fee options. Find out if you qualify for free or reduced-cost naturalization.",
       "excerpt_es": "Aprende sobre las tarifas de solicitud de ciudadanía N-400, exenciones de tarifas y opciones de tarifa reducida."
-    },
-    {
-      "id": "how-long-does-naturalization-take",
-      "file": "blog/how-long-does-naturalization-take.html",
-      "title_en": "How Long Does the Naturalization Process Take?",
-      "title_es": "¿Cuánto Tiempo Toma el Proceso de Naturalización?",
-      "excerpt_en": "Learn how long the US citizenship process takes from N-400 application to oath ceremony. Understand processing times, timelines, and what affects wait times.",
-      "excerpt_es": "Aprende cuánto tiempo toma el proceso de ciudadanía desde la solicitud N-400 hasta la ceremonia de juramento."
     }
   ]
 }
