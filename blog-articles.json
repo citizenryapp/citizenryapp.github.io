@@ -10,6 +10,70 @@
       "excerpt_es": "¡Prepárate para el examen de ciudadanía 2025! Revisa las 128 preguntas y respuestas cívicas, conoce las últimas actualizaciones y practica con las entrevistas simuladas de Citizenry."
     },
     {
+      "id": "naturalization-eligibility-requirements",
+      "file": "blog/naturalization-eligibility-requirements.html",
+      "title_en": "Naturalization Requirements: Are You Eligible?",
+      "title_es": "Requisitos de Naturalización: ¿Es Elegible?",
+      "excerpt_en": "Check if you meet the eligibility requirements for US citizenship. Learn about residence, physical presence, age, and other naturalization requirements.",
+      "excerpt_es": "Verifica si cumples con los requisitos de elegibilidad para la ciudadanía."
+    },
+    {
+      "id": "check-n400-case-status",
+      "file": "blog/check-n400-case-status.html",
+      "title_en": "How to Check Your N-400 Case Status",
+      "title_es": "Cómo Verificar el Estado de Tu Caso N-400",
+      "excerpt_en": "Learn what each status update means and how to track your N-400 application step by step using the USCIS online portal.",
+      "excerpt_es": "Aprende qué significa cada actualización de estado y cómo rastrear tu solicitud N-400."
+    },
+    {
+      "id": "citizenship-through-military-service",
+      "file": "blog/citizenship-through-military-service.html",
+      "title_en": "Citizenship Through Military Service",
+      "title_es": "Ciudadanía a Través del Servicio Militar",
+      "excerpt_en": "Learn how military service can expedite your path to US citizenship. Understand requirements for active duty, veterans, and family members of service members.",
+      "excerpt_es": "Aprende cómo el servicio militar puede acelerar tu camino hacia la ciudadanía."
+    },
+    {
+      "id": "how-to-apply-for-us-citizenship",
+      "file": "blog/how-to-apply-for-us-citizenship.html",
+      "title_en": "How to Apply for US Citizenship (Step-by-Step Guide)",
+      "title_es": "Cómo Solicitar la Ciudadanía de EE.UU. (Guía Paso a Paso)",
+      "excerpt_en": "Complete guide on how to apply for US citizenship through naturalization. Learn the steps, requirements, forms, and timeline for becoming an American citizen.",
+      "excerpt_es": "Guía completa sobre cómo solicitar la ciudadanía estadounidense a través de la naturalización. Aprende los pasos, requisitos, formularios y cronograma."
+    },
+    {
+      "id": "n400-filing-fees-and-fee-waivers",
+      "file": "blog/n400-filing-fees-and-fee-waivers.html",
+      "title_en": "N-400 Filing Fees and Fee Waivers Explained",
+      "title_es": "Tarifas del N-400 y Exenciones de Tarifas Explicadas",
+      "excerpt_en": "Learn about N-400 citizenship application fees, fee waivers, and reduced fee options. Find out if you qualify for free or reduced-cost naturalization.",
+      "excerpt_es": "Aprende sobre las tarifas de solicitud de ciudadanía N-400, exenciones de tarifas y opciones de tarifa reducida."
+    },
+    {
+      "id": "hardest-citizenship-test-questions",
+      "file": "blog/hardest-citizenship-test-questions.html",
+      "title_en": "What Are the Hardest US Citizenship Test Questions?",
+      "title_es": "¿Cuáles Son las Preguntas Más Difíciles del Examen de Ciudadanía de EE.UU.?",
+      "excerpt_en": "Discover which US citizenship test questions are the hardest and learn strategies to master the toughest civics topics.",
+      "excerpt_es": "Descubre cuáles son las preguntas más difíciles del examen de ciudadanía y aprende estrategias para dominar los temas cívicos más difíciles."
+    },
+    {
+      "id": "best-study-guides-citizenship-test",
+      "file": "blog/best-study-guides-citizenship-test.html",
+      "title_en": "Best Study Guides for the US Citizenship Test",
+      "title_es": "Las Mejores Guías de Estudio para el Examen de Ciudadanía de EE.UU.",
+      "excerpt_en": "A complete guide to the best study resources for the US citizenship test, including official USCIS materials, flashcards, and practice tests.",
+      "excerpt_es": "Una guía completa de los mejores recursos de estudio para el examen de ciudadanía, incluyendo materiales oficiales de USCIS y exámenes de práctica."
+    },
+    {
+      "id": "most-missed-citizenship-test-questions",
+      "file": "blog/most-missed-citizenship-test-questions.html",
+      "title_en": "Which Citizenship Test Questions Do People Miss Most?",
+      "title_es": "",
+      "excerpt_en": "Learn which US citizenship test questions trip up the most applicants and how to avoid common mistakes on the civics test.",
+      "excerpt_es": ""
+    },
+    {
       "id": "how-long-does-naturalization-take",
       "file": "blog/how-long-does-naturalization-take.html",
       "title_en": "How Long Does the Naturalization Process Take?",
@@ -176,46 +240,6 @@
       "title_es": "Qué Esperar en Tu Ceremonia de Juramento",
       "excerpt_en": "Everything you need to know about the naturalization oath ceremony. Learn what happens, what to bring, and what to do after you become a US citizen.",
       "excerpt_es": "Todo lo que necesitas saber sobre la ceremonia de juramento de naturalización."
-    },
-    {
-      "id": "naturalization-eligibility-requirements",
-      "file": "blog/naturalization-eligibility-requirements.html",
-      "title_en": "Naturalization Requirements: Are You Eligible?",
-      "title_es": "Requisitos de Naturalización: ¿Es Elegible?",
-      "excerpt_en": "Check if you meet the eligibility requirements for US citizenship. Learn about residence, physical presence, age, and other naturalization requirements.",
-      "excerpt_es": "Verifica si cumples con los requisitos de elegibilidad para la ciudadanía."
-    },
-    {
-      "id": "check-n400-case-status",
-      "file": "blog/check-n400-case-status.html",
-      "title_en": "How to Check Your N-400 Case Status",
-      "title_es": "Cómo Verificar el Estado de Tu Caso N-400",
-      "excerpt_en": "Learn what each status update means and how to track your N-400 application step by step using the USCIS online portal.",
-      "excerpt_es": "Aprende qué significa cada actualización de estado y cómo rastrear tu solicitud N-400."
-    },
-    {
-      "id": "citizenship-through-military-service",
-      "file": "blog/citizenship-through-military-service.html",
-      "title_en": "Citizenship Through Military Service",
-      "title_es": "Ciudadanía a Través del Servicio Militar",
-      "excerpt_en": "Learn how military service can expedite your path to US citizenship. Understand requirements for active duty, veterans, and family members of service members.",
-      "excerpt_es": "Aprende cómo el servicio militar puede acelerar tu camino hacia la ciudadanía."
-    },
-    {
-      "id": "how-to-apply-for-us-citizenship",
-      "file": "blog/how-to-apply-for-us-citizenship.html",
-      "title_en": "How to Apply for US Citizenship (Step-by-Step Guide)",
-      "title_es": "Cómo Solicitar la Ciudadanía de EE.UU. (Guía Paso a Paso)",
-      "excerpt_en": "Complete guide on how to apply for US citizenship through naturalization. Learn the steps, requirements, forms, and timeline for becoming an American citizen.",
-      "excerpt_es": "Guía completa sobre cómo solicitar la ciudadanía estadounidense a través de la naturalización. Aprende los pasos, requisitos, formularios y cronograma."
-    },
-    {
-      "id": "n400-filing-fees-and-fee-waivers",
-      "file": "blog/n400-filing-fees-and-fee-waivers.html",
-      "title_en": "N-400 Filing Fees and Fee Waivers Explained",
-      "title_es": "Tarifas del N-400 y Exenciones de Tarifas Explicadas",
-      "excerpt_en": "Learn about N-400 citizenship application fees, fee waivers, and reduced fee options. Find out if you qualify for free or reduced-cost naturalization.",
-      "excerpt_es": "Aprende sobre las tarifas de solicitud de ciudadanía N-400, exenciones de tarifas y opciones de tarifa reducida."
     }
   ]
 }

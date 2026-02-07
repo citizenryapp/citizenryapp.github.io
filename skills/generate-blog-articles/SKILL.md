@@ -59,7 +59,7 @@ Search the web for factual information using the authoritative sources listed ab
 
 Determine from the research:
 - **Title**: Mirror the search phrasing people use (check the user's provided phrases)
-- **Slug**: Kebab-case filename (e.g., `most-failed-citizenship-test-questions`)
+- **Slug**: Kebab-case filename (e.g., `most-missed-citizenship-test-questions`)
 - **Keywords**: 3-6 comma-separated search phrases
 - **Sections**: 5-8 `## Heading` sections covering the topic
 - **Related Articles**: 2-4 existing articles from `blog-articles.json` that are topically related
