@@ -21,10 +21,12 @@ Articles are authored as **Markdown files** in `blog-drafts/` and compiled to bi
 ## Critical Rules
 
 1. **Never fabricate information.** Every claim must be verifiable via official sources, existing blog articles, or the USCIS civics test question banks. Use web search to research each topic before writing.
-2. **English only in drafts.** Generate English-only Markdown in `blog-drafts/`. Spanish translations are added later as companion `.es.md` files and merged during the build step.
+2. **English only in drafts.** Generate English-only Markdown in `blog-drafts/`. Spanish translations are created as companion `.es.md` files when the user is ready to build (see Build step below).
 3. **Match existing style exactly.** Read `references/blog-style-guide.md` for tone, structure, length, and formatting rules.
-4. **Related Articles is always LAST.** Every article must end with a Related Articles section (2-4 internal links) defined in the front matter `related:` list. Do NOT add a manual Citizenry CTA section — the blog-post layout automatically appends a "Ready to Start Practicing?" CTA box with app store badges.
-5. **Surface 2008 vs 2025 differences.** Always read both official USCIS civics test Q&A documents (listed below). When the topic relates to civics test content, compare how the information differs between the 2008 (100 questions) and 2025 (128 questions) versions and mention relevant differences in the article.
+4. **Related Articles is always LAST.** Every article must end with a Related Articles section (2-4 internal links) defined in the front matter `related:` list. Do NOT add a manual Citizenry CTA section; the blog-post layout automatically appends a "Ready to Start Practicing?" CTA box with app store badges.
+5. **Guide the reader to use Citizenry at the end.** Before the Related Articles section, include a brief closing (1-3 sentences) that naturally guides the reader to use Citizenry to prepare (e.g. practicing with mock interviews, studying with the app, or downloading Citizenry). Keep it helpful and on-topic; the layout’s CTA box will follow, so the article copy should set that up.
+6. **Do not use em-dashes.** Use commas, parentheses, or short sentences instead of em-dashes (—) in article content.
+7. **Surface 2008 vs 2025 differences.** Always read both official USCIS civics test Q&A documents (listed below). When the topic relates to civics test content, compare how the information differs between the 2008 (100 questions) and 2025 (128 questions) versions and mention relevant differences in the article.
 
 ## Authoritative Sources
 
@@ -74,6 +76,7 @@ Write the article Markdown file to `blog-drafts/{slug}.md` with:
 - 5-8 sections with `## Heading` headings
 - Lists where appropriate (`-` for unordered, `1.` for ordered)
 - When topic relates to civics content, mention how questions or rules differ between 2008 and 2025 test versions
+- **Closing that guides to Citizenry:** Before Related Articles, add 1-3 sentences that naturally point the reader to using Citizenry (e.g. mock interviews, study tools, or the app) to prepare. Do not add a full CTA block; the layout adds the CTA box after the article.
 - `related:` front matter list with 2-4 internal links (slug + title for each)
 - Today's date for the `date` field
 
@@ -84,9 +87,15 @@ After generating the Markdown draft(s), tell the user:
 
 The user can open the `.md` file in any text editor, tweak wording, add/remove sections, etc. This is the primary advantage of the Markdown workflow.
 
-### 5. Build HTML from Markdown
+### 5. Build HTML from Markdown (Including Spanish)
 
-When the user is ready, build the final HTML:
+When the user is ready to build:
+
+1. **Create Spanish translation(s)** for each article being built. For each `blog-drafts/{slug}.md`:
+   - Create `blog-drafts/{slug}.es.md` with the same block structure as the English file (same headings, paragraphs, and list items in the same order).
+   - Include only `title_es` in the front matter and the translated body. See `references/blog-style-guide.md` for the Spanish translation file format.
+   - The build script pairs blocks by position and outputs bilingual `data-en`/`data-es` HTML.
+2. **Run the build script** with `--integrate`:
 
 ```bash
 node scripts/build-blog-article.js blog-drafts/{slug}.md --integrate
@@ -94,7 +103,7 @@ node scripts/build-blog-article.js blog-drafts/{slug}.md --integrate
 
 The `--integrate` flag also updates `blog-articles.json`, `sitemap.xml`, and `llms.txt`. Omit `--integrate` when rebuilding existing articles that are already integrated.
 
-For multiple articles:
+For multiple articles, create each `.es.md` first, then:
 
 ```bash
 node scripts/build-blog-article.js blog-drafts/article-1.md blog-drafts/article-2.md --integrate
@@ -107,17 +116,6 @@ After ALL articles are built and integrated, run once:
 ```bash
 node scripts/rotate-blog.js
 ```
-
-## Adding Spanish Translations
-
-After the user has finalized the English Markdown, Spanish translations are added via companion files:
-
-1. Create `blog-drafts/{slug}.es.md` with the same block structure as the English file
-2. The `.es.md` file has `title_es` in front matter and translated paragraphs, headings, and list items in the same order
-3. Rebuild: `node scripts/build-blog-article.js blog-drafts/{slug}.md`
-4. The build script pairs English and Spanish blocks by position and generates bilingual `data-en`/`data-es` HTML
-
-See `references/blog-style-guide.md` for the Spanish translation file format.
 
 ## Bundled Resources
 

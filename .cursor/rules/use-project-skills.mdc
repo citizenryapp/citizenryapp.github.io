@@ -1,0 +1,19 @@
+---
+description: Always check and use project skills in the skills/ directory when a task matches a skill's scope
+alwaysApply: true
+---
+
+# Use Project Skills
+
+When the user's request matches the scope of a skill defined in this project's **`skills/`** directory, you **must**:
+
+1. **Identify the relevant skill**  
+   Each skill lives in `skills/<skill-name>/SKILL.md`. Read the skill's front matter (name, description) to see if the user's task falls under its scope.
+
+2. **Read the skill first**  
+   Before doing the task, read the full skill file at `skills/<skill-name>/SKILL.md` using the Read tool.
+
+3. **Follow the skill's workflow**  
+   Execute the steps and rules defined in the skill (e.g. workflow order, draft-then-build, use of references). Do not skip steps or substitute your own workflow when the skill defines one.
+
+If no skill in `skills/` applies to the request, proceed as usual. When in doubt, list the contents of `skills/` and check each skill's description against the user's ask.

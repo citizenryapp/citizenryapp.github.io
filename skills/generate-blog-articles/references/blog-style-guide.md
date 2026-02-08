@@ -7,6 +7,7 @@
 - Empathetic toward applicants navigating a complex process
 - Confident and reassuring without being patronizing
 - No jargon without explanation; define USCIS terms on first use
+- Do not use em-dashes (—); use commas, parentheses, or short sentences instead
 
 ## Article Structure
 
@@ -14,9 +15,10 @@ Every article follows this exact pattern:
 
 1. **Opening paragraph**: 1-2 sentences summarizing what the article covers and why it matters. Sets expectations.
 2. **5-8 body sections** (`## Heading` + content): Each section covers one subtopic. Use paragraphs for explanations, `- ` or `1. ` for lists. Use `### Subheading` sparingly for subsections within a `## Heading`.
-3. **Related Articles**: Defined in front matter `related:` list (2-4 internal links). The build script renders this as the LAST section in the HTML.
+3. **Closing that guides to Citizenry**: Before Related Articles, include 1-3 sentences that naturally guide the reader to use Citizenry to prepare (e.g. mock interviews, study tools, or the app). Keep it helpful and on-topic; the layout’s CTA box follows, so the article copy should set that up.
+4. **Related Articles**: Defined in front matter `related:` list (2-4 internal links). The build script renders this as the LAST section in the HTML.
 
-The blog-post layout (`_layouts/blog-post.html`) automatically appends a "Ready to Start Practicing?" CTA box with app store download badges after the article content. Do NOT add a manual Citizenry CTA section—the layout handles it.
+The blog-post layout (`_layouts/blog-post.html`) automatically appends a "Ready to Start Practicing?" CTA box with app store download badges after the article content. Do NOT add a manual Citizenry CTA section; the layout handles it. Do include the brief in-article closing that points readers to Citizenry (see item 3 above).
 
 ## Content Length
 
@@ -106,7 +108,7 @@ The test covers three areas:
 
 ## Spanish Translation File Format
 
-After finalizing the English Markdown, Spanish translations are added via a companion file: `blog-drafts/{slug}.es.md`.
+When the user is ready to build, create the Spanish translation as a companion file `blog-drafts/{slug}.es.md` (same slug as the English draft). The build step includes creating this file before running the build script so the output HTML has bilingual `data-en`/`data-es` attributes.
 
 ### Requirements
 
