@@ -6,9 +6,12 @@ date: {{DATE}}
 llms_section: "{{SECTION}}"
 llms_desc: "{{BRIEF_DESCRIPTION}}"
 related:
-  - slug: {{RELATED_SLUG_1}}  title: "{{RELATED_TITLE_1}}"
-  - slug: {{RELATED_SLUG_2}}  title: "{{RELATED_TITLE_2}}"
-  - slug: {{RELATED_SLUG_3}}  title: "{{RELATED_TITLE_3}}"
+  - slug: {{RELATED_SLUG_1}}
+    title: "{{RELATED_TITLE_1}}"
+  - slug: {{RELATED_SLUG_2}}
+    title: "{{RELATED_TITLE_2}}"
+  - slug: {{RELATED_SLUG_3}}
+    title: "{{RELATED_TITLE_3}}"
 ---
 
 {{INTRO_PARAGRAPH}}

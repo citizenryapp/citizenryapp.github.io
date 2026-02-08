@@ -6,10 +6,14 @@ date: 2026-01-16
 llms_section: "Test Preparation"
 llms_desc: "Learn which US citizenship test questions are most commonly answered incorrectly and how to avoid common mistakes"
 related:
-  - slug: hardest-citizenship-test-questions  title: "What Are the Hardest US Citizenship Test Questions?"
-  - slug: how-to-pass-citizenship-test  title: "How to Pass the US Citizenship Test"
-  - slug: 2008-vs-2025-civics-test  title: "2008 vs 2025 Civics Test: What's Different?"
-  - slug: what-if-i-fail-citizenship-test  title: "What Happens If I Fail the Citizenship Test?"
+  - slug: hardest-citizenship-test-questions
+    title: "What Are the Hardest US Citizenship Test Questions?"
+  - slug: how-to-pass-citizenship-test
+    title: "How to Pass the US Citizenship Test"
+  - slug: 2008-vs-2025-civics-test
+    title: "2008 vs 2025 Civics Test: What's Different?"
+  - slug: what-if-i-fail-citizenship-test
+    title: "What Happens If I Fail the Citizenship Test?"
 ---
 
 While over 92% of applicants pass the civics portion of the citizenship test on their first attempt according to USCIS data, certain questions trip up more people than others. Understanding which topics cause the most errors can help you focus your study time where it matters most.

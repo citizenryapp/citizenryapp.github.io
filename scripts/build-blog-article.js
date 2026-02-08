@@ -40,10 +40,16 @@ function parseFrontMatter(content) {
   let listItems = [];
 
   for (const line of rawMeta.split('\n')) {
-    // List continuation (indented "- " lines under a key)
+    // List item: "  - something"
     const listItemMatch = line.match(/^\s+-\s+(.*)/);
     if (listItemMatch && currentKey) {
       listItems.push(listItemMatch[1].trim());
+      continue;
+    }
+
+    // Multi-line list item: "    key: value" (indented, no leading "-") appends to last item
+    if (currentKey && listItems.length > 0 && line.match(/^\s{2,}\S/) && !line.match(/^\s+-\s+/)) {
+      listItems[listItems.length - 1] += ' ' + line.trim();
       continue;
     }
 

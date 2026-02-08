@@ -6,10 +6,14 @@ date: 2026-01-23
 llms_section: "Test Preparation"
 llms_desc: "Discover which US citizenship test questions are the hardest and learn strategies to master them"
 related:
-  - slug: most-missed-citizenship-test-questions  title: "Which Citizenship Test Questions Do People Miss Most?"
-  - slug: 128-civics-questions-2025  title: "128 Civics Questions and Answers: 2025 Test Guide"
-  - slug: 2008-vs-2025-civics-test  title: "2008 vs 2025 Civics Test: What's Different?"
-  - slug: best-study-guides-citizenship-test  title: "Best Study Guides for the US Citizenship Test"
+  - slug: most-missed-citizenship-test-questions
+    title: "Which Citizenship Test Questions Do People Miss Most?"
+  - slug: 128-civics-questions-2025
+    title: "128 Civics Questions and Answers: 2025 Test Guide"
+  - slug: 2008-vs-2025-civics-test
+    title: "2008 vs 2025 Civics Test: What's Different?"
+  - slug: best-study-guides-citizenship-test
+    title: "Best Study Guides for the US Citizenship Test"
 ---
 
 Some US citizenship test questions are straightforward, like naming the current President. Others require memorizing specific facts that are easy to mix up. Here are the topic areas that many applicants find most challenging on the civics test, with the official USCIS answers and key differences between the 2008 and 2025 test versions. For either test, always check uscis.gov/citizenship/testupdates before your interview for the latest answers

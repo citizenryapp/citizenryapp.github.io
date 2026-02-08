@@ -6,10 +6,14 @@ date: 2026-01-19
 llms_section: "Test Preparation"
 llms_desc: "A complete guide to the best study resources for the US citizenship test including official USCIS materials"
 related:
-  - slug: how-to-pass-citizenship-test  title: "How to Pass the US Citizenship Test"
-  - slug: 128-civics-questions-2025  title: "128 Civics Questions and Answers: 2025 Test Guide"
-  - slug: 2008-vs-2025-civics-test  title: "2008 vs 2025 Civics Test: What's Different?"
-  - slug: citizenship-test-exemptions  title: "Citizenship Test Exemptions: Age and Disability Accommodations"
+  - slug: how-to-pass-citizenship-test
+    title: "How to Pass the US Citizenship Test"
+  - slug: 128-civics-questions-2025
+    title: "128 Civics Questions and Answers: 2025 Test Guide"
+  - slug: 2008-vs-2025-civics-test
+    title: "2008 vs 2025 Civics Test: What's Different?"
+  - slug: citizenship-test-exemptions
+    title: "Citizenship Test Exemptions: Age and Disability Accommodations"
 ---
 
 Choosing the right study materials can make the difference between feeling nervous and feeling confident on test day. Here are the best study guides and resources available for the US citizenship test, starting with the official USCIS materials.

@@ -169,16 +169,22 @@ Read `blog-articles.json` to identify articles that share topics with the new ar
 
 ### Format in Markdown Front Matter
 
+Use multi-line YAML so titles that contain colons (e.g. "2008 vs 2025 Civics Test: What's Different?") parse correctly:
+
 ```yaml
 related:
-  - slug: how-to-pass-citizenship-test  title: "How to Pass the US Citizenship Test"
-  - slug: what-if-i-fail-citizenship-test  title: "What Happens If I Fail the Citizenship Test?"
-  - slug: english-reading-writing-test-tips  title: "English Reading and Writing Test Tips"
+  - slug: how-to-pass-citizenship-test
+    title: "How to Pass the US Citizenship Test"
+  - slug: what-if-i-fail-citizenship-test
+    title: "What Happens If I Fail the Citizenship Test?"
+  - slug: english-reading-writing-test-tips
+    title: "English Reading and Writing Test Tips"
 ```
 
 ### Rules
 
 - Include 2-4 links (3 is ideal)
+- Put each entry on two lines: `slug:` then `title:` (indented). This avoids YAML errors when titles contain colons.
 - `slug` is the article filename without `.html` extension
 - `title` is the article's full English title in double quotes
 - Choose articles that are topically related, not random
