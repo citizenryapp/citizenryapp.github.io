@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.citizenryapp.citizenryandroid",
+      "sha256_cert_fingerprints": [
+        "66:33:3B:8C:DC:BD:F4:3F:22:EB:D0:5A:92:80:BE:2A:22:83:52:5E:91:9E:AC:5B:3C:CA:EC:9E:7F:A3:D2:B5"
+      ]
+    }
+  }
+]
