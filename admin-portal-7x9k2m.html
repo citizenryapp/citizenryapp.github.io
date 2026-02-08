@@ -1,0 +1,603 @@
+---
+layout: null
+sitemap: false
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Citizenry Admin Portal</title>
+    <meta name="robots" content="noindex, nofollow">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f5f5f7;
+            color: #1d1d1f;
+            min-height: 100vh;
+        }
+
+        /* Login */
+        .login-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .login-box {
+            background: #fff;
+            border-radius: 16px;
+            padding: 40px;
+            max-width: 400px;
+            width: 100%;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+        }
+        .login-box h1 { font-size: 24px; margin-bottom: 8px; }
+        .login-box p { color: #6e6e73; margin-bottom: 24px; font-size: 14px; }
+        .form-group { margin-bottom: 16px; }
+        .form-group label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; color: #1d1d1f; }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 10px 14px;
+            border: 1px solid #d2d2d7;
+            border-radius: 10px;
+            font-size: 15px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .form-group input:focus, .form-group select:focus { border-color: #0071e3; }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #0071e3;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .btn:hover { background: #0077ed; }
+        .btn-full { width: 100%; }
+        .btn-danger { background: #ff3b30; }
+        .btn-danger:hover { background: #ff453a; }
+        .btn-secondary { background: #e8e8ed; color: #1d1d1f; }
+        .btn-secondary:hover { background: #d2d2d7; }
+        .btn-small { padding: 6px 14px; font-size: 13px; }
+        .btn-success { background: #34c759; }
+        .btn-success:hover { background: #30d158; }
+
+        /* Admin Layout */
+        .admin-container { display: none; }
+        .admin-header {
+            background: #fff;
+            padding: 16px 32px;
+            border-bottom: 1px solid #d2d2d7;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .admin-header h1 { font-size: 20px; }
+        .admin-body { max-width: 1000px; margin: 32px auto; padding: 0 20px; }
+
+        /* Cards */
+        .card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        }
+        .card h2 { font-size: 18px; margin-bottom: 16px; }
+
+        /* Table */
+        .table-wrapper { overflow-x: auto; }
+        table { width: 100%; border-collapse: collapse; font-size: 14px; }
+        th { text-align: left; padding: 10px 12px; font-weight: 600; color: #6e6e73; border-bottom: 2px solid #e8e8ed; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+        td { padding: 12px; border-bottom: 1px solid #f0f0f3; }
+        tr:hover td { background: #f5f5f7; }
+
+        /* Badge */
+        .badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        .badge-active { background: #d1f2d9; color: #1b7a2e; }
+        .badge-inactive { background: #fce4e4; color: #c93030; }
+        .badge-code {
+            font-family: 'SF Mono', Menlo, monospace;
+            background: #f0f0f3;
+            color: #1d1d1f;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 13px;
+            letter-spacing: 1px;
+        }
+
+        /* Stats row */
+        .stats-row { display: flex; gap: 16px; margin-bottom: 24px; flex-wrap: wrap; }
+        .stat-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            flex: 1;
+            min-width: 150px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        }
+        .stat-card .label { font-size: 12px; color: #6e6e73; text-transform: uppercase; letter-spacing: 0.5px; }
+        .stat-card .value { font-size: 28px; font-weight: 700; margin-top: 4px; }
+
+        /* Modal */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.4);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-overlay.active { display: flex; }
+        .modal {
+            background: #fff;
+            border-radius: 16px;
+            padding: 32px;
+            max-width: 500px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        .modal h2 { margin-bottom: 20px; }
+        .modal-actions { display: flex; gap: 12px; margin-top: 24px; justify-content: flex-end; }
+
+        /* Redemption list */
+        .redemption-item {
+            padding: 8px 0;
+            border-bottom: 1px solid #f0f0f3;
+            font-size: 13px;
+            color: #6e6e73;
+        }
+        .redemption-item:last-child { border-bottom: none; }
+        .redemption-id { font-family: 'SF Mono', Menlo, monospace; font-size: 11px; }
+
+        /* Error / info */
+        .error-msg { color: #ff3b30; font-size: 13px; margin-top: 8px; }
+        .info-msg { color: #0071e3; font-size: 13px; margin-top: 8px; }
+        .link-display {
+            background: #f0f0f3;
+            border-radius: 8px;
+            padding: 12px;
+            font-family: 'SF Mono', Menlo, monospace;
+            font-size: 13px;
+            word-break: break-all;
+            margin-top: 8px;
+            user-select: all;
+        }
+
+        .loading { text-align: center; padding: 40px; color: #6e6e73; }
+    </style>
+</head>
+<body>
+
+<!-- Login Screen -->
+<div class="login-container" id="loginScreen">
+    <div class="login-box">
+        <h1>Citizenry Admin</h1>
+        <p>Organization management portal</p>
+        <div class="form-group">
+            <label>Email</label>
+            <input type="email" id="loginEmail" placeholder="admin@citizenryapp.com">
+        </div>
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" id="loginPassword" placeholder="Password" onkeyup="if(event.key==='Enter')login()">
+        </div>
+        <div class="error-msg" id="loginError"></div>
+        <button class="btn btn-full" onclick="login()" style="margin-top: 16px;">Sign In</button>
+    </div>
+</div>
+
+<!-- Admin Screen -->
+<div class="admin-container" id="adminScreen">
+    <div class="admin-header">
+        <h1>Citizenry Admin</h1>
+        <button class="btn btn-secondary btn-small" onclick="logout()">Sign Out</button>
+    </div>
+
+    <div class="admin-body">
+        <!-- Stats -->
+        <div class="stats-row">
+            <div class="stat-card">
+                <div class="label">Organizations</div>
+                <div class="value" id="statOrgs">-</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">Total Seats</div>
+                <div class="value" id="statSeats">-</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">Seats Used</div>
+                <div class="value" id="statUsed">-</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">Active Orgs</div>
+                <div class="value" id="statActive">-</div>
+            </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="card">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">
+                <h2 style="margin-bottom: 0;">Organizations</h2>
+                <button class="btn btn-small" onclick="openCreateModal()">+ New Organization</button>
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Organization</th>
+                            <th>Code</th>
+                            <th>Seats</th>
+                            <th>Status</th>
+                            <th>Expires</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="orgsTableBody">
+                        <tr><td colspan="6" class="loading">Loading...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Create Organization Modal -->
+<div class="modal-overlay" id="createModal">
+    <div class="modal">
+        <h2>New Organization</h2>
+        <div class="form-group">
+            <label>Organization Name</label>
+            <input type="text" id="orgName" placeholder="NYC Citizenship Prep School">
+        </div>
+        <div class="form-group">
+            <label>Contact Email</label>
+            <input type="email" id="orgEmail" placeholder="teacher@school.org">
+        </div>
+        <div class="form-group">
+            <label>Website URL</label>
+            <input type="url" id="orgUrl" placeholder="https://www.school.org">
+        </div>
+        <div class="form-group">
+            <label>Redemption Code</label>
+            <input type="text" id="orgCode" placeholder="Leave blank to auto-generate" style="text-transform: uppercase;">
+            <span style="font-size: 12px; color: #6e6e73;">Letters and numbers only. Leave blank for a random code.</span>
+        </div>
+        <div class="form-group">
+            <label>Total Seats</label>
+            <input type="number" id="orgSeats" placeholder="12" min="1">
+        </div>
+        <div class="form-group">
+            <label>Price Per Seat ($)</label>
+            <input type="number" id="orgPrice" placeholder="10.00" min="0" step="0.01">
+        </div>
+        <div class="form-group">
+            <label>Duration (days)</label>
+            <input type="number" id="orgDuration" placeholder="365" min="1" value="365">
+        </div>
+        <div class="form-group">
+            <label>Expiration Date</label>
+            <input type="date" id="orgExpires">
+        </div>
+        <div class="error-msg" id="createError"></div>
+        <div class="modal-actions">
+            <button class="btn btn-secondary" onclick="closeCreateModal()">Cancel</button>
+            <button class="btn" onclick="createOrg()">Create Organization</button>
+        </div>
+    </div>
+</div>
+
+<!-- View Redemptions Modal -->
+<div class="modal-overlay" id="redemptionsModal">
+    <div class="modal">
+        <h2 id="redemptionsTitle">Redemptions</h2>
+        <div id="redemptionsList">
+            <div class="loading">Loading...</div>
+        </div>
+        <div class="modal-actions">
+            <button class="btn btn-secondary" onclick="closeRedemptionsModal()">Close</button>
+        </div>
+    </div>
+</div>
+
+<!-- Link Display Modal -->
+<div class="modal-overlay" id="linkModal">
+    <div class="modal">
+        <h2>Redemption Links</h2>
+        <p style="font-size: 14px; color: #6e6e73; margin-bottom: 16px;">Share these links with the organization. Students tap the link on their phone to activate Pro access.</p>
+        <div class="form-group">
+            <label>Universal Link (iOS & Android)</label>
+            <div class="link-display" id="linkUrl"></div>
+        </div>
+        <div class="form-group">
+            <label>Code</label>
+            <div class="link-display" id="linkCode"></div>
+        </div>
+        <div class="modal-actions">
+            <button class="btn btn-secondary" onclick="closeLinkModal()">Close</button>
+            <button class="btn" onclick="copyLink()">Copy Link</button>
+        </div>
+    </div>
+</div>
+
+<!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore-compat.js"></script>
+
+<script>
+    // Firebase config - production project
+    firebase.initializeApp({
+        apiKey: "AIzaSyBVMOjIRsSzZ_7nS-m02qGJhu9Otba5dQE",
+        authDomain: "citizenry-ee3b9.firebaseapp.com",
+        projectId: "citizenry-ee3b9",
+        storageBucket: "citizenry-ee3b9.appspot.com",
+        messagingSenderId: "659704835799",
+        appId: "1:659704835799:web:placeholder"
+    });
+
+    var auth = firebase.auth();
+    var db = firebase.firestore();
+    var orgsData = [];
+
+    // Auth state
+    auth.onAuthStateChanged(function(user) {
+        if (user) {
+            document.getElementById('loginScreen').style.display = 'none';
+            document.getElementById('adminScreen').style.display = 'block';
+            loadOrganizations();
+        } else {
+            document.getElementById('loginScreen').style.display = 'flex';
+            document.getElementById('adminScreen').style.display = 'none';
+        }
+    });
+
+    function login() {
+        var email = document.getElementById('loginEmail').value;
+        var password = document.getElementById('loginPassword').value;
+        document.getElementById('loginError').textContent = '';
+
+        auth.signInWithEmailAndPassword(email, password)
+            .catch(function(error) {
+                document.getElementById('loginError').textContent = error.message;
+            });
+    }
+
+    function logout() {
+        auth.signOut();
+    }
+
+    // Load organizations
+    function loadOrganizations() {
+        db.collection('organizations').orderBy('createdAt', 'desc').get()
+            .then(function(snapshot) {
+                orgsData = [];
+                var totalSeats = 0;
+                var totalUsed = 0;
+                var activeCount = 0;
+
+                snapshot.forEach(function(doc) {
+                    var data = doc.data();
+                    data.id = doc.id;
+                    orgsData.push(data);
+                    totalSeats += data.totalSeats || 0;
+                    totalUsed += data.seatsUsed || 0;
+                    if (data.active) activeCount++;
+                });
+
+                document.getElementById('statOrgs').textContent = orgsData.length;
+                document.getElementById('statSeats').textContent = totalSeats;
+                document.getElementById('statUsed').textContent = totalUsed;
+                document.getElementById('statActive').textContent = activeCount;
+
+                renderOrgsTable();
+            });
+    }
+
+    function renderOrgsTable() {
+        var tbody = document.getElementById('orgsTableBody');
+
+        if (orgsData.length === 0) {
+            tbody.innerHTML = '<tr><td colspan="6" class="loading">No organizations yet. Click "+ New Organization" to create one.</td></tr>';
+            return;
+        }
+
+        tbody.innerHTML = orgsData.map(function(org) {
+            var expiresDate = org.expiresAt ? new Date(org.expiresAt).toLocaleDateString() : 'N/A';
+            var isExpired = org.expiresAt && org.expiresAt < Date.now();
+            var statusClass = (org.active && !isExpired) ? 'badge-active' : 'badge-inactive';
+            var statusText = isExpired ? 'Expired' : (org.active ? 'Active' : 'Inactive');
+
+            var urlHtml = org.websiteUrl ? '<br><a href="' + escapeHtml(org.websiteUrl) + '" target="_blank" style="font-size:11px;color:#0071e3;">' + escapeHtml(org.websiteUrl) + '</a>' : '';
+
+            return '<tr>' +
+                '<td><strong>' + escapeHtml(org.name) + '</strong><br><span style="font-size:12px;color:#6e6e73;">' + escapeHtml(org.contactEmail || '') + '</span>' + urlHtml + '</td>' +
+                '<td><span class="badge-code">' + escapeHtml(org.code) + '</span></td>' +
+                '<td>' + (org.seatsUsed || 0) + ' / ' + (org.totalSeats || 0) + '</td>' +
+                '<td><span class="badge ' + statusClass + '">' + statusText + '</span></td>' +
+                '<td>' + expiresDate + '</td>' +
+                '<td>' +
+                    '<button class="btn btn-small btn-secondary" onclick="showLink(\'' + escapeHtml(org.code) + '\')" style="margin-right:4px;">Link</button>' +
+                    '<button class="btn btn-small btn-secondary" onclick="showRedemptions(\'' + org.id + '\', \'' + escapeHtml(org.name) + '\')" style="margin-right:4px;">History</button>' +
+                    (org.active
+                        ? '<button class="btn btn-small btn-danger" onclick="toggleOrg(\'' + org.id + '\', false)">Deactivate</button>'
+                        : '<button class="btn btn-small btn-success" onclick="toggleOrg(\'' + org.id + '\', true)">Activate</button>') +
+                '</td>' +
+            '</tr>';
+        }).join('');
+    }
+
+    // Create organization
+    function openCreateModal() {
+        document.getElementById('createModal').classList.add('active');
+        document.getElementById('createError').textContent = '';
+        // Default expiration to 1 year from now
+        var d = new Date();
+        d.setFullYear(d.getFullYear() + 1);
+        document.getElementById('orgExpires').value = d.toISOString().split('T')[0];
+    }
+
+    function closeCreateModal() {
+        document.getElementById('createModal').classList.remove('active');
+    }
+
+    function generateCode() {
+        var chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+        var code = '';
+        for (var i = 0; i < 8; i++) {
+            code += chars.charAt(Math.floor(Math.random() * chars.length));
+        }
+        return code;
+    }
+
+    function createOrg() {
+        var name = document.getElementById('orgName').value.trim();
+        var email = document.getElementById('orgEmail').value.trim();
+        var orgUrl = document.getElementById('orgUrl').value.trim();
+        var customCode = document.getElementById('orgCode').value.trim().toUpperCase().replace(/[^A-Z0-9]/g, '');
+        var seats = parseInt(document.getElementById('orgSeats').value);
+        var price = parseFloat(document.getElementById('orgPrice').value);
+        var duration = parseInt(document.getElementById('orgDuration').value);
+        var expiresStr = document.getElementById('orgExpires').value;
+
+        if (!name || !seats || seats < 1) {
+            document.getElementById('createError').textContent = 'Please fill in organization name and seats.';
+            return;
+        }
+
+        var code = customCode || generateCode();
+
+        // Check for duplicate code
+        db.collection('organizations').where('code', '==', code).limit(1).get()
+            .then(function(snapshot) {
+                if (!snapshot.empty) {
+                    document.getElementById('createError').textContent = 'Code "' + code + '" is already in use. Please choose a different code.';
+                    return;
+                }
+
+                var expiresAt = expiresStr ? new Date(expiresStr).getTime() : (Date.now() + 365 * 24 * 60 * 60 * 1000);
+
+                return db.collection('organizations').add({
+                    name: name,
+                    contactEmail: email,
+                    websiteUrl: orgUrl,
+                    code: code,
+                    totalSeats: seats,
+                    seatsUsed: 0,
+                    pricePerSeat: price || 10.00,
+                    durationDays: duration || 365,
+                    active: true,
+                    createdAt: Date.now(),
+                    expiresAt: expiresAt
+                });
+            }).then(function(result) {
+                if (!result) return; // duplicate code case, already showed error
+                closeCreateModal();
+                // Clear form
+                document.getElementById('orgName').value = '';
+                document.getElementById('orgEmail').value = '';
+                document.getElementById('orgUrl').value = '';
+                document.getElementById('orgCode').value = '';
+                document.getElementById('orgSeats').value = '';
+                document.getElementById('orgPrice').value = '';
+                document.getElementById('orgDuration').value = '365';
+                loadOrganizations();
+                // Show the link immediately
+                showLink(code);
+            }).catch(function(error) {
+                document.getElementById('createError').textContent = error.message;
+            });
+    }
+
+    // Toggle active status
+    function toggleOrg(orgId, active) {
+        db.collection('organizations').doc(orgId).update({ active: active })
+            .then(function() {
+                loadOrganizations();
+            });
+    }
+
+    // Show redemption link
+    function showLink(code) {
+        var url = 'https://citizenryapp.com/redeem/' + code;
+        document.getElementById('linkUrl').textContent = url;
+        document.getElementById('linkCode').textContent = code;
+        document.getElementById('linkModal').classList.add('active');
+    }
+
+    function closeLinkModal() {
+        document.getElementById('linkModal').classList.remove('active');
+    }
+
+    function copyLink() {
+        var url = document.getElementById('linkUrl').textContent;
+        navigator.clipboard.writeText(url).then(function() {
+            alert('Link copied to clipboard!');
+        });
+    }
+
+    // Show redemptions
+    function showRedemptions(orgId, orgName) {
+        document.getElementById('redemptionsTitle').textContent = 'Redemptions - ' + orgName;
+        document.getElementById('redemptionsList').innerHTML = '<div class="loading">Loading...</div>';
+        document.getElementById('redemptionsModal').classList.add('active');
+
+        db.collection('organizations').doc(orgId).collection('redemptions')
+            .orderBy('redeemedAt', 'desc')
+            .get()
+            .then(function(snapshot) {
+                if (snapshot.empty) {
+                    document.getElementById('redemptionsList').innerHTML = '<p style="color:#6e6e73;font-size:14px;">No redemptions yet.</p>';
+                    return;
+                }
+
+                var html = '';
+                var count = 0;
+                snapshot.forEach(function(doc) {
+                    count++;
+                    var r = doc.data();
+                    var date = new Date(r.redeemedAt).toLocaleString();
+                    var expires = r.entitlementExpiresAt ? new Date(r.entitlementExpiresAt).toLocaleDateString() : 'N/A';
+                    html += '<div class="redemption-item">' +
+                        '<strong>#' + count + '</strong> &mdash; ' + date +
+                        '<br><span class="redemption-id">User: ' + escapeHtml(r.rcAppUserID || 'unknown') + '</span>' +
+                        '<br>Platform: ' + escapeHtml(r.platform || 'unknown') + ' &mdash; Expires: ' + expires +
+                    '</div>';
+                });
+
+                document.getElementById('redemptionsList').innerHTML = html;
+            });
+    }
+
+    function closeRedemptionsModal() {
+        document.getElementById('redemptionsModal').classList.remove('active');
+    }
+
+    // Utility
+    function escapeHtml(text) {
+        var div = document.createElement('div');
+        div.appendChild(document.createTextNode(text));
+        return div.innerHTML;
+    }
+</script>
+</body>
+</html>
