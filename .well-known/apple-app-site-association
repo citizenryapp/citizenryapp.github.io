@@ -3,7 +3,7 @@
     "apps": [],
     "details": [
       {
-        "appID": "9NQ9XUQP33.com.everyday.Citizenry",
+        "appID": "9NQ9XUQP33.com.everyday.citizenry",
         "paths": [
           "/events/*",
           "/in-app-events/*",
