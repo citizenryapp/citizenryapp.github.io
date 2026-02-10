@@ -1,6 +1,6 @@
 /* ============================================
    Citizenry Website Styles
-   Clean, minimal design
+   Professional typography and refined layout
    ============================================ */
 
 /* Import Inter font - MUST be at top */
@@ -38,7 +38,7 @@
     
     /* Typography */
     --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    --transition: all 0.3s ease;
+    --transition: all 0.25s ease;
 }
 
 html {
@@ -491,6 +491,7 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 1rem;
     font-weight: 500;
     margin: 0;
+    letter-spacing: 0.02em;
 }
 
 /* ============================================
@@ -525,7 +526,7 @@ h1, h2, h3, h4, h5, h6 {
     gap: 60px;
     align-items: center;
     background: var(--bg-section);
-    border-radius: 24px;
+    border-radius: 16px;
     padding: 48px;
     margin-bottom: 60px;
     border: 1px solid var(--border-color);
@@ -540,11 +541,13 @@ h1, h2, h3, h4, h5, h6 {
     display: inline-block;
     background: var(--accent-color);
     color: white;
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-size: 0.875rem;
-    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
     margin-bottom: 16px;
+    text-transform: uppercase;
 }
 
 .feature-highlight-content h3 {
@@ -580,11 +583,12 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
 }
 
-/* Callout Box (Reduce Nervousness) */
+/* Callout Box (Reduce Nervousness) - uses brand accent, not generic purple */
 .callout-box {
-    background: rgba(102, 126, 234, 0.08);
-    border: 2px solid rgba(102, 126, 234, 0.2);
-    border-radius: 16px;
+    background: rgba(17, 50, 99, 0.06);
+    border: 1px solid var(--border-color);
+    border-left: 4px solid var(--accent-color);
+    border-radius: 0 12px 12px 0;
     padding: 24px;
     margin-top: 24px;
 }
@@ -613,14 +617,14 @@ h1, h2, h3, h4, h5, h6 {
     content: '✓';
     position: absolute;
     left: 0;
-    color: #667eea;
+    color: var(--accent-color);
     font-weight: 700;
 }
 
 .callout-note {
     font-size: 0.95rem;
     font-weight: 500;
-    color: #667eea;
+    color: var(--text-secondary);
     margin: 0;
     line-height: 1.6;
 }
@@ -698,15 +702,14 @@ h1, h2, h3, h4, h5, h6 {
 .feature-card {
     background: var(--bg-white);
     padding: 32px;
-    border-radius: 16px;
+    border-radius: 12px;
     border: 1px solid var(--border-color);
     transition: var(--transition);
 }
 
 .feature-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-md);
-    border-color: transparent;
+    border-color: var(--accent-color);
+    box-shadow: var(--shadow-sm);
 }
 
 .feature-icon {
@@ -743,18 +746,18 @@ h1, h2, h3, h4, h5, h6 {
     display: inline-block;
     background: var(--text-primary);
     color: white;
-    padding: 18px 48px;
-    border-radius: 12px;
+    padding: 16px 40px;
+    border-radius: 8px;
     text-decoration: none;
     font-weight: 600;
-    font-size: 1.1rem;
+    font-size: 1rem;
+    letter-spacing: 0.02em;
     transition: var(--transition);
 }
 
 .btn-primary:hover {
-    background: #2a2a3e;
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
+    background: #113263;
+    box-shadow: var(--shadow-sm);
 }
 
 /* ============================================
@@ -780,14 +783,14 @@ h1, h2, h3, h4, h5, h6 {
 .testimonial-card {
     background: var(--bg-white);
     padding: 32px;
-    border-radius: 16px;
+    border-radius: 12px;
     transition: var(--transition);
     border: 1px solid var(--border-color);
 }
 
 .testimonial-card:hover {
     box-shadow: var(--shadow-sm);
-    transform: translateY(-4px);
+    border-color: var(--border-color);
 }
 
 .testimonial-header {
@@ -863,12 +866,13 @@ h1, h2, h3, h4, h5, h6 {
 .info-card {
     background: var(--bg-section);
     padding: 32px;
-    border-radius: 16px;
+    border-radius: 12px;
     transition: var(--transition);
     border: 1px solid var(--border-color);
 }
 
 .info-card:hover {
+    border-color: var(--border-color);
     box-shadow: var(--shadow-sm);
 }
 
@@ -913,7 +917,7 @@ h1, h2, h3, h4, h5, h6 {
 .requirement-card {
     background: var(--bg-white);
     padding: 32px;
-    border-radius: 16px;
+    border-radius: 12px;
     border: 1px solid var(--border-color);
 }
 

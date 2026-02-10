@@ -1,6 +1,6 @@
 /* ============================================
    Citizenry Blog Styles
-   Clean, minimal design
+   Uses CSS variables from style.css
    ============================================ */
 
 /* Blog Header */
@@ -46,10 +46,12 @@
     display: inline-block;
     background: var(--accent-color);
     color: white;
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-size: 0.85rem;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 0.8125rem;
     font-weight: 600;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
     margin-bottom: 16px;
 }
 
@@ -103,15 +105,15 @@
 
 .blog-post-card {
     background: var(--bg-section);
-    border-radius: 16px;
+    border-radius: 12px;
     overflow: hidden;
     transition: var(--transition);
     border: 1px solid var(--border-color);
 }
 
 .blog-post-card:hover {
-    box-shadow: var(--shadow-md);
-    transform: translateY(-4px);
+    box-shadow: var(--shadow-sm);
+    border-color: var(--accent-color);
     background: var(--bg-white);
 }
 
@@ -479,16 +481,18 @@
     margin-top: -20px;
 }
 
+/* Our Commitment: 100% Ad-Free - brand colors, not generic green */
 .privacy-highlight {
-    background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
-    border: 2px solid #22c55e;
-    border-radius: 12px;
+    background: rgba(17, 50, 99, 0.06);
+    border: 1px solid var(--border-color);
+    border-left: 4px solid var(--accent-color);
+    border-radius: 0 12px 12px 0;
     padding: 24px;
     margin-bottom: 32px;
 }
 
 .privacy-highlight h3 {
-    color: #15803d;
+    color: var(--text-primary);
     margin-top: 0;
     margin-bottom: 12px;
     font-size: 1.2rem;
@@ -496,7 +500,7 @@
 
 .privacy-highlight p {
     margin-bottom: 0;
-    color: #166534;
+    color: var(--text-secondary);
 }
 
 .legal-content hr {
@@ -626,8 +630,8 @@
 }
 
 .compare-card:hover {
-    box-shadow: var(--shadow-md);
-    transform: translateY(-4px);
+    box-shadow: var(--shadow-sm);
+    border-color: var(--accent-color);
 }
 
 .compare-card-header {
@@ -647,10 +651,11 @@
 .compare-badge {
     background: var(--accent-color);
     color: white;
-    padding: 6px 12px;
-    border-radius: 20px;
+    padding: 5px 12px;
+    border-radius: 6px;
     font-size: 0.75rem;
     font-weight: 600;
+    letter-spacing: 0.02em;
     white-space: nowrap;
 }
 
@@ -725,23 +730,25 @@
 }
 
 /* Verdict Box */
+/* Verdict / conclusion box - brand colors */
 .verdict-box {
-    background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
-    border: 2px solid #22c55e;
-    border-radius: 16px;
+    background: rgba(17, 50, 99, 0.06);
+    border: 1px solid var(--border-color);
+    border-left: 4px solid var(--accent-color);
+    border-radius: 0 16px 16px 0;
     padding: 28px 32px;
     margin-bottom: 40px;
 }
 
 .verdict-box h3 {
-    color: #15803d;
+    color: var(--text-primary);
     font-size: 1.2rem;
     margin-top: 0;
     margin-bottom: 12px;
 }
 
 .verdict-box p {
-    color: #166534;
+    color: var(--text-secondary);
     font-size: 1.05rem;
     line-height: 1.7;
     margin: 0;
@@ -871,24 +878,88 @@
     }
 }
 
-/* Recommendation Boxes */
+/* Who Should Choose Each App? - Citizenry primary, competitor secondary (subtle) */
 .recommendation-boxes {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 1fr;
     gap: 24px;
     margin: 24px 0 40px;
+    align-items: start;
 }
 
 .recommendation-box {
     background: var(--bg-section);
-    border-radius: 16px;
-    padding: 28px;
+    border-radius: 12px;
+    padding: 24px;
     border: 1px solid var(--border-color);
+    position: relative;
 }
 
+/* Competitor box: slightly softer so Citizenry still leads */
+.recommendation-box:not(.recommended) {
+    background: var(--bg-section);
+}
+
+.recommendation-box:not(.recommended) h4 {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.recommendation-box:not(.recommended) li {
+    color: var(--text-secondary);
+}
+
+/* Citizenry box: recommended with subtle emphasis */
 .recommendation-box.recommended {
-    background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
-    border: 2px solid #22c55e;
+    background: rgba(17, 50, 99, 0.05);
+    border: 1px solid var(--border-color);
+    border-left: 4px solid var(--accent-color);
+    padding: 24px;
+}
+
+.recommendation-box.recommended::before {
+    content: 'Recommended';
+    display: inline-block;
+    background: rgba(232, 90, 79, 0.12);
+    color: var(--accent-dark);
+    padding: 3px 10px;
+    border-radius: 6px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.recommendation-box.recommended h4 {
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-weight: 700;
+}
+
+.recommendation-box.recommended ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.recommendation-box.recommended li {
+    color: var(--text-secondary);
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.recommendation-box.recommended li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+    font-weight: 700;
 }
 
 .recommendation-box h4 {
@@ -896,10 +967,6 @@
     margin-top: 0;
     margin-bottom: 16px;
     color: var(--text-primary);
-}
-
-.recommendation-box.recommended h4 {
-    color: #15803d;
 }
 
 .recommendation-box ul {
@@ -923,15 +990,6 @@
     left: 0;
     color: var(--text-muted);
     font-weight: 700;
-}
-
-.recommendation-box.recommended li::before {
-    content: '✓';
-    color: #22c55e;
-}
-
-.recommendation-box.recommended li {
-    color: #166534;
 }
 
 /* Responsive Compare Styles */
