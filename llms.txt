@@ -20,6 +20,7 @@ The US citizenship test (naturalization test) consists of three parts:
 - [Compare](https://citizenryapp.com/compare/): Compare Citizenry to other citizenship test apps
 - [Privacy Policy](https://citizenryapp.com/privacy-policy.html): Privacy practices for the Citizenry app
 - [Terms of Service](https://citizenryapp.com/terms-of-service.html): Terms and conditions for using Citizenry
+- [Support](https://citizenryapp.com/support.html): Customer support and help for the Citizenry app
 
 ## App Comparisons
 

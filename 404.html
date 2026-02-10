@@ -7,76 +7,134 @@ permalink: /404.html
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Citizenry</title>
+    <title>Page Not Found – Citizenry</title>
     <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png">
+    <link rel="stylesheet" href="/css/style.css">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-            color: #fff;
-            min-height: 100vh;
+        .page-404 { min-height: 100vh; display: flex; flex-direction: column; background: var(--bg-white); }
+        .page-404 .header-bar {
+            border-bottom: 1px solid var(--border-color);
+            padding: 12px 0;
+        }
+        .page-404 .header-bar .container { display: flex; justify-content: space-between; align-items: center; }
+        .page-404 .brand-text {
+            font-family: var(--font-primary);
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        .page-404 .brand-text:hover { color: #113263; }
+        .page-404 main {
+            flex: 1;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 20px;
+            padding: 48px 24px;
         }
-        .container { text-align: center; max-width: 420px; }
-        .logo {
-            width: 80px; height: 80px; margin: 0 auto 24px;
-            background: #fff; border-radius: 18px;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 40px;
+        .page-404 .content-wrap {
+            text-align: center;
+            max-width: 480px;
         }
-        h1 { font-size: 24px; margin-bottom: 12px; font-weight: 600; }
-        p { font-size: 16px; color: #b0b8c8; margin-bottom: 24px; line-height: 1.5; }
-        .store-buttons { display: flex; flex-direction: column; gap: 12px; align-items: center; }
-        .store-btn {
-            display: inline-block; padding: 14px 28px; background: #fff;
-            color: #1a1a2e; text-decoration: none; border-radius: 12px;
-            font-weight: 600; font-size: 16px; width: 260px;
-            transition: transform 0.15s, box-shadow 0.15s;
+        .page-404 .code-404 {
+            font-size: 4rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            line-height: 1;
+            margin-bottom: 8px;
+            letter-spacing: -0.02em;
         }
-        .store-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
-        .help-text { margin-top: 32px; font-size: 13px; color: #7a8598; }
-        .spinner {
-            width: 32px; height: 32px;
-            border: 3px solid rgba(255,255,255,0.2); border-top-color: #fff;
-            border-radius: 50%; animation: spin 0.8s linear infinite;
-            margin: 0 auto 24px;
+        .page-404 h1 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 12px;
         }
-        @keyframes spin { to { transform: rotate(360deg); } }
+        .page-404 .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 32px;
+        }
+        .page-404 .actions { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+        .page-404 .btn-home {
+            display: inline-block;
+            background: var(--text-primary);
+            color: white;
+            padding: 16px 40px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: 0.02em;
+            transition: var(--transition);
+        }
+        .page-404 .btn-home:hover {
+            background: #113263;
+            box-shadow: var(--shadow-sm);
+        }
+        /* Redeem-specific */
+        .page-404 .store-buttons-404 {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+        .page-404 .store-btn-404 {
+            display: inline-block;
+            padding: 14px 28px;
+            background: var(--text-primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            width: 260px;
+            text-align: center;
+            transition: var(--transition);
+        }
+        .page-404 .store-btn-404:hover {
+            background: #113263;
+            box-shadow: var(--shadow-sm);
+        }
+        .page-404 .help-text-404 { font-size: 0.9rem; color: var(--text-muted); margin-top: 8px; }
         #redeem-content, #notfound-content { display: none; }
     </style>
 </head>
-<body>
-    <div class="container">
-        <!-- Redemption content (shown for /redeem/* URLs) -->
-        <div id="redeem-content">
-            <div class="logo">🇺🇸</div>
-            <h1>Citizenry</h1>
-            <p>To redeem your access code, please install the Citizenry app and tap your link again.</p>
-            <div class="store-buttons">
-                <a class="store-btn" id="ios-btn" href="https://apps.apple.com/us/app/us-citizenship-test-2026-uscis/id6451455299">
-                    Download on the App Store
-                </a>
-                <a class="store-btn" id="android-btn" href="https://play.google.com/store/apps/details?id=com.citizenryapp.citizenryandroid">
-                    Get it on Google Play
-                </a>
-            </div>
-            <p class="help-text">After installing, tap your redemption link again to activate access.</p>
+<body class="page-404">
+    <header class="header-bar">
+        <div class="container">
+            <a href="/" class="brand-text">Citizenry</a>
         </div>
+    </header>
 
-        <!-- Normal 404 content (shown for non-redeem URLs) -->
-        <div id="notfound-content">
-            <div class="logo">🇺🇸</div>
-            <h1>Page Not Found</h1>
-            <p>The page you're looking for doesn't exist.</p>
-            <div class="store-buttons">
-                <a class="store-btn" href="https://citizenryapp.com/">Go to Homepage</a>
+    <main>
+        <div class="content-wrap">
+            <!-- Redemption content (shown for /redeem/* URLs) -->
+            <div id="redeem-content">
+                <h1>Citizenry</h1>
+                <p class="subtitle">To redeem your access code, please install the Citizenry app and tap your link again.</p>
+                <div class="store-buttons-404">
+                    <a class="store-btn-404" id="ios-btn" href="https://apps.apple.com/us/app/us-citizenship-test-2026-uscis/id6451455299">Download on the App Store</a>
+                    <a class="store-btn-404" id="android-btn" href="https://play.google.com/store/apps/details?id=com.citizenryapp.citizenryandroid">Get it on Google Play</a>
+                </div>
+                <p class="help-text-404">After installing, tap your redemption link again to activate access.</p>
+            </div>
+
+            <!-- Normal 404 content (shown for non-redeem URLs) -->
+            <div id="notfound-content">
+                <p class="code-404" aria-hidden="true">404</p>
+                <h1>Page not found</h1>
+                <p class="subtitle">The page you're looking for doesn't exist or may have been moved.</p>
+                <div class="actions">
+                    <a class="btn-home" href="/">Go to Homepage</a>
+                </div>
             </div>
         </div>
-    </div>
+    </main>
 
     <script>
         (function() {
@@ -85,17 +143,11 @@ permalink: /404.html
 
             if (isRedeem) {
                 document.getElementById('redeem-content').style.display = 'block';
-
-                // Detect platform and show relevant button
                 var ua = navigator.userAgent || navigator.vendor || window.opera;
                 var isIOS = /iPad|iPhone|iPod/.test(ua) && !window.MSStream;
                 var isAndroid = /android/i.test(ua);
-
-                if (isIOS) {
-                    document.getElementById('android-btn').style.display = 'none';
-                } else if (isAndroid) {
-                    document.getElementById('ios-btn').style.display = 'none';
-                }
+                if (isIOS) document.getElementById('android-btn').style.display = 'none';
+                else if (isAndroid) document.getElementById('ios-btn').style.display = 'none';
             } else {
                 document.getElementById('notfound-content').style.display = 'block';
             }
