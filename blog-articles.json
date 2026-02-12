@@ -10,6 +10,14 @@
       "excerpt_es": "¡Prepárate para el examen de ciudadanía 2025! Revisa las 128 preguntas y respuestas cívicas, conoce las últimas actualizaciones y practica con las entrevistas simuladas de Citizenry."
     },
     {
+      "id": "conditional-green-card-citizenship",
+      "file": "blog/conditional-green-card-citizenship.html",
+      "title_en": "Conditional Green Card Holders: Applying for Citizenship",
+      "title_es": "Titulares de Green Card Condicional: Solicitando la Ciudadanía",
+      "excerpt_en": "Learn how conditional green card holders can apply for US citizenship. Understand the I-751 process, timing for N-400, and what to do if conditions aren't removed yet.",
+      "excerpt_es": "Aprende cómo los titulares de green card condicional pueden solicitar la ciudadanía de EE.UU."
+    },
+    {
       "id": "common-reasons-citizenship-denied",
       "file": "blog/common-reasons-citizenship-denied.html",
       "title_en": "Common Reasons Citizenship Applications Get Denied",
@@ -240,14 +248,6 @@
       "title_es": "Naturalización para Cónyuges de Ciudadanos de EE.UU.: La Regla de 3 Años Explicada",
       "excerpt_en": "Learn about the 3-year naturalization rule for spouses of US citizens. Understand eligibility requirements, marital union, and how to apply for citizenship sooner.",
       "excerpt_es": "Aprende sobre la regla de naturalización de 3 años para cónyuges de ciudadanos de EE.UU."
-    },
-    {
-      "id": "conditional-green-card-citizenship",
-      "file": "blog/conditional-green-card-citizenship.html",
-      "title_en": "Conditional Green Card Holders: Applying for Citizenship",
-      "title_es": "Titulares de Green Card Condicional: Solicitando la Ciudadanía",
-      "excerpt_en": "Learn how conditional green card holders can apply for US citizenship. Understand the I-751 process, timing for N-400, and what to do if conditions aren't removed yet.",
-      "excerpt_es": "Aprende cómo los titulares de green card condicional pueden solicitar la ciudadanía de EE.UU."
     }
   ]
 }
