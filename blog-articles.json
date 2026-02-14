@@ -10,6 +10,94 @@
       "excerpt_es": "¡Prepárate para el examen de ciudadanía 2025! Revisa las 128 preguntas y respuestas cívicas, conoce las últimas actualizaciones y practica con las entrevistas simuladas de Citizenry."
     },
     {
+      "id": "changing-name-during-naturalization",
+      "file": "blog/changing-name-during-naturalization.html",
+      "title_en": "Can I Change My Name During Naturalization?",
+      "title_es": "¿Puedo Cambiar Mi Nombre Durante la Naturalización?",
+      "excerpt_en": "Learn how to legally change your name during the naturalization process. Understand the difference between judicial and administrative oath ceremonies.",
+      "excerpt_es": "Aprende cómo cambiar legalmente tu nombre durante el proceso de naturalización."
+    },
+    {
+      "id": "why-choose-citizenship-test-app-without-ads",
+      "file": "blog/why-choose-citizenship-test-app-without-ads.html",
+      "title_en": "Why It's Important to Choose a Citizenship Test Study App Without Ads",
+      "title_es": "Por Qué es Importante Elegir una App de Estudio para el Examen de Ciudadanía Sin Anuncios",
+      "excerpt_en": "Choosing a citizenship test study app without ads can make a real difference in how well you learn. Ads get in the way of focus and consistency. Here is why an ad-free app is worth considering and how",
+      "excerpt_es": "Elegir una app de estudio para el examen de ciudadanía sin anuncios puede marcar una diferencia real en qué tan bien aprendes. Los anuncios se interponen en la concentración y la constancia. Aquí verá"
+    },
+    {
+      "id": "green-card-expiring-while-n400-pending",
+      "file": "blog/green-card-expiring-while-n400-pending.html",
+      "title_en": "What If My Green Card Expires While N-400 is Pending?",
+      "title_es": "¿Qué Pasa Si Mi Green Card Expira Mientras Mi N-400 Está Pendiente?",
+      "excerpt_en": "Learn what to do if your Green Card expires while your citizenship application is pending. Understand the automatic 24-month extension and Form I-90.",
+      "excerpt_es": "Aprende qué hacer si tu Green Card expira mientras tu solicitud de ciudadanía está pendiente."
+    },
+    {
+      "id": "best-way-to-study-for-citizenship-test",
+      "file": "blog/best-way-to-study-for-citizenship-test.html",
+      "title_en": "What is the Best Way to Study for the Citizenship Test?",
+      "title_es": "¿Cuál es la Mejor Forma de Estudiar para el Examen de Ciudadanía?",
+      "excerpt_en": "The best way to study for the citizenship test is to use official USCIS materials in conjunction with a study app that fits your learning style, and practice answering out loud. The test is an oral in",
+      "excerpt_es": "La mejor forma de estudiar para el examen de ciudadanía es usar los materiales oficiales de USCIS junto con una app de estudio que se adapte a tu estilo de aprendizaje y practicar respondiendo en voz "
+    },
+    {
+      "id": "what-if-i-fail-citizenship-test",
+      "file": "blog/what-if-i-fail-citizenship-test.html",
+      "title_en": "What Happens If I Fail the Citizenship Test?",
+      "title_es": "¿Qué Pasa Si No Apruebo el Examen de Ciudadanía?",
+      "excerpt_en": "Learn what happens if you fail the US citizenship test. Understand the retesting process, timeline, and how to prepare for your second attempt.",
+      "excerpt_es": "Aprende qué pasa si no apruebas el examen de ciudadanía. Entiende el proceso de reexamen y cómo prepararte."
+    },
+    {
+      "id": "best-apps-citizenship-test-preparation",
+      "file": "blog/best-apps-citizenship-test-preparation.html",
+      "title_en": "Best Apps for Citizenship Test Preparation",
+      "title_es": "Mejores Apps para Preparar el Examen de Ciudadanía",
+      "excerpt_en": "Many apps can help you prepare for the US citizenship test. The best one for you depends on which test version you take, how you like to study, and whether you want features like mock interviews or mu",
+      "excerpt_es": "Muchas apps pueden ayudarte a prepararte para el examen de ciudadanía de EE.UU. La mejor para ti depende de qué versión del examen tomes, cómo te gusta estudiar y si quieres funciones como entrevistas"
+    },
+    {
+      "id": "continuous-residence-vs-physical-presence",
+      "file": "blog/continuous-residence-vs-physical-presence.html",
+      "title_en": "Continuous Residence vs Physical Presence: What's the Difference?",
+      "title_es": "Residencia Continua vs Presencia Física: ¿Cuál es la Diferencia?",
+      "excerpt_en": "Understand the difference between continuous residence and physical presence requirements for US citizenship. Learn how travel affects your naturalization eligibility.",
+      "excerpt_es": "Entiende la diferencia entre los requisitos de residencia continua y presencia física para la ciudadanía."
+    },
+    {
+      "id": "is-citizenship-test-changing-2026",
+      "file": "blog/is-citizenship-test-changing-2026.html",
+      "title_en": "Is the Citizenship Test Changing in 2026?",
+      "title_es": "¿Está Cambiando el Examen de Ciudadanía en 2026?",
+      "excerpt_en": "The citizenship test already changed in late 2025. In 2026 there is no additional change scheduled. What matters is which version you take based on when you filed your application.",
+      "excerpt_es": "El examen de ciudadanía ya cambió a fines de 2025. En 2026 no hay ningún cambio adicional programado. Lo que importa es qué versión te toca según cuándo presentaste tu solicitud."
+    },
+    {
+      "id": "selective-service-registration",
+      "file": "blog/selective-service-registration.html",
+      "title_en": "Selective Service Registration: What Male Applicants Need to Know",
+      "title_es": "Registro del Servicio Selectivo: Lo que los Solicitantes Masculinos Deben Saber",
+      "excerpt_en": "Learn about Selective Service registration requirements for male citizenship applicants. Understand what happens if you didn't register and how it affects naturalization.",
+      "excerpt_es": "Aprende sobre los requisitos de registro del Servicio Selectivo para solicitantes masculinos de ciudadanía."
+    },
+    {
+      "id": "spouses-of-us-citizens-3-year-rule",
+      "file": "blog/spouses-of-us-citizens-3-year-rule.html",
+      "title_en": "Naturalization for Spouses of US Citizens: The 3-Year Rule Explained",
+      "title_es": "Naturalización para Cónyuges de Ciudadanos de EE.UU.: La Regla de 3 Años Explicada",
+      "excerpt_en": "Learn about the 3-year naturalization rule for spouses of US citizens. Understand eligibility requirements, marital union, and how to apply for citizenship sooner.",
+      "excerpt_es": "Aprende sobre la regla de naturalización de 3 años para cónyuges de ciudadanos de EE.UU."
+    },
+    {
+      "id": "how-many-questions-for-citizenship-2026",
+      "file": "blog/how-many-questions-for-citizenship-2026.html",
+      "title_en": "How Many Questions for Citizenship 2026?",
+      "title_es": "¿Cuántas Preguntas Son para la Ciudadanía 2026?",
+      "excerpt_en": "If you are preparing for U.S. citizenship in 2026, the number of civics questions depends on your N-400 filing date. USCIS now uses two civics test versions, and most 2026 applicants take the newer 20",
+      "excerpt_es": "Si te estás preparando para la ciudadanía de EE.UU. en 2026, el número de preguntas cívicas depende de la fecha en que presentaste tu N-400."
+    },
+    {
       "id": "conditional-green-card-citizenship",
       "file": "blog/conditional-green-card-citizenship.html",
       "title_en": "Conditional Green Card Holders: Applying for Citizenship",
@@ -200,54 +288,6 @@
       "title_es": "¿Necesito un Abogado para Solicitar la Ciudadanía de EE.UU.?",
       "excerpt_en": "Learn whether you need a lawyer for your N-400 citizenship application. Understand when legal help is beneficial and how to find authorized representatives.",
       "excerpt_es": "Aprende si necesitas un abogado para tu solicitud de ciudadanía N-400. Entiende cuándo la ayuda legal es beneficiosa."
-    },
-    {
-      "id": "changing-name-during-naturalization",
-      "file": "blog/changing-name-during-naturalization.html",
-      "title_en": "Can I Change My Name During Naturalization?",
-      "title_es": "¿Puedo Cambiar Mi Nombre Durante la Naturalización?",
-      "excerpt_en": "Learn how to legally change your name during the naturalization process. Understand the difference between judicial and administrative oath ceremonies.",
-      "excerpt_es": "Aprende cómo cambiar legalmente tu nombre durante el proceso de naturalización."
-    },
-    {
-      "id": "green-card-expiring-while-n400-pending",
-      "file": "blog/green-card-expiring-while-n400-pending.html",
-      "title_en": "What If My Green Card Expires While N-400 is Pending?",
-      "title_es": "¿Qué Pasa Si Mi Green Card Expira Mientras Mi N-400 Está Pendiente?",
-      "excerpt_en": "Learn what to do if your Green Card expires while your citizenship application is pending. Understand the automatic 24-month extension and Form I-90.",
-      "excerpt_es": "Aprende qué hacer si tu Green Card expira mientras tu solicitud de ciudadanía está pendiente."
-    },
-    {
-      "id": "what-if-i-fail-citizenship-test",
-      "file": "blog/what-if-i-fail-citizenship-test.html",
-      "title_en": "What Happens If I Fail the Citizenship Test?",
-      "title_es": "¿Qué Pasa Si No Apruebo el Examen de Ciudadanía?",
-      "excerpt_en": "Learn what happens if you fail the US citizenship test. Understand the retesting process, timeline, and how to prepare for your second attempt.",
-      "excerpt_es": "Aprende qué pasa si no apruebas el examen de ciudadanía. Entiende el proceso de reexamen y cómo prepararte."
-    },
-    {
-      "id": "continuous-residence-vs-physical-presence",
-      "file": "blog/continuous-residence-vs-physical-presence.html",
-      "title_en": "Continuous Residence vs Physical Presence: What's the Difference?",
-      "title_es": "Residencia Continua vs Presencia Física: ¿Cuál es la Diferencia?",
-      "excerpt_en": "Understand the difference between continuous residence and physical presence requirements for US citizenship. Learn how travel affects your naturalization eligibility.",
-      "excerpt_es": "Entiende la diferencia entre los requisitos de residencia continua y presencia física para la ciudadanía."
-    },
-    {
-      "id": "selective-service-registration",
-      "file": "blog/selective-service-registration.html",
-      "title_en": "Selective Service Registration: What Male Applicants Need to Know",
-      "title_es": "Registro del Servicio Selectivo: Lo que los Solicitantes Masculinos Deben Saber",
-      "excerpt_en": "Learn about Selective Service registration requirements for male citizenship applicants. Understand what happens if you didn't register and how it affects naturalization.",
-      "excerpt_es": "Aprende sobre los requisitos de registro del Servicio Selectivo para solicitantes masculinos de ciudadanía."
-    },
-    {
-      "id": "spouses-of-us-citizens-3-year-rule",
-      "file": "blog/spouses-of-us-citizens-3-year-rule.html",
-      "title_en": "Naturalization for Spouses of US Citizens: The 3-Year Rule Explained",
-      "title_es": "Naturalización para Cónyuges de Ciudadanos de EE.UU.: La Regla de 3 Años Explicada",
-      "excerpt_en": "Learn about the 3-year naturalization rule for spouses of US citizens. Understand eligibility requirements, marital union, and how to apply for citizenship sooner.",
-      "excerpt_es": "Aprende sobre la regla de naturalización de 3 años para cónyuges de ciudadanos de EE.UU."
     }
   ]
 }

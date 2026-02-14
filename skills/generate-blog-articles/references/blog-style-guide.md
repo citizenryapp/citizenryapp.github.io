@@ -71,6 +71,7 @@ Plain Markdown:
 - `## Heading` for section headings (5-8 per article)
 - `### Subheading` for sub-sections (use sparingly)
 - Regular paragraphs as plain text separated by blank lines
+- **Inline links:** Use Markdown link syntax `[link text](url)` for in-article links (e.g. to other pages or the Compare section). The build script converts these to clickable HTML links. Use relative paths for site links (e.g. `/compare/`, `/compare/citizenry-vs-uscis-app.html`).
 - `- Item` for unordered lists
 - `1. Item` for ordered lists
 - Blank lines between sections

@@ -21,7 +21,7 @@ Articles are authored as **Markdown files** in `blog-drafts/` and compiled to bi
 ## Critical Rules
 
 1. **Never fabricate information.** Every claim must be verifiable via official sources, existing blog articles, or the USCIS civics test question banks. Use web search to research each topic before writing.
-2. **English only in drafts.** Generate English-only Markdown in `blog-drafts/`. Spanish translations are created as companion `.es.md` files when the user is ready to build (see Build step below).
+2. **English only in drafts.** Generate English-only Markdown in `blog-drafts/`. Spanish companion files (`.es.md`) are created or updated as part of the build step, from the current English draft (see step 5).
 3. **Match existing style exactly.** Read `references/blog-style-guide.md` for tone, structure, length, and formatting rules.
 4. **Related Articles is always LAST.** Every article must end with a Related Articles section (2-4 internal links) defined in the front matter `related:` list. Do NOT add a manual Citizenry CTA section; the blog-post layout automatically appends a "Ready to Start Practicing?" CTA box with app store badges.
 5. **Guide the reader to use Citizenry at the end.** Before the Related Articles section, include a brief closing (1-3 sentences) that naturally guides the reader to use Citizenry to prepare (e.g. practicing with mock interviews, studying with the app, or downloading Citizenry). Keep it helpful and on-topic; the layout’s CTA box will follow, so the article copy should set that up.
@@ -74,6 +74,7 @@ Write the article Markdown file to `blog-drafts/{slug}.md` with:
 - YAML front matter (`title`, `description`, `keywords`, `date`, `llms_section`, `llms_desc`, `related`)
 - Opening paragraph (plain text)
 - 5-8 sections with `## Heading` headings
+- Inline links using Markdown syntax `[link text](url)` (e.g. to Compare pages or other site URLs); the build script converts these to HTML links
 - Lists where appropriate (`-` for unordered, `1.` for ordered)
 - When topic relates to civics content, mention how questions or rules differ between 2008 and 2025 test versions
 - **Closing that guides to Citizenry:** Before Related Articles, add 1-3 sentences that naturally point the reader to using Citizenry (e.g. mock interviews, study tools, or the app) to prepare. Do not add a full CTA block; the layout adds the CTA box after the article.
@@ -85,25 +86,28 @@ Write the article Markdown file to `blog-drafts/{slug}.md` with:
 After generating the Markdown draft(s), tell the user:
 > Your Markdown draft(s) are ready in `blog-drafts/`. Review and edit them, then let me know when you're ready to build.
 
-The user can open the `.md` file in any text editor, tweak wording, add/remove sections, etc. This is the primary advantage of the Markdown workflow.
+The user can open the `.md` file in any text editor, tweak wording, add/remove sections, etc. When they say they are ready to build, **always** read the current English draft, create or update the Spanish file to match it, then run the build script. Do not wait for the user to ask separately for the Spanish file; it is part of the build step.
 
-### 5. Build HTML from Markdown (Including Spanish)
+### 5. Build HTML from Markdown (Always Include Spanish)
 
-When the user is ready to build:
+When the user is ready to build, the build step **always** includes creating or updating the Spanish companion file; the user does not need to ask for it separately.
 
-1. **Create Spanish translation(s)** for each article being built. For each `blog-drafts/{slug}.md`:
-   - Create `blog-drafts/{slug}.es.md` with the same block structure as the English file (same headings, paragraphs, and list items in the same order).
+For each article being built:
+
+1. **Read the current English draft** at `blog-drafts/{slug}.md`. Use this version as the source of truth, since the user may have edited it after the initial draft.
+2. **Create or update the Spanish companion file** `blog-drafts/{slug}.es.md` so that it matches the **current** English file:
+   - Same block structure (same headings, paragraphs, and list items in the same order). If the user added, removed, or reordered sections, the Spanish file must reflect that.
    - Include only `title_es` in the front matter and the translated body. See `references/blog-style-guide.md` for the Spanish translation file format.
-   - The build script pairs blocks by position and outputs bilingual `data-en`/`data-es` HTML.
-2. **Run the build script** with `--integrate`:
+   - The build script pairs blocks by position, so the Spanish file must have the same number and types of blocks as the English file.
+3. **Run the build script** with `--integrate`:
 
 ```bash
 node scripts/build-blog-article.js blog-drafts/{slug}.md --integrate
 ```
 
-The `--integrate` flag also updates `blog-articles.json`, `sitemap.xml`, and `llms.txt`. Omit `--integrate` when rebuilding existing articles that are already integrated.
+The build script outputs bilingual HTML with `data-en`/`data-es` attributes. The `--integrate` flag also updates `blog-articles.json`, `sitemap.xml`, and `llms.txt`. Omit `--integrate` when rebuilding existing articles that are already integrated.
 
-For multiple articles, create each `.es.md` first, then:
+For multiple articles: for each article, read the current English draft, create or update the corresponding `.es.md` to match, then run the build once with all files:
 
 ```bash
 node scripts/build-blog-article.js blog-drafts/article-1.md blog-drafts/article-2.md --integrate
@@ -116,6 +120,16 @@ After ALL articles are built and integrated, run once:
 ```bash
 node scripts/rotate-blog.js
 ```
+
+### 7. Update SEO and LLM Discovery Files
+
+Ensure the following files are updated so search engines and LLMs can discover new content:
+
+- **sitemap.xml** — Updated automatically when you run the build script with `--integrate`. Contains all blog article URLs. If you built with `--integrate`, new article URLs are already added; otherwise run the build with `--integrate` for new articles.
+- **llms.txt** — Updated automatically when you run the build script with `--integrate`. Contains blog article titles and descriptions for LLM discovery, grouped by section. Verify the new article appears under the correct section (e.g. "Test Preparation") if needed.
+- **robots.txt** — Ensure it references the sitemap (e.g. `Sitemap: https://citizenryapp.com/sitemap.xml`) so crawlers can find the updated sitemap. This file usually does not need changes when adding individual articles; it points to the sitemap, which is updated by the build. If the project maintains a custom robots.txt that lists specific paths, update it when adding new content types or rules.
+
+After building new articles with `--integrate`, sitemap.xml and llms.txt are already updated. Run `node scripts/rotate-blog.js` (step 6), then confirm sitemap.xml and llms.txt contain the new entries and that robots.txt still points to the sitemap.
 
 ## Bundled Resources
 

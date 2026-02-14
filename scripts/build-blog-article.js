@@ -223,11 +223,17 @@ const LI_INDENT = '                        '; // 24 spaces
 
 /**
  * Process inline Markdown formatting:
- *   **text**  → <strong>text</strong>
- *   *text*    → <em>text</em>
- *   <br>      → passed through as-is (works in both inner HTML and data attributes)
+ *   [text](url) → <a href="url">text</a>
+ *   **text**    → <strong>text</strong>
+ *   *text*      → <em>text</em>
+ *   <br>        → passed through as-is (works in both inner HTML and data attributes)
  */
 function processInline(text) {
+  // Links: [text](url) → <a href="url">text</a> (process first so bold/italic can wrap link text)
+  text = text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_, linkText, url) => {
+    const safeUrl = url.replace(/"/g, '&quot;');
+    return `<a href="${safeUrl}">${linkText}</a>`;
+  });
   // Bold: **text** → <strong>text</strong>  (process before italic)
   text = text.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
   // Italic: *text* → <em>text</em>
