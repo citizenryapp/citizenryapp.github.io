@@ -131,6 +131,22 @@ Ensure the following files are updated so search engines and LLMs can discover n
 
 After building new articles with `--integrate`, sitemap.xml and llms.txt are already updated. Run `node scripts/rotate-blog.js` (step 6), then confirm sitemap.xml and llms.txt contain the new entries and that robots.txt still points to the sitemap.
 
+### 8. List Production URLs and How to Request Indexing in Google Search Console
+
+After all build steps are complete, list the full production URLs for every article that was created and built in the current chat session. Use the production base URL `https://citizenryapp.com`. Format each URL as:
+
+`https://citizenryapp.com/blog/{slug}.html`
+
+where `{slug}` is the article filename without the `.md` or `.html` extension (e.g. `best-way-to-study-for-citizenship-test`). Provide the list in your reply, one URL per line, so the user can copy, share, or verify the live URLs. Only include articles that were actually built in this session, not previously existing articles.
+
+Then add friendly instructions for requesting indexing in Google Search Console. Tell the user that after they have pushed their code to production and verified that the new blog articles are live on the public site, they can ask Google to index these URLs:
+
+- Go to [Google Search Console](https://search.google.com/search-console) and select the property for the site (e.g. citizenryapp.com).
+- Use **URL Inspection** (the search or input at the top): paste one of the article URLs and press Enter.
+- If the URL is not yet indexed, click **Request Indexing**. Repeat for each new article URL.
+
+The agent cannot submit indexing requests on the user's behalf; that must be done by the user in their own Search Console account. The list of URLs from this step is intended to be used for that purpose once the user has deployed and verified the articles are live.
+
 ## Bundled Resources
 
 - **`references/blog-style-guide.md`** -- Read before writing any article. Contains tone, structure, length, Markdown format, Spanish translation format, related articles format, SEO rules, and annotated examples.
