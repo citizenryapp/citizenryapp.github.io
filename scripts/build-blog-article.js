@@ -122,8 +122,18 @@ function parseRelated(rawRelated) {
 }
 
 /**
+ * Parse a Markdown table row into cell strings.
+ */
+function parseTableRow(line) {
+  const cells = line.split('|').map(c => c.trim());
+  if (cells.length && cells[0] === '') cells.shift();
+  if (cells.length && cells[cells.length - 1] === '') cells.pop();
+  return cells;
+}
+
+/**
  * Parse Markdown body into ordered blocks.
- * Block types: intro_p, h2, h3, p, ul_start, ol_start, li, ul_end, ol_end
+ * Block types: intro_p, h2, h3, p, ul_start, ol_start, li, ul_end, ol_end, table
  */
 function parseMarkdownBlocks(body) {
   const lines = body.split('\n');
@@ -152,6 +162,29 @@ function parseMarkdownBlocks(body) {
 
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i];
+
+    // Markdown table: consecutive lines starting with |
+    if (line.trim().startsWith('|')) {
+      flushParagraph();
+      closeList();
+      seenHeading = true;
+      const tableRows = [];
+      while (i < lines.length && lines[i].trim().startsWith('|')) {
+        tableRows.push(parseTableRow(lines[i]));
+        i++;
+      }
+      i--;
+      if (tableRows.length === 0) continue;
+      const headers = tableRows[0];
+      const dataRows = [];
+      for (let r = 1; r < tableRows.length; r++) {
+        const row = tableRows[r];
+        if (row.length === headers.length && row.every(c => /^:?-+:?$/.test(c))) continue;
+        dataRows.push(row);
+      }
+      blocks.push({ type: 'table', headers, rows: dataRows });
+      continue;
+    }
 
     // H2
     if (line.startsWith('## ') && !line.startsWith('### ')) {
@@ -261,28 +294,33 @@ function generateHTML(meta, enBlocks, esBlocks) {
 
   // Pair English and Spanish blocks by position (matching translatable blocks only)
   const enTranslatable = enBlocks.filter(b =>
-    ['intro_p', 'h2', 'h3', 'p', 'li'].includes(b.type)
+    ['intro_p', 'h2', 'h3', 'p', 'li', 'table'].includes(b.type)
   );
   const esTranslatable = esBlocks ? esBlocks.blocks.filter(b =>
-    ['intro_p', 'h2', 'h3', 'p', 'li'].includes(b.type)
+    ['intro_p', 'h2', 'h3', 'p', 'li', 'table'].includes(b.type)
   ) : [];
 
-  // Build a map from English block index to Spanish text
+  // Build a map from English block index to Spanish (text for most, { headers, rows } for table)
   const esMap = {};
   for (let i = 0; i < enTranslatable.length; i++) {
-    if (i < esTranslatable.length && esTranslatable[i].text) {
-      esMap[i] = esTranslatable[i].text;
+    const enBlock = enTranslatable[i];
+    const esBlock = i < esTranslatable.length ? esTranslatable[i] : null;
+    if (enBlock.type === 'table' && esBlock && esBlock.type === 'table' && esBlock.headers) {
+      esMap[i] = { headers: esBlock.headers, rows: esBlock.rows || [] };
+    } else if (esBlock && esBlock.text) {
+      esMap[i] = esBlock.text;
     }
   }
 
   let transIdx = 0;
 
   for (const block of enBlocks) {
-    const isTranslatable = ['intro_p', 'h2', 'h3', 'p', 'li'].includes(block.type);
-    const rawEsText = isTranslatable ? (esMap[transIdx] || '') : '';
+    const isTranslatable = ['intro_p', 'h2', 'h3', 'p', 'li', 'table'].includes(block.type);
+    const rawEs = isTranslatable ? (esMap[transIdx] || (block.type === 'table' ? null : '')) : null;
+    const rawEsText = typeof rawEs === 'string' ? rawEs : '';
 
     // Apply inline Markdown formatting (bold, italic, <br>)
-    const enText = isTranslatable ? processInline(block.text) : block.text;
+    const enText = isTranslatable && block.text ? processInline(block.text) : block.text;
     const esText = rawEsText ? processInline(rawEsText) : rawEsText;
 
     switch (block.type) {
@@ -326,6 +364,34 @@ function generateHTML(meta, enBlocks, esBlocks) {
       case 'ol_end':
         html += `${INDENT}</ol>\n`;
         break;
+
+      case 'table': {
+        const esTable = rawEs && typeof rawEs === 'object' && rawEs.headers ? rawEs : null;
+        const TH_INDENT = INDENT + '                        ';
+        const TD_INDENT = INDENT + '                        ';
+        html += `${INDENT}<table class="comparison-table">\n`;
+        html += `${INDENT}    <thead>\n${INDENT}        <tr>\n`;
+        for (let c = 0; c < block.headers.length; c++) {
+          const enCell = processInline(block.headers[c]);
+          const esCell = esTable && esTable.headers[c] ? processInline(esTable.headers[c]) : '';
+          html += `${TH_INDENT}<th data-en="${escapeAttr(enCell)}" data-es="${escapeAttr(esCell)}">${enCell}</th>\n`;
+        }
+        html += `${INDENT}        </tr>\n${INDENT}    </thead>\n${INDENT}    <tbody>\n`;
+        for (let r = 0; r < block.rows.length; r++) {
+          html += `${INDENT}        <tr>\n`;
+          const row = block.rows[r];
+          const esRow = esTable && esTable.rows[r] ? esTable.rows[r] : [];
+          for (let c = 0; c < row.length; c++) {
+            const enCell = processInline(row[c]);
+            const esCell = esRow[c] ? processInline(esRow[c]) : '';
+            html += `${TD_INDENT}<td data-en="${escapeAttr(enCell)}" data-es="${escapeAttr(esCell)}">${enCell}</td>\n`;
+          }
+          html += `${INDENT}        </tr>\n`;
+        }
+        html += `${INDENT}    </tbody>\n${INDENT}</table>\n`;
+        transIdx++;
+        break;
+      }
     }
   }
 

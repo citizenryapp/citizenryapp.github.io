@@ -76,6 +76,7 @@ Write the article Markdown file to `blog-drafts/{slug}.md` with:
 - 5-8 sections with `## Heading` headings
 - Inline links using Markdown syntax `[link text](url)` (e.g. to Compare pages or other site URLs); the build script converts these to HTML links
 - Lists where appropriate (`-` for unordered, `1.` for ordered)
+- **Tables:** Use Markdown pipe tables when you need a comparison table (e.g. 2008 vs 2025 vs 65/20). See **Markdown Tables** below for syntax and Spanish pairing rules.
 - When topic relates to civics content, mention how questions or rules differ between 2008 and 2025 test versions
 - **Closing that guides to Citizenry:** Before Related Articles, add 1-3 sentences that naturally point the reader to using Citizenry (e.g. mock interviews, study tools, or the app) to prepare. Do not add a full CTA block; the layout adds the CTA box after the article.
 - `related:` front matter list with 2-4 internal links (slug + title for each)
@@ -96,9 +97,9 @@ For each article being built:
 
 1. **Read the current English draft** at `blog-drafts/{slug}.md`. Use this version as the source of truth, since the user may have edited it after the initial draft.
 2. **Create or update the Spanish companion file** `blog-drafts/{slug}.es.md` so that it matches the **current** English file:
-   - Same block structure (same headings, paragraphs, and list items in the same order). If the user added, removed, or reordered sections, the Spanish file must reflect that.
+   - Same block structure (same headings, paragraphs, list items, and tables in the same order). If the user added, removed, or reordered sections, the Spanish file must reflect that.
    - Include only `title_es` in the front matter and the translated body. See `references/blog-style-guide.md` for the Spanish translation file format.
-   - The build script pairs blocks by position, so the Spanish file must have the same number and types of blocks as the English file.
+   - The build script pairs blocks by position, so the Spanish file must have the same number and types of blocks as the English file. For tables, use the same number of columns and data rows with translated cell text (see **Markdown Tables** below).
 3. **Run the build script** with `--integrate`:
 
 ```bash
@@ -146,6 +147,40 @@ Then add friendly instructions for requesting indexing in Google Search Console.
 - If the URL is not yet indexed, click **Request Indexing**. Repeat for each new article URL.
 
 The agent cannot submit indexing requests on the user's behalf; that must be done by the user in their own Search Console account. The list of URLs from this step is intended to be used for that purpose once the user has deployed and verified the articles are live.
+
+## Markdown Tables
+
+The build script (`scripts/build-blog-article.js`) parses **Markdown pipe tables** and converts them to HTML so they render correctly in the browser (rather than as raw pipe text).
+
+### Syntax in the draft
+
+- Use consecutive lines that **start with `|`**. Each line is a row; cells are separated by `|`.
+- **First row** is the header row (column titles).
+- **Optional separator row:** A row whose cells look like `---` or `:---:` is treated as a separator and omitted from the output. Include it after the header if you prefer (e.g. `| --- | --- | --- |`).
+- **Following rows** are data rows. Every row must have the same number of cells as the header.
+
+Example:
+
+```markdown
+| Feature | 2008 Version | 2025 Version | Senior (65/20) |
+| --- | --- | --- | --- |
+| Questions to study | 100 questions | 128 questions | 20 only |
+| Passing score | 6 of 10 | 12 of 20 | 6 of 10 |
+```
+
+### What the build script does
+
+- Detects a run of lines whose trimmed form starts with `|`.
+- Parses each row by splitting on `|` and trimming cells (leading/trailing empty cells from the line are dropped).
+- Skips one separator row after the header if it matches a dash-only pattern (e.g. `---` or `:---:`).
+- Outputs `<table class="comparison-table">` with `<thead>` and `<tbody>`, and `<th>` / `<td>` elements. Site CSS (e.g. in `css/blog.css`) styles `.post-content table` and `.comparison-table`.
+- Each header and cell is output with **bilingual attributes:** `data-en` (from the English draft) and `data-es` (from the Spanish draft), so the language switcher can show the table in either language.
+
+### Spanish companion file
+
+- The Spanish file (`blog-drafts/{slug}.es.md`) must contain a **table with the same structure** as the English table: same number of columns and same number of data rows.
+- The build script pairs blocks by position. Tables are treated as a single block; the script matches the English table block to the Spanish table block and maps cells by position to fill `data-es` for each `<th>` and `<td>`.
+- Put the translated header and cell text in the Spanish table. Do not change the number of rows or columns.
 
 ## Bundled Resources
 
