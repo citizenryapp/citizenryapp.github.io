@@ -39,7 +39,7 @@
 <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
 
 <!-- Stylesheets -->
-<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/style.css?v={{ site.time | date: '%s' }}">
 {% if page.extra_css %}
 {% for css in page.extra_css %}
 <link rel="stylesheet" href="{{ css }}">

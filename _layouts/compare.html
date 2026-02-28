@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     {% include head.html %}
-    <link rel="stylesheet" href="/css/blog.css">
+    <link rel="stylesheet" href="/css/blog.css?v={{ site.time | date: '%s' }}">
 
     {% assign author_name = page.author_name | default: site.author.name %}
     {% assign author_title = page.author_title | default: site.author.title %}
