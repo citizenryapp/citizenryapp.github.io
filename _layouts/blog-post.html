@@ -3,7 +3,12 @@
 <head>
     {% include head.html %}
     <link rel="stylesheet" href="/css/blog.css">
-    
+
+    {% assign author_name = page.author_name | default: site.author.name %}
+    {% assign author_title = page.author_title | default: site.author.title %}
+    {% assign author_image = page.author_image | default: site.author.image %}
+    {% assign date_modified = page.date_modified | default: page.date | date: '%Y-%m-%d' %}
+
     <!-- Article Schema -->
     <script type="application/ld+json">
     {
@@ -12,15 +17,55 @@
         "headline": "{{ page.title }}",
         "description": "{{ page.description }}",
         "datePublished": "{{ page.date | date: '%Y-%m-%d' }}",
+        "dateModified": "{{ date_modified }}",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "{{ page.url | absolute_url }}"
+        },
         "author": {
-            "@type": "Organization",
-            "name": "Citizenry"
+            "@type": "Person",
+            "name": "{{ author_name }}",
+            "jobTitle": "{{ author_title }}",
+            "url": "{{ site.author.url | default: site.url }}"{% if author_image %},
+            "image": "{{ site.url }}{{ author_image }}"{% endif %}
         },
         "publisher": {
             "@type": "Organization",
             "name": "Citizenry",
-            "logo": "https://citizenryapp.com/assets/images/citizenry-logotype.png"
+            "url": "https://citizenryapp.com",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://citizenryapp.com/assets/images/citizenry-logotype.png"
+            }
         }
+    }
+    </script>
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://citizenryapp.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Blog",
+                "item": "https://citizenryapp.com/blog.html"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "{{ page.title }}",
+                "item": "{{ page.url | absolute_url }}"
+            }
+        ]
     }
     </script>
 </head>
@@ -34,14 +79,26 @@
                 <div class="post-header">
                     <a href="/blog.html" class="back-link" data-en="← Back to Blog" data-es="← Volver al Blog">← Back to Blog</a>
                     <h1 data-en="{{ page.title }}" data-es="{{ page.title_es | default: page.title }}">{{ page.title }}</h1>
-                    <div class="post-meta">
-                        <time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: '%B %d, %Y' }}</time>
+                    <div class="post-byline">
+                        {% if author_image %}<img src="{{ author_image }}" alt="{{ author_name }}" class="author-photo">{% endif %}
+                        <div class="byline-text">
+                            <a href="#about-author" class="post-author" data-en="By {{ author_name }}" data-es="Por {{ author_name }}">By {{ author_name }}</a>
+                            <time datetime="{{ date_modified }}" data-en="Updated {{ date_modified | date: '%B %d, %Y' }}" data-es="Actualizado {{ date_modified | date: '%B %d, %Y' }}">Updated {{ date_modified | date: '%B %d, %Y' }}</time>
+                        </div>
                     </div>
                 </div>
                 
                 <div class="post-content">
                     {{ content }}
                     
+                    <div id="about-author" class="author-bio-box">
+                        {% if author_image %}<img src="{{ author_image }}" alt="{{ author_name }}" class="author-bio-photo">{% endif %}
+                        <div class="author-bio-text">
+                            <h3 data-en="About the Author" data-es="Sobre la Autora">About the Author</h3>
+                            <p data-en="Dr. Jennifer Brisbane is a researcher and engineer focused on helping applicants navigate the U.S. citizenship and naturalization process. She previously served as an adjunct assistant professor at the City University of New York, where she taught courses and conducted research related to immigration and public policy." data-es="La Dra. Jennifer Brisbane es investigadora e ingeniera enfocada en ayudar a los solicitantes a navegar el proceso de ciudadanía y naturalización de EE.UU. Anteriormente se desempeñó como profesora adjunta asistente en la City University of New York, donde impartió cursos y realizó investigaciones relacionadas con la inmigración y las políticas públicas.">Dr. Jennifer Brisbane is a researcher and engineer focused on helping applicants navigate the U.S. citizenship and naturalization process. She previously served as an adjunct assistant professor at the City University of New York, where she taught courses and conducted research related to immigration and public policy.</p>
+                        </div>
+                    </div>
+
                     <div class="post-cta">
                         <h3 data-en="Ready to Start Practicing?" data-es="¿Listo para Empezar a Practicar?">Ready to Start Practicing?</h3>
                         <p data-en="Download Citizenry and start your path to citizenship today." data-es="Descarga Citizenry y comienza tu camino hacia la ciudadanía hoy.">Download Citizenry and start your path to citizenship today.</p>

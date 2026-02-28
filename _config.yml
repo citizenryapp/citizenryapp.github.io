@@ -43,6 +43,13 @@ defaults:
     values:
       layout: "compare"
 
+# Default author (override per-page with author_name / author_title / author_image in front matter)
+author:
+  name: "Jennifer Brisbane, Ph.D."
+  title: "Adjunct Assistant Professor"
+  image: "/assets/images/author-jennifer-brisbane.png"
+  url: "https://citizenryapp.com"
+
 # App store links (reusable)
 app_store_url: "https://apps.apple.com/us/app/us-citizenship-test-2026-uscis/id6451455299"
 play_store_url: "https://play.google.com/store/apps/details?id=com.citizenryapp.citizenryandroid"

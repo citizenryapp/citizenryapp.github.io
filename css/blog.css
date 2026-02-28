@@ -279,6 +279,43 @@
     font-size: 1rem;
 }
 
+.post-byline {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 4px;
+}
+
+.author-photo {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.byline-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.byline-text .post-author {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+}
+
+.byline-text .post-author:hover {
+    text-decoration: underline;
+}
+
+.byline-text time {
+    font-size: 0.775rem;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
 .post-content {
     max-width: 800px;
     margin: 0 auto;
@@ -339,6 +376,41 @@
 
 .post-content td {
     color: var(--text-secondary);
+}
+
+/* Author Bio Box */
+.author-bio-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    background: var(--bg-section);
+    border-radius: 16px;
+    padding: 28px 32px;
+    margin-top: 60px;
+    border: 1px solid var(--border-color);
+}
+
+.author-bio-photo {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.author-bio-text h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0 0 8px 0;
+}
+
+.author-bio-text p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin: 0;
 }
 
 /* Blog Post CTA */
@@ -424,6 +496,10 @@
         font-size: 1.2rem;
     }
     
+    .author-bio-box {
+        padding: 24px 20px;
+    }
+
     .post-cta {
         padding: 32px 16px;
     }

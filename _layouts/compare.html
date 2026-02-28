@@ -3,7 +3,12 @@
 <head>
     {% include head.html %}
     <link rel="stylesheet" href="/css/blog.css">
-    
+
+    {% assign author_name = page.author_name | default: site.author.name %}
+    {% assign author_title = page.author_title | default: site.author.title %}
+    {% assign author_image = page.author_image | default: site.author.image %}
+    {% assign date_modified = page.date_modified | default: page.date | date: '%Y-%m-%d' %}
+
     <!-- Article Schema -->
     <script type="application/ld+json">
     {
@@ -12,15 +17,55 @@
         "headline": "{{ page.title }}",
         "description": "{{ page.description }}",
         "datePublished": "{{ page.date | date: '%Y-%m-%d' }}",
+        "dateModified": "{{ date_modified }}",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "{{ page.url | absolute_url }}"
+        },
         "author": {
-            "@type": "Organization",
-            "name": "Citizenry"
+            "@type": "Person",
+            "name": "{{ author_name }}",
+            "jobTitle": "{{ author_title }}",
+            "url": "{{ site.author.url | default: site.url }}"{% if author_image %},
+            "image": "{{ site.url }}{{ author_image }}"{% endif %}
         },
         "publisher": {
             "@type": "Organization",
             "name": "Citizenry",
-            "logo": "https://citizenryapp.com/assets/images/citizenry-logotype.png"
+            "url": "https://citizenryapp.com",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://citizenryapp.com/assets/images/citizenry-logotype.png"
+            }
         }
+    }
+    </script>
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://citizenryapp.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Compare",
+                "item": "https://citizenryapp.com/compare/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "{{ page.title }}",
+                "item": "{{ page.url | absolute_url }}"
+            }
+        ]
     }
     </script>
     
@@ -41,6 +86,13 @@
                 <div class="post-header">
                     <a href="/compare/" class="back-link" data-en="← All Comparisons" data-es="← Todas las Comparaciones">← All Comparisons</a>
                     <h1 data-en="{{ page.title }}" data-es="{{ page.title_es | default: page.title }}">{{ page.title }}</h1>
+                    <div class="post-byline">
+                        {% if author_image %}<img src="{{ author_image }}" alt="{{ author_name }}" class="author-photo">{% endif %}
+                        <div class="byline-text">
+                            <span class="post-author" data-en="By {{ author_name }}" data-es="Por {{ author_name }}">By {{ author_name }}</span>
+                            <time datetime="{{ date_modified }}" data-en="Updated {{ date_modified | date: '%B %d, %Y' }}" data-es="Actualizado {{ date_modified | date: '%B %d, %Y' }}">Updated {{ date_modified | date: '%B %d, %Y' }}</time>
+                        </div>
+                    </div>
                 </div>
                 
                 <div class="post-content compare-content">
