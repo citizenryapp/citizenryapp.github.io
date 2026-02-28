@@ -2,47 +2,40 @@
 title_es: "¿Cuáles Preguntas del Examen de Ciudadanía Fallan Más las Personas?"
 ---
 
-Según datos de USCIS, más del 92% de los solicitantes aprueban la parte cívica del examen de ciudadanía en el primer intento, pero ciertas preguntas hacen fallar a más personas que otras. Saber qué temas causan más errores te ayuda a enfocar tu tiempo de estudio donde más importa.
+USCIS no publica estadísticas sobre cuáles preguntas del examen cívico la gente responde incorrectamente con más frecuencia. Eso significa que la mayoría de las listas de "preguntas más falladas" en internet son solo suposiciones. Citizenry es diferente. Como la app contiene cada pregunta oficial de USCIS y todas sus respuestas aceptables, y porque registra cómo los usuarios responden durante las entrevistas simuladas, puede identificar exactamente cuáles preguntas causan más dificultad. Estas son las preguntas que los usuarios de Citizenry responden incorrectamente con más frecuencia, y por qué.
 
-## Preguntas que se Fallan con Frecuencia
+## Conceptos que suenan familiares pero tienen respuestas específicas
 
-**Pregunta:** ¿Qué es el "estado de derecho"?<br>
-**Respuesta incorrecta:** La Constitución
+**"¿Qué es el 'estado de derecho' (rule of law)?"**
 
-La Constitución es la ley suprema, pero el "estado de derecho" significa que *todos deben cumplir la ley*. Cualquiera de las siguientes respuestas es aceptable:
-- Todos deben cumplir la ley
-- Los líderes deben obedecer la ley
-- El gobierno debe obedecer la ley
-- Nadie está por encima de la ley
+La respuesta incorrecta más común es "la Constitución." La Constitución es la ley suprema del país, pero esa es una pregunta diferente. El "estado de derecho" significa que todos deben obedecer la ley, los líderes deben obedecer la ley, el gobierno debe obedecer la ley, y nadie está por encima de la ley. Cualquiera de esas respuestas es aceptable. Las personas confunden estos dos conceptos porque suenan relacionados, pero USCIS busca una idea específica: ninguna persona o grupo está por encima de la ley.
 
-<br>
-**Pregunta:** ¿Quién hace las leyes federales?<br>
-**Respuesta incorrecta:** El Presidente
+**"¿Qué hace la rama judicial?"**
 
-El Presidente firma proyectos de ley para convertirlos en ley, pero el *Congreso* hace las leyes federales.
+Muchas personas responden "hace leyes" o "hace cumplir las leyes." La rama judicial revisa las leyes, explica las leyes, resuelve disputas y decide si una ley va en contra de la Constitución. La palabra clave para recordar es "revisa." El Congreso hace las leyes, el Presidente las hace cumplir y los tribunales las revisan.
 
-<br>
-**Pregunta:** Los Documentos Federalistas apoyaron la aprobación de la Constitución de EE.UU. Nombra uno de los autores.<br>
-**Respuesta incorrecta:** Thomas Jefferson
+## Preguntas donde las personas confunden datos similares
 
-Es una confusión común. Thomas Jefferson escribió la Declaración de Independencia, *no* los Documentos Federalistas. Cualquiera de las siguientes respuestas es aceptable:
-- James Madison
-- Alexander Hamilton
-- John Jay
-- Publius
+**"Los Documentos Federalistas apoyaron la aprobación de la Constitución de EE.UU. Nombre uno de los escritores."**
 
+La respuesta incorrecta más común es Thomas Jefferson. Jefferson escribió la Declaración de Independencia, no los Documentos Federalistas. Las respuestas correctas son James Madison, Alexander Hamilton, John Jay o Publius (el seudónimo compartido que usaron).
 
-## Números Que Debes Memorizar
+**"¿Quién hace las leyes federales?"**
 
-Muchas preguntas cívicas piden que recuerdes números específicos. A continuación algunos de los más importantes, y en qué versión del examen aparecen.
+Muchas personas responden "el Presidente." El Presidente firma los proyectos de ley, pero el Congreso (el Senado y la Cámara de Representantes) hace las leyes federales. Esta confusión ocurre porque el Presidente es la figura más visible del gobierno, pero el poder legislativo pertenece al Congreso.
 
-- 435 miembros con derecho a voto en la Cámara de Representantes (ambas versiones)
-- 100 Senadores, 2 por estado (ambas versiones)
-- 27 enmiendas a la Constitución (ambas versiones)
-- 9 asientos en la Corte Suprema (ambas versiones)
-- 5 jueces necesarios para decidir un caso de la Corte Suprema (solo versión 2025)
+## Números que son fáciles de confundir
 
+Varias preguntas cívicas piden números específicos, y confundirlos es uno de los errores más comunes.
 
-## Cómo Evitar Estos Errores Comunes
+- **435** miembros con derecho a voto en la Cámara de Representantes (ambas versiones del examen)
+- **100** senadores de EE.UU., 2 por estado (ambas versiones del examen)
+- **27** enmiendas a la Constitución (ambas versiones del examen)
+- **9** jueces en la Corte Suprema (ambas versiones del examen)
+- **5** jueces necesarios para decidir un caso en la Corte Suprema (solo examen 2025)
 
-La forma más efectiva de evitar errores comunes es dedicar más tiempo a repasar las preguntas que suelen hacer fallar a la gente y practicar respondiéndolas en voz alta, como en una entrevista real. Citizenry ofrece una lista seleccionada de las 25 preguntas más falladas para cada versión del examen, basada en datos reales de entrevistas simuladas, con consejos y trucos de memoria para cada pregunta.
+Las personas frecuentemente intercambian estos números. Por ejemplo, dicen 50 senadores en lugar de 100. Un truco útil: hay 50 estados y 2 senadores por estado, así que 50 por 2 es igual a 100.
+
+## Cómo estudiar las preguntas más falladas
+
+Citizenry incluye una lista seleccionada de las 25 preguntas más falladas para cada versión del examen (2008 y 2025), basada en datos reales de entrevistas simuladas. Cada pregunta está etiquetada con una frecuencia de error (alta, media o baja) para que pueda ver de un vistazo cuáles causan más problemas. Ningún otro recurso de estudio tiene los datos para hacer estas determinaciones. Saber cuáles preguntas la gente falla con más frecuencia, y con qué frecuencia las fallan, le ayuda a enfocar su tiempo de estudio en las áreas que más importan.
