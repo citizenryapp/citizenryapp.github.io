@@ -13,7 +13,7 @@
 
 Every article follows this exact pattern:
 
-1. **Opening paragraph**: 1-2 sentences summarizing what the article covers and why it matters. Sets expectations.
+1. **Opening paragraph**: 1-2 sentences that DIRECTLY ANSWER the title question. Lead with the answer, not background context. The first paragraph should be self-contained (make sense if extracted in isolation by an AI system). See "AI Search Engine Optimization" below for details.
 2. **5-8 body sections** (`## Heading` + content): Each section covers one subtopic. Use paragraphs for explanations, `- ` or `1. ` for lists. Use `### Subheading` sparingly for subsections within a `## Heading`.
 3. **Closing that guides to Citizenry**: Before Related Articles, include 1-3 sentences that naturally guide the reader to use Citizenry to prepare (e.g. mock interviews, study tools, or the app). Keep it helpful and on-topic; the layout’s CTA box follows, so the article copy should set that up.
 4. **Related Articles**: Defined in front matter `related:` list (2-4 internal links). The build script renders this as the LAST section in the HTML.
@@ -58,11 +58,12 @@ related:
 ```
 
 - **title**: Use the exact phrasing people search for (e.g., "How to Pass the US Citizenship Test" not "Passing Your Citizenship Exam")
-- **description**: Natural sentence(s) incorporating primary keywords; 120-160 characters ideal
+- **description**: A direct answer to the title question, not a teaser. Should read like an AI-extractable snippet. Example: "The 2025 U.S. citizenship civics test has 128 questions. During the interview, USCIS asks 20 and you must answer 12 correctly to pass." NOT: "Find out how many questions are on the citizenship test." 120-160 characters ideal.
 - **keywords**: 3-6 comma-separated search phrases people actually use
 - **date**: Today's date in ISO format
 - **llms_section**: Category for llms.txt. Values: `Test Preparation`, `Eligibility & Requirements`, `Application Process`, `Special Situations`, `After the Test`
 - **llms_desc**: Brief description for llms.txt entry (under 100 characters)
+- **faq_schema**: FAQPage JSON-LD structured data with 2-4 Q&A entries. See "AI Search Engine Optimization" below for the exact format.
 - **related**: 2-4 related articles. Each item has `slug` (filename without extension) and `title` (English title in double quotes) on a single line
 
 ### Body Content
@@ -81,28 +82,54 @@ Plain Markdown:
 ```markdown
 ---
 title: "How to Pass the US Citizenship Test"
-description: "Step-by-step tips on how to pass the citizenship test."
-keywords: "how to pass citizenship test, citizenship test tips"
+description: "To pass the U.S. citizenship test, you need to answer 6 of 10 civics questions correctly on the 2008 test or 12 of 20 on the 2025 test (60%), plus pass an English reading, writing, and speaking assessment. Start studying 1-3 months before your interview."
+keywords: "how to pass citizenship test, citizenship test tips, naturalization test study guide, US citizenship preparation"
 date: 2026-01-18
 llms_section: "Test Preparation"
 llms_desc: "Step-by-step tips on how to pass the US citizenship test"
+faq_schema: |
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do you pass the U.S. citizenship test?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "To pass the citizenship test, you need to answer 60% of civics questions correctly (6 of 10 on the 2008 test, or 12 of 20 on the 2025 test) and pass an English reading, writing, and speaking assessment. Study 15-30 minutes daily for 1-3 months and practice answering questions out loud, since the test is oral."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long should I study for the citizenship test?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most successful applicants study for 1-3 months before their interview. Studying 15-30 minutes per day is more effective than longer, less frequent sessions."
+        }
+      }
+    ]
+  }
 related:
-  - slug: n400-interview-preparation  title: "How to Prepare for the N-400 Interview"
-  - slug: what-if-i-fail-citizenship-test  title: "What Happens If I Fail the Citizenship Test?"
-  - slug: 128-civics-questions-2025  title: "128 Civics Questions and Answers: 2025 Test Guide"
+  - slug: n400-interview-preparation
+    title: "How to Prepare for the N-400 Interview"
+  - slug: what-if-i-fail-citizenship-test
+    title: "What Happens If I Fail the Citizenship Test?"
+  - slug: 128-civics-questions-2025
+    title: "128 Civics Questions and Answers: 2025 Test Guide"
 ---
 
-Passing the US citizenship test is an achievable goal with the right preparation. Here are proven strategies and tips.
+To pass the U.S. citizenship test, you must answer at least 60% of the civics questions correctly and pass an English reading, writing, and speaking assessment. According to the [official USCIS test guidelines](https://www.uscis.gov/citizenship/learn-about-citizenship/the-naturalization-interview-and-test), that means 6 of 10 correct on the 2008 test or 12 of 20 on the 2025 test. Most successful applicants study 15-30 minutes per day for 1-3 months before their interview.
 
 ## Step 1: Start Early
 
-Begin studying as soon as you submit your N-400 application. Most successful applicants study 15-30 minutes per day for 1-3 months.
+Begin studying as soon as you submit your [N-400 application](https://www.uscis.gov/n-400). Most successful applicants study 15-30 minutes per day for 1-3 months.
 
 ## What You Need to Know
 
-The test covers three areas:
+According to [USCIS](https://www.uscis.gov/citizenship/learn-about-citizenship/the-naturalization-interview-and-test), the test covers three areas:
 
-- Civics (US government and history questions)
+- Civics (U.S. government and history questions from the [official study materials](https://www.uscis.gov/citizenship/find-study-materials-and-resources/study-for-the-test))
 - English reading (you read a sentence aloud)
 - English writing (you write a sentence from dictation)
 ```
@@ -220,3 +247,102 @@ When the article topic relates to civics test content, always compare the 2008 a
 - Different numbers of answers required (e.g., "Name three original states" in 2008 vs "Name five" in 2025)
 - Different test format (10 questions asked/6 to pass in 2008 vs 20 asked/12 to pass in 2025)
 - Different 65/20 special consideration rules between versions
+
+## AI Search Engine Optimization
+
+Every article must be optimized for citation by AI search engines (Google AI Overviews, ChatGPT, Perplexity, Claude, Gemini, Copilot). AI systems extract passages, not pages. Content must be structured so that key answers are self-contained, authoritative, and easy for AI to extract and cite.
+
+### Direct-Answer Meta Descriptions
+
+The `description` front matter field must read as a direct answer to the title question. AI systems frequently use the meta description as a source for generating answers.
+
+- **BAD (teaser):** "Find out how many questions are on the citizenship test and how many you need to pass."
+- **GOOD (answer):** "The 2025 U.S. citizenship civics test has 128 questions. During the interview, USCIS asks 20 and you must answer 12 correctly (60%) to pass."
+
+### Answer-First Opening Paragraphs
+
+The first paragraph must directly answer the title question in the first 1-2 sentences. Do not start with background, history, or context. The answer should be self-contained: it must make sense if an AI system extracts it without any surrounding context.
+
+- **BAD:** "USCIS does not publish statistics on which civics test questions people get wrong most often. That means most lists online are just guesses."
+- **GOOD:** "The most commonly missed questions on the U.S. citizenship civics test fall into three categories: concepts with specific definitions (like 'rule of law'), questions where people confuse similar facts (like who wrote the Federalist Papers), and number-based questions (like how many U.S. Senators there are)."
+
+Keep the answer passage to 40-60 words for optimal snippet extraction.
+
+### Source Citations
+
+Add links to official USCIS pages where factual claims are made. Use "According to USCIS" or "According to the official USCIS study materials" framing. This boosts AI citation rates by up to 40%.
+
+**Approved USCIS link targets:**
+- `https://www.uscis.gov/citizenship/find-study-materials-and-resources/study-for-the-test` (study materials, civics questions)
+- `https://www.uscis.gov/citizenship` (general citizenship info)
+- `https://www.uscis.gov/n-400` (N-400 application)
+- `https://www.uscis.gov/citizenship/learn-about-citizenship/the-naturalization-interview-and-test` (interview and test)
+- `https://www.uscis.gov/forms/explore-my-options/become-a-us-citizen` (becoming a citizen)
+
+Do NOT add links to non-USCIS websites. Only use `uscis.gov` domains.
+
+**In Markdown drafts**, use standard link syntax: `[official USCIS study materials](https://www.uscis.gov/citizenship/find-study-materials-and-resources/study-for-the-test)`. The build script converts these to HTML links with proper bilingual attributes.
+
+### Self-Contained Answer Blocks
+
+Each key paragraph should work as a standalone answer if extracted by an AI system without surrounding context. Include enough context in each paragraph that it makes sense on its own.
+
+- **BAD:** "The answer is Congress." (requires reading the question above)
+- **GOOD:** "According to the USCIS civics test, Congress (the Senate and House of Representatives) makes federal laws. Many people incorrectly answer 'the President,' but the President signs bills into law rather than creating them."
+
+### FAQ Schema
+
+Every article must include `faq_schema` in the front matter with 2-4 FAQ entries. Choose questions that match how people actually search (natural question phrasing). FAQ schema makes content directly extractable by Perplexity and Google AI Overviews as Q&A pairs, boosting visibility by 30-40%.
+
+Format in front matter:
+
+```yaml
+faq_schema: |
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How many questions are on the U.S. citizenship test?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The 2008 citizenship test has 100 questions (USCIS asks 10, you need 6 correct). The 2025 test has 128 questions (USCIS asks 20, you need 12 correct). Which test you take depends on when you filed your N-400 application."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What score do you need to pass the citizenship test?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You need to answer 60% of the civics questions correctly: 6 out of 10 on the 2008 test, or 12 out of 20 on the 2025 test."
+        }
+      }
+    ]
+  }
+```
+
+**FAQ question selection criteria:**
+- Use natural question phrasing ("How many..." not "Number of...")
+- Choose questions people actually search for
+- Answers should be 1-3 sentences, self-contained, and factually precise
+- Include the most important/searchable question from the article as the first FAQ entry
+
+### Heading Structure for AI
+
+Use H2 headings that match how people phrase search queries. AI systems match headings to queries when selecting which passage to extract.
+
+- **BAD:** "Key Information" or "Details"
+- **GOOD:** "How Many Questions Are on the 2025 Civics Test?" or "What Documents Should I Bring to My Citizenship Interview?"
+
+### Template-Level AI SEO (Already Configured)
+
+The blog post layout (`_layouts/blog-post.html`) already includes these AI SEO elements automatically. You do not need to add them in article content:
+
+- **Article schema** with `datePublished`, `dateModified`, `mainEntityOfPage`, Person author with credentials, and publisher
+- **BreadcrumbList schema** (Home > Blog > Article)
+- **Author byline** with photo and "Updated [date]"
+- **Author bio box** at the bottom of each post
+- **robots.txt** allows all AI crawlers (GPTBot, PerplexityBot, ClaudeBot, Google-Extended, etc.)
+- **llms.txt** provides structured context for AI discovery
+- **Cache-busting** CSS links to prevent stale styling after deploys

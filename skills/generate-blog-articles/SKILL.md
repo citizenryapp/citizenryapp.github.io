@@ -27,6 +27,7 @@ Articles are authored as **Markdown files** in `blog-drafts/` and compiled to bi
 5. **Guide the reader to use Citizenry at the end.** Before the Related Articles section, include a brief closing (1-3 sentences) that naturally guides the reader to use Citizenry to prepare (e.g. practicing with mock interviews, studying with the app, or downloading Citizenry). Keep it helpful and on-topic; the layout’s CTA box will follow, so the article copy should set that up.
 6. **Do not use em-dashes.** Use commas, parentheses, or short sentences instead of em-dashes (—) in article content.
 7. **Surface 2008 vs 2025 differences.** Always read both official USCIS civics test Q&A documents (listed below). When the topic relates to civics test content, compare how the information differs between the 2008 (100 questions) and 2025 (128 questions) versions and mention relevant differences in the article.
+8. **Optimize for AI search engines.** Every article must follow the AI SEO patterns described in `references/blog-style-guide.md` under "AI Search Engine Optimization." This includes: direct-answer meta descriptions, answer-first opening paragraphs, USCIS source citations, self-contained answer blocks, and FAQ schema.
 
 ## Authoritative Sources
 
@@ -71,7 +72,7 @@ Determine from the research:
 Read the template at `assets/blog-article-template.md` for the structural pattern. Read `references/blog-style-guide.md` for detailed formatting rules.
 
 Write the article Markdown file to `blog-drafts/{slug}.md` with:
-- YAML front matter (`title`, `description`, `keywords`, `date`, `llms_section`, `llms_desc`, `related`)
+- YAML front matter (`title`, `description`, `keywords`, `date`, `llms_section`, `llms_desc`, `faq_schema`, `related`)
 - Opening paragraph (plain text)
 - 5-8 sections with `## Heading` headings
 - Inline links using Markdown syntax `[link text](url)` (e.g. to Compare pages or other site URLs); the build script converts these to HTML links
