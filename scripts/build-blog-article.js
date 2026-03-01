@@ -35,11 +35,32 @@ function parseFrontMatter(content) {
   const body = match[2];
   const meta = {};
 
-  // Parse simple YAML (key: value, key: "value", and related: list)
+  // Parse simple YAML (key: value, key: "value", related: list, and block scalars)
   let currentKey = null;
   let listItems = [];
+  let blockScalar = null; // { key, lines[] } for | or > scalars
+  let blockIndent = null;
 
   for (const line of rawMeta.split('\n')) {
+    // If we're collecting a block scalar (| or >), keep going until unindented
+    if (blockScalar) {
+      if (line.match(/^\s/) && (line.trim() !== '' || blockScalar.lines.length === 0)) {
+        if (blockIndent === null) {
+          const indentMatch = line.match(/^(\s+)/);
+          blockIndent = indentMatch ? indentMatch[1].length : 2;
+        }
+        blockScalar.lines.push(line.slice(blockIndent));
+        continue;
+      } else if (line.trim() === '' && blockScalar.lines.length > 0) {
+        blockScalar.lines.push('');
+        continue;
+      } else {
+        meta[blockScalar.key] = blockScalar.lines.join('\n').trimEnd();
+        blockScalar = null;
+        blockIndent = null;
+      }
+    }
+
     // List item: "  - something"
     const listItemMatch = line.match(/^\s+-\s+(.*)/);
     if (listItemMatch && currentKey) {
@@ -66,8 +87,14 @@ function parseFrontMatter(content) {
       const key = kvMatch[1];
       let value = kvMatch[2].trim();
 
-      if (value === '' || value === '|' || value === '>') {
-        // This might be a list or multiline — track the key
+      if (value === '|' || value === '>') {
+        blockScalar = { key, lines: [] };
+        blockIndent = null;
+        currentKey = null;
+        continue;
+      }
+
+      if (value === '') {
         currentKey = key;
         listItems = [];
         continue;
@@ -82,6 +109,11 @@ function parseFrontMatter(content) {
       meta[key] = value;
       currentKey = null;
     }
+  }
+
+  // Flush trailing block scalar
+  if (blockScalar) {
+    meta[blockScalar.key] = blockScalar.lines.join('\n').trimEnd();
   }
 
   // Flush trailing list
@@ -280,7 +312,7 @@ function escapeAttr(text) {
 
 function generateHTML(meta, enBlocks, esBlocks) {
   const date = meta.date || new Date().toISOString().slice(0, 10);
-  const titleEs = (esBlocks && esBlocks._meta && esBlocks._meta.title_es) || '';
+  const titleEs = meta.title_es || (esBlocks && esBlocks._meta && esBlocks._meta.title_es) || '';
 
   // Build front matter
   let html = '---\n';
@@ -290,6 +322,18 @@ function generateHTML(meta, enBlocks, esBlocks) {
   html += `description: "${meta.description || ''}"\n`;
   html += `keywords: "${meta.keywords || ''}"\n`;
   html += `date: ${date}\n`;
+
+  // Pass through faq_schema as a YAML block scalar
+  if (meta.faq_schema) {
+    const schemaLines = Array.isArray(meta.faq_schema)
+      ? meta.faq_schema.join('\n')
+      : meta.faq_schema;
+    html += `faq_schema: |\n`;
+    for (const line of schemaLines.split('\n')) {
+      html += `  ${line}\n`;
+    }
+  }
+
   html += '---\n\n';
 
   // Pair English and Spanish blocks by position (matching translatable blocks only)
